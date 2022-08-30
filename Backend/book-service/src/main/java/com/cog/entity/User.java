@@ -5,11 +5,15 @@ import java.time.LocalDateTime;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+
+import com.cog.enums.Event;
 
 @Entity
 @Table(name = "user_master")
@@ -33,8 +37,10 @@ public class User {
 	@Column(name = "registered_date")
 	private LocalDateTime registeredDate;
 	
-	String status;
-
+	
+	@Column(name = "status")
+	@Enumerated(EnumType.STRING)
+	private Event status = Event.ACTIVE;
 	public User() {
 		
 	}
@@ -87,18 +93,14 @@ public class User {
 		this.registeredDate = registeredDate;
 	}
 
-	public String getStatus() {
+	public Event getStatus() {
 		return status;
 	}
 
-	public void setStatus(String status) {
+	public void setStatus(Event status) {
 		this.status = status;
 	}
 
-	@Override
-	public String toString() {
-		return "User [id=" + id + ", emailId=" + emailId + ", firstName=" + firstName + ", lastName=" + lastName
-				+ ", password=" + password + ", registeredDate=" + registeredDate + ", status=" + status + "]";
-	}
+	
 
 }

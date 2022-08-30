@@ -1,0 +1,682 @@
+2022-08-30 17:29:11.085  INFO 14568 --- [restartedMain] com.cog.BookServiceApplication           : Starting BookServiceApplication using Java 17.0.4 on LTIN411775 with PID 14568 (C:\Users\2216990\Documents\CaseStudy\Backend\book-service\target\classes started by 2216990 in C:\Users\2216990\Documents\CaseStudy\Backend\book-service)
+2022-08-30 17:29:11.088  INFO 14568 --- [restartedMain] com.cog.BookServiceApplication           : No active profile set, falling back to 1 default profile: "default"
+2022-08-30 17:29:11.164  INFO 14568 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-08-30 17:29:11.169  INFO 14568 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-08-30 17:29:11.942  INFO 14568 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-08-30 17:29:12.007  INFO 14568 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 55 ms. Found 5 JPA repository interfaces.
+2022-08-30 17:29:12.577  INFO 14568 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-08-30 17:29:12.587  INFO 14568 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-08-30 17:29:12.587  INFO 14568 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-08-30 17:29:12.691  INFO 14568 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-08-30 17:29:12.691  INFO 14568 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1521 ms
+2022-08-30 17:29:12.753  WARN 14568 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/autoconfigure/sql/init/DataSourceInitializationConfiguration.class]: Unsatisfied dependency expressed through method 'dataSourceScriptDatabaseInitializer' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception; nested exception is org.springframework.boot.autoconfigure.jdbc.DataSourceProperties$DataSourceBeanCreationException: Failed to determine a suitable driver class
+2022-08-30 17:29:12.756  INFO 14568 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-08-30 17:29:12.773  INFO 14568 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-08-30 17:29:12.792 ERROR 14568 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Failed to configure a DataSource: no embedded datasource could be configured.
+
+Reason: Failed to determine a suitable driver class
+
+
+Action:
+
+Consider the following:
+	If you want an embedded database (H2, HSQL or Derby), please put it on the classpath.
+	If you have database settings to be loaded from a particular profile you may need to activate it (no profiles are currently active).
+
+2022-08-30 17:31:08.022  INFO 12336 --- [restartedMain] com.cog.BookServiceApplication           : Starting BookServiceApplication using Java 17.0.4 on LTIN411775 with PID 12336 (C:\Users\2216990\Documents\CaseStudy\Backend\book-service\target\classes started by 2216990 in C:\Users\2216990\Documents\CaseStudy\Backend\book-service)
+2022-08-30 17:31:08.023  INFO 12336 --- [restartedMain] com.cog.BookServiceApplication           : No active profile set, falling back to 1 default profile: "default"
+2022-08-30 17:31:08.079  INFO 12336 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-08-30 17:31:08.080  INFO 12336 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-08-30 17:31:08.758  INFO 12336 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-08-30 17:31:08.851  INFO 12336 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 81 ms. Found 5 JPA repository interfaces.
+2022-08-30 17:31:09.527  INFO 12336 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-08-30 17:31:09.537  INFO 12336 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-08-30 17:31:09.538  INFO 12336 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-08-30 17:31:09.618  INFO 12336 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-08-30 17:31:09.619  INFO 12336 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1538 ms
+2022-08-30 17:31:09.669  WARN 12336 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/autoconfigure/sql/init/DataSourceInitializationConfiguration.class]: Unsatisfied dependency expressed through method 'dataSourceScriptDatabaseInitializer' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception; nested exception is java.lang.IllegalArgumentException: URL must start with 'jdbc'
+2022-08-30 17:31:09.673  INFO 12336 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-08-30 17:31:09.691  INFO 12336 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-08-30 17:31:09.713 ERROR 12336 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/autoconfigure/sql/init/DataSourceInitializationConfiguration.class]: Unsatisfied dependency expressed through method 'dataSourceScriptDatabaseInitializer' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception; nested exception is java.lang.IllegalArgumentException: URL must start with 'jdbc'
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:800) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:541) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1154) ~[spring-context-5.3.22.jar:5.3.22]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:908) ~[spring-context-5.3.22.jar:5.3.22]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.22.jar:5.3.22]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147) ~[spring-boot-2.7.3.jar:2.7.3]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734) ~[spring-boot-2.7.3.jar:2.7.3]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408) ~[spring-boot-2.7.3.jar:2.7.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308) ~[spring-boot-2.7.3.jar:2.7.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306) ~[spring-boot-2.7.3.jar:2.7.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295) ~[spring-boot-2.7.3.jar:2.7.3]
+	at com.cog.BookServiceApplication.main(BookServiceApplication.java:10) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) ~[spring-boot-devtools-2.7.3.jar:2.7.3]
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception; nested exception is java.lang.IllegalArgumentException: URL must start with 'jdbc'
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:658) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:638) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1391) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1311) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:887) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791) ~[spring-beans-5.3.22.jar:5.3.22]
+	... 26 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception; nested exception is java.lang.IllegalArgumentException: URL must start with 'jdbc'
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653) ~[spring-beans-5.3.22.jar:5.3.22]
+	... 40 common frames omitted
+Caused by: java.lang.IllegalArgumentException: URL must start with 'jdbc'
+	at org.springframework.util.Assert.isTrue(Assert.java:121) ~[spring-core-5.3.22.jar:5.3.22]
+	at org.springframework.boot.jdbc.DatabaseDriver.fromJdbcUrl(DatabaseDriver.java:290) ~[spring-boot-2.7.3.jar:2.7.3]
+	at org.springframework.boot.autoconfigure.jdbc.DataSourceProperties.determineDriverClassName(DataSourceProperties.java:176) ~[spring-boot-autoconfigure-2.7.3.jar:2.7.3]
+	at org.springframework.boot.autoconfigure.jdbc.DataSourceProperties.initializeDataSourceBuilder(DataSourceProperties.java:123) ~[spring-boot-autoconfigure-2.7.3.jar:2.7.3]
+	at org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration.createDataSource(DataSourceConfiguration.java:48) ~[spring-boot-autoconfigure-2.7.3.jar:2.7.3]
+	at org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration$Hikari.dataSource(DataSourceConfiguration.java:90) ~[spring-boot-autoconfigure-2.7.3.jar:2.7.3]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154) ~[spring-beans-5.3.22.jar:5.3.22]
+	... 41 common frames omitted
+
+2022-08-30 17:31:26.815  INFO 17828 --- [restartedMain] com.cog.BookServiceApplication           : Starting BookServiceApplication using Java 17.0.4 on LTIN411775 with PID 17828 (C:\Users\2216990\Documents\CaseStudy\Backend\book-service\target\classes started by 2216990 in C:\Users\2216990\Documents\CaseStudy\Backend\book-service)
+2022-08-30 17:31:26.818  INFO 17828 --- [restartedMain] com.cog.BookServiceApplication           : No active profile set, falling back to 1 default profile: "default"
+2022-08-30 17:31:26.877  INFO 17828 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-08-30 17:31:26.878  INFO 17828 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-08-30 17:31:27.506  INFO 17828 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-08-30 17:31:27.579  INFO 17828 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 60 ms. Found 5 JPA repository interfaces.
+2022-08-30 17:31:28.242  INFO 17828 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-08-30 17:31:28.253  INFO 17828 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-08-30 17:31:28.254  INFO 17828 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-08-30 17:31:28.348  INFO 17828 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-08-30 17:31:28.349  INFO 17828 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1470 ms
+2022-08-30 17:31:28.829  INFO 17828 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-08-30 17:31:29.242  INFO 17828 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-08-30 17:31:31.461  INFO 17828 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-08-30 17:31:31.865  WARN 17828 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-08-30 17:31:32.009 DEBUG 17828 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2022-08-30 17:31:32.093  WARN 17828 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'userController' method 
+com.cog.controller.UserController#loginUser(UserDto)
+to {POST [/api/v1/digitalbooks/author], consumes [application/json], produces [application/jso]}: There is already 'userController' bean method
+com.cog.controller.UserController#createUser(UserDto) mapped.
+2022-08-30 17:31:32.094  INFO 17828 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-08-30 17:31:32.097  INFO 17828 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-08-30 17:31:32.104  INFO 17828 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-08-30 17:31:32.107  INFO 17828 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-08-30 17:31:32.117  INFO 17828 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-08-30 17:31:32.140 ERROR 17828 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'userController' method 
+com.cog.controller.UserController#loginUser(UserDto)
+to {POST [/api/v1/digitalbooks/author], consumes [application/json], produces [application/jso]}: There is already 'userController' bean method
+com.cog.controller.UserController#createUser(UserDto) mapped.
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1804) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918) ~[spring-context-5.3.22.jar:5.3.22]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.22.jar:5.3.22]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147) ~[spring-boot-2.7.3.jar:2.7.3]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734) ~[spring-boot-2.7.3.jar:2.7.3]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408) ~[spring-boot-2.7.3.jar:2.7.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308) ~[spring-boot-2.7.3.jar:2.7.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306) ~[spring-boot-2.7.3.jar:2.7.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295) ~[spring-boot-2.7.3.jar:2.7.3]
+	at com.cog.BookServiceApplication.main(BookServiceApplication.java:10) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) ~[spring-boot-devtools-2.7.3.jar:2.7.3]
+Caused by: java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'userController' method 
+com.cog.controller.UserController#loginUser(UserDto)
+to {POST [/api/v1/digitalbooks/author], consumes [application/json], produces [application/jso]}: There is already 'userController' bean method
+com.cog.controller.UserController#createUser(UserDto) mapped.
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.validateMethodMapping(AbstractHandlerMethodMapping.java:669) ~[spring-webmvc-5.3.22.jar:5.3.22]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:635) ~[spring-webmvc-5.3.22.jar:5.3.22]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(AbstractHandlerMethodMapping.java:332) ~[spring-webmvc-5.3.22.jar:5.3.22]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.registerHandlerMethod(RequestMappingHandlerMapping.java:420) ~[spring-webmvc-5.3.22.jar:5.3.22]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.registerHandlerMethod(RequestMappingHandlerMapping.java:76) ~[spring-webmvc-5.3.22.jar:5.3.22]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.lambda$detectHandlerMethods$2(AbstractHandlerMethodMapping.java:299) ~[spring-webmvc-5.3.22.jar:5.3.22]
+	at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:721) ~[na:na]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.detectHandlerMethods(AbstractHandlerMethodMapping.java:297) ~[spring-webmvc-5.3.22.jar:5.3.22]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.processCandidateBean(AbstractHandlerMethodMapping.java:266) ~[spring-webmvc-5.3.22.jar:5.3.22]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.initHandlerMethods(AbstractHandlerMethodMapping.java:225) ~[spring-webmvc-5.3.22.jar:5.3.22]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.afterPropertiesSet(AbstractHandlerMethodMapping.java:213) ~[spring-webmvc-5.3.22.jar:5.3.22]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.afterPropertiesSet(RequestMappingHandlerMapping.java:205) ~[spring-webmvc-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800) ~[spring-beans-5.3.22.jar:5.3.22]
+	... 21 common frames omitted
+
+2022-08-30 17:32:29.696  INFO 1612 --- [restartedMain] com.cog.BookServiceApplication           : Starting BookServiceApplication using Java 17.0.4 on LTIN411775 with PID 1612 (C:\Users\2216990\Documents\CaseStudy\Backend\book-service\target\classes started by 2216990 in C:\Users\2216990\Documents\CaseStudy\Backend\book-service)
+2022-08-30 17:32:29.698  INFO 1612 --- [restartedMain] com.cog.BookServiceApplication           : No active profile set, falling back to 1 default profile: "default"
+2022-08-30 17:32:29.753  INFO 1612 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-08-30 17:32:29.753  INFO 1612 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-08-30 17:32:30.377  INFO 1612 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-08-30 17:32:30.446  INFO 1612 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 55 ms. Found 5 JPA repository interfaces.
+2022-08-30 17:32:31.050  INFO 1612 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-08-30 17:32:31.066  INFO 1612 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-08-30 17:32:31.067  INFO 1612 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-08-30 17:32:31.167  INFO 1612 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-08-30 17:32:31.167  INFO 1612 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1413 ms
+2022-08-30 17:32:31.649  INFO 1612 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-08-30 17:32:31.972  INFO 1612 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-08-30 17:32:32.877  INFO 1612 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-08-30 17:32:33.259  WARN 1612 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-08-30 17:32:33.371 DEBUG 1612 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2022-08-30 17:32:33.454 DEBUG 1612 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 4 mappings in 'requestMappingHandlerMapping'
+2022-08-30 17:32:33.477 DEBUG 1612 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2022-08-30 17:32:33.485 DEBUG 1612 --- [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2022-08-30 17:32:33.661  INFO 1612 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-08-30 17:32:33.699  INFO 1612 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-08-30 17:32:33.707  INFO 1612 --- [restartedMain] com.cog.BookServiceApplication           : Started BookServiceApplication in 4.4 seconds (JVM running for 5.137)
+2022-08-30 17:33:42.695  INFO 1612 --- [RMI TCP Connection(9)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2022-08-30 17:33:42.712  INFO 1612 --- [RMI TCP Connection(9)-127.0.0.1] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-08-30 17:33:42.722  INFO 1612 --- [RMI TCP Connection(9)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-08-30 17:33:42.725  INFO 1612 --- [RMI TCP Connection(9)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-08-30 17:33:42.735  INFO 1612 --- [RMI TCP Connection(9)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-08-30 17:33:55.828  INFO 11752 --- [restartedMain] com.cog.BookServiceApplication           : Starting BookServiceApplication using Java 17.0.4 on LTIN411775 with PID 11752 (C:\Users\2216990\Documents\CaseStudy\Backend\book-service\target\classes started by 2216990 in C:\Users\2216990\Documents\CaseStudy\Backend\book-service)
+2022-08-30 17:33:55.829  INFO 11752 --- [restartedMain] com.cog.BookServiceApplication           : No active profile set, falling back to 1 default profile: "default"
+2022-08-30 17:33:55.884  INFO 11752 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-08-30 17:33:55.884  INFO 11752 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-08-30 17:33:56.535  INFO 11752 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-08-30 17:33:56.619  INFO 11752 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 71 ms. Found 5 JPA repository interfaces.
+2022-08-30 17:33:57.170  INFO 11752 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-08-30 17:33:57.183  INFO 11752 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-08-30 17:33:57.184  INFO 11752 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-08-30 17:33:57.284  INFO 11752 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-08-30 17:33:57.284  INFO 11752 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1399 ms
+2022-08-30 17:33:57.752  INFO 11752 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-08-30 17:33:58.083  INFO 11752 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-08-30 17:34:00.153  INFO 11752 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-08-30 17:34:00.551  WARN 11752 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-08-30 17:34:00.669 DEBUG 11752 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2022-08-30 17:34:00.777 DEBUG 11752 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 4 mappings in 'requestMappingHandlerMapping'
+2022-08-30 17:34:00.805 DEBUG 11752 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2022-08-30 17:34:00.817 DEBUG 11752 --- [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2022-08-30 17:34:01.042  INFO 11752 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-08-30 17:34:01.085  INFO 11752 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-08-30 17:34:01.098  INFO 11752 --- [restartedMain] com.cog.BookServiceApplication           : Started BookServiceApplication in 5.689 seconds (JVM running for 6.527)
+2022-08-30 17:38:41.537  INFO 11752 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2022-08-30 17:38:41.554  INFO 11752 --- [Thread-5] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-08-30 17:38:41.563  INFO 11752 --- [Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-08-30 17:38:41.566  INFO 11752 --- [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-08-30 17:38:41.575  INFO 11752 --- [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-08-30 17:38:41.654  INFO 11752 --- [restartedMain] com.cog.BookServiceApplication           : Starting BookServiceApplication using Java 17.0.4 on LTIN411775 with PID 11752 (C:\Users\2216990\Documents\CaseStudy\Backend\book-service\target\classes started by 2216990 in C:\Users\2216990\Documents\CaseStudy\Backend\book-service)
+2022-08-30 17:38:41.654  INFO 11752 --- [restartedMain] com.cog.BookServiceApplication           : No active profile set, falling back to 1 default profile: "default"
+2022-08-30 17:38:41.846  INFO 11752 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-08-30 17:38:41.867  INFO 11752 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 21 ms. Found 5 JPA repository interfaces.
+2022-08-30 17:38:41.962  INFO 11752 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-08-30 17:38:41.963  INFO 11752 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-08-30 17:38:41.963  INFO 11752 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-08-30 17:38:41.988  INFO 11752 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-08-30 17:38:41.988  INFO 11752 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 331 ms
+2022-08-30 17:38:42.036  INFO 11752 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2022-08-30 17:38:42.054  INFO 11752 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2022-08-30 17:38:42.191  INFO 11752 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-08-30 17:38:42.272  WARN 11752 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-08-30 17:38:42.315 DEBUG 11752 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2022-08-30 17:38:42.328 DEBUG 11752 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 4 mappings in 'requestMappingHandlerMapping'
+2022-08-30 17:38:42.333 DEBUG 11752 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2022-08-30 17:38:42.337 DEBUG 11752 --- [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2022-08-30 17:38:42.432  INFO 11752 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-08-30 17:38:42.444  INFO 11752 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-08-30 17:38:42.448  INFO 11752 --- [restartedMain] com.cog.BookServiceApplication           : Started BookServiceApplication in 0.83 seconds (JVM running for 287.877)
+2022-08-30 17:38:42.450  INFO 11752 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-08-30 17:38:56.017  INFO 11752 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2022-08-30 17:38:56.026  INFO 11752 --- [Thread-7] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-08-30 17:38:56.032  INFO 11752 --- [Thread-7] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-08-30 17:38:56.032  INFO 11752 --- [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2022-08-30 17:38:56.039  INFO 11752 --- [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2022-08-30 17:38:56.108  INFO 11752 --- [restartedMain] com.cog.BookServiceApplication           : Starting BookServiceApplication using Java 17.0.4 on LTIN411775 with PID 11752 (C:\Users\2216990\Documents\CaseStudy\Backend\book-service\target\classes started by 2216990 in C:\Users\2216990\Documents\CaseStudy\Backend\book-service)
+2022-08-30 17:38:56.108  INFO 11752 --- [restartedMain] com.cog.BookServiceApplication           : No active profile set, falling back to 1 default profile: "default"
+2022-08-30 17:38:56.258  INFO 11752 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-08-30 17:38:56.293  INFO 11752 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 34 ms. Found 5 JPA repository interfaces.
+2022-08-30 17:38:56.353  INFO 11752 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-08-30 17:38:56.353  INFO 11752 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-08-30 17:38:56.353  INFO 11752 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-08-30 17:38:56.374  INFO 11752 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-08-30 17:38:56.375  INFO 11752 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 264 ms
+2022-08-30 17:38:56.408  INFO 11752 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2022-08-30 17:38:56.420  INFO 11752 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2022-08-30 17:38:56.523  INFO 11752 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-08-30 17:38:56.604  WARN 11752 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-08-30 17:38:56.641 DEBUG 11752 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2022-08-30 17:38:56.653 DEBUG 11752 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 4 mappings in 'requestMappingHandlerMapping'
+2022-08-30 17:38:56.660 DEBUG 11752 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2022-08-30 17:38:56.667 DEBUG 11752 --- [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2022-08-30 17:38:56.752  INFO 11752 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-08-30 17:38:56.762  INFO 11752 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-08-30 17:38:56.766  INFO 11752 --- [restartedMain] com.cog.BookServiceApplication           : Started BookServiceApplication in 0.682 seconds (JVM running for 302.195)
+2022-08-30 17:38:56.768  INFO 11752 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-08-30 17:39:25.532  INFO 11752 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2022-08-30 17:39:25.563  INFO 11752 --- [Thread-11] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-08-30 17:39:25.569  INFO 11752 --- [Thread-11] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-08-30 17:39:25.571  INFO 11752 --- [Thread-11] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
+2022-08-30 17:39:25.577  INFO 11752 --- [Thread-11] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
+2022-08-30 17:39:25.660  INFO 11752 --- [restartedMain] com.cog.BookServiceApplication           : Starting BookServiceApplication using Java 17.0.4 on LTIN411775 with PID 11752 (C:\Users\2216990\Documents\CaseStudy\Backend\book-service\target\classes started by 2216990 in C:\Users\2216990\Documents\CaseStudy\Backend\book-service)
+2022-08-30 17:39:25.660  INFO 11752 --- [restartedMain] com.cog.BookServiceApplication           : No active profile set, falling back to 1 default profile: "default"
+2022-08-30 17:39:25.780  INFO 11752 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-08-30 17:39:25.799  INFO 11752 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 18 ms. Found 5 JPA repository interfaces.
+2022-08-30 17:39:25.854  INFO 11752 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-08-30 17:39:25.854  INFO 11752 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-08-30 17:39:25.855  INFO 11752 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-08-30 17:39:25.876  INFO 11752 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-08-30 17:39:25.876  INFO 11752 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 213 ms
+2022-08-30 17:39:25.907  INFO 11752 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Starting...
+2022-08-30 17:39:25.927  INFO 11752 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Start completed.
+2022-08-30 17:39:26.035  INFO 11752 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-08-30 17:39:26.099  WARN 11752 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-08-30 17:39:26.130 DEBUG 11752 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2022-08-30 17:39:26.140 DEBUG 11752 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 4 mappings in 'requestMappingHandlerMapping'
+2022-08-30 17:39:26.149 DEBUG 11752 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2022-08-30 17:39:26.152 DEBUG 11752 --- [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2022-08-30 17:39:26.230  INFO 11752 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-08-30 17:39:26.238  INFO 11752 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-08-30 17:39:26.243  INFO 11752 --- [restartedMain] com.cog.BookServiceApplication           : Started BookServiceApplication in 0.614 seconds (JVM running for 331.672)
+2022-08-30 17:39:26.245  INFO 11752 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-08-30 17:42:41.144  INFO 11752 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2022-08-30 17:42:41.155  INFO 11752 --- [Thread-15] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-08-30 17:42:41.160  INFO 11752 --- [Thread-15] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-08-30 17:42:41.161  INFO 11752 --- [Thread-15] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown initiated...
+2022-08-30 17:42:41.166  INFO 11752 --- [Thread-15] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown completed.
+2022-08-30 17:42:41.228  INFO 11752 --- [restartedMain] com.cog.BookServiceApplication           : Starting BookServiceApplication using Java 17.0.4 on LTIN411775 with PID 11752 (C:\Users\2216990\Documents\CaseStudy\Backend\book-service\target\classes started by 2216990 in C:\Users\2216990\Documents\CaseStudy\Backend\book-service)
+2022-08-30 17:42:41.229  INFO 11752 --- [restartedMain] com.cog.BookServiceApplication           : No active profile set, falling back to 1 default profile: "default"
+2022-08-30 17:42:41.373  INFO 11752 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-08-30 17:42:41.396  INFO 11752 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 22 ms. Found 5 JPA repository interfaces.
+2022-08-30 17:42:41.476  INFO 11752 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-08-30 17:42:41.478  INFO 11752 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-08-30 17:42:41.479  INFO 11752 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-08-30 17:42:41.519  INFO 11752 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-08-30 17:42:41.519  INFO 11752 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 289 ms
+2022-08-30 17:42:41.565  INFO 11752 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Starting...
+2022-08-30 17:42:41.579  INFO 11752 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Start completed.
+2022-08-30 17:42:41.712  INFO 11752 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-08-30 17:42:41.809  WARN 11752 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-08-30 17:42:41.852 DEBUG 11752 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2022-08-30 17:42:41.864 DEBUG 11752 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 4 mappings in 'requestMappingHandlerMapping'
+2022-08-30 17:42:41.873 DEBUG 11752 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2022-08-30 17:42:41.879 DEBUG 11752 --- [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2022-08-30 17:42:41.981  INFO 11752 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-08-30 17:42:41.992  INFO 11752 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-08-30 17:42:42.000  INFO 11752 --- [restartedMain] com.cog.BookServiceApplication           : Started BookServiceApplication in 0.79 seconds (JVM running for 527.428)
+2022-08-30 17:42:42.002  INFO 11752 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-08-30 17:42:43.415  INFO 11752 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 2 class path changes (0 additions, 0 deletions, 2 modifications)
+2022-08-30 17:42:43.427  INFO 11752 --- [Thread-19] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-08-30 17:42:43.431  INFO 11752 --- [Thread-19] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-08-30 17:42:43.432  INFO 11752 --- [Thread-19] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown initiated...
+2022-08-30 17:42:43.439  INFO 11752 --- [Thread-19] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown completed.
+2022-08-30 17:42:43.510  INFO 11752 --- [restartedMain] com.cog.BookServiceApplication           : Starting BookServiceApplication using Java 17.0.4 on LTIN411775 with PID 11752 (C:\Users\2216990\Documents\CaseStudy\Backend\book-service\target\classes started by 2216990 in C:\Users\2216990\Documents\CaseStudy\Backend\book-service)
+2022-08-30 17:42:43.510  INFO 11752 --- [restartedMain] com.cog.BookServiceApplication           : No active profile set, falling back to 1 default profile: "default"
+2022-08-30 17:42:43.645  INFO 11752 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-08-30 17:42:43.664  INFO 11752 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 18 ms. Found 5 JPA repository interfaces.
+2022-08-30 17:42:43.729  INFO 11752 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-08-30 17:42:43.731  INFO 11752 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-08-30 17:42:43.731  INFO 11752 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-08-30 17:42:43.754  INFO 11752 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-08-30 17:42:43.754  INFO 11752 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 242 ms
+2022-08-30 17:42:43.785  INFO 11752 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Starting...
+2022-08-30 17:42:43.801  INFO 11752 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Start completed.
+2022-08-30 17:42:43.884  INFO 11752 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-08-30 17:42:43.929  WARN 11752 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-08-30 17:42:43.951 DEBUG 11752 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2022-08-30 17:42:43.960 DEBUG 11752 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 4 mappings in 'requestMappingHandlerMapping'
+2022-08-30 17:42:43.966 DEBUG 11752 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2022-08-30 17:42:43.970 DEBUG 11752 --- [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2022-08-30 17:42:44.040  INFO 11752 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-08-30 17:42:44.049  INFO 11752 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-08-30 17:42:44.054  INFO 11752 --- [restartedMain] com.cog.BookServiceApplication           : Started BookServiceApplication in 0.572 seconds (JVM running for 529.482)
+2022-08-30 17:42:44.055  INFO 11752 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-08-30 17:42:45.472  INFO 11752 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2022-08-30 17:42:45.485  INFO 11752 --- [Thread-23] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-08-30 17:42:45.488  INFO 11752 --- [Thread-23] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-08-30 17:42:45.489  INFO 11752 --- [Thread-23] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Shutdown initiated...
+2022-08-30 17:42:45.495  INFO 11752 --- [Thread-23] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Shutdown completed.
+2022-08-30 17:42:45.560  INFO 11752 --- [restartedMain] com.cog.BookServiceApplication           : Starting BookServiceApplication using Java 17.0.4 on LTIN411775 with PID 11752 (C:\Users\2216990\Documents\CaseStudy\Backend\book-service\target\classes started by 2216990 in C:\Users\2216990\Documents\CaseStudy\Backend\book-service)
+2022-08-30 17:42:45.561  INFO 11752 --- [restartedMain] com.cog.BookServiceApplication           : No active profile set, falling back to 1 default profile: "default"
+2022-08-30 17:42:45.692  INFO 11752 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-08-30 17:42:45.710  INFO 11752 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 18 ms. Found 5 JPA repository interfaces.
+2022-08-30 17:42:45.770  INFO 11752 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-08-30 17:42:45.770  INFO 11752 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-08-30 17:42:45.770  INFO 11752 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-08-30 17:42:45.793  INFO 11752 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-08-30 17:42:45.793  INFO 11752 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 230 ms
+2022-08-30 17:42:45.828  INFO 11752 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Starting...
+2022-08-30 17:42:45.840  INFO 11752 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Start completed.
+2022-08-30 17:42:45.919  INFO 11752 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-08-30 17:42:45.967  WARN 11752 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-08-30 17:42:46.004 DEBUG 11752 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2022-08-30 17:42:46.017 DEBUG 11752 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 4 mappings in 'requestMappingHandlerMapping'
+2022-08-30 17:42:46.024 DEBUG 11752 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2022-08-30 17:42:46.029 DEBUG 11752 --- [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2022-08-30 17:42:46.124  INFO 11752 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-08-30 17:42:46.134  INFO 11752 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-08-30 17:42:46.142  INFO 11752 --- [restartedMain] com.cog.BookServiceApplication           : Started BookServiceApplication in 0.606 seconds (JVM running for 531.572)
+2022-08-30 17:42:46.145  INFO 11752 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-08-30 17:43:16.934  INFO 11752 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2022-08-30 17:43:16.948  INFO 11752 --- [Thread-27] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-08-30 17:43:16.953  INFO 11752 --- [Thread-27] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-08-30 17:43:16.954  INFO 11752 --- [Thread-27] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Shutdown initiated...
+2022-08-30 17:43:16.959  INFO 11752 --- [Thread-27] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Shutdown completed.
+2022-08-30 17:43:17.022  INFO 11752 --- [restartedMain] com.cog.BookServiceApplication           : Starting BookServiceApplication using Java 17.0.4 on LTIN411775 with PID 11752 (C:\Users\2216990\Documents\CaseStudy\Backend\book-service\target\classes started by 2216990 in C:\Users\2216990\Documents\CaseStudy\Backend\book-service)
+2022-08-30 17:43:17.022  INFO 11752 --- [restartedMain] com.cog.BookServiceApplication           : No active profile set, falling back to 1 default profile: "default"
+2022-08-30 17:43:17.132  INFO 11752 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-08-30 17:43:17.151  INFO 11752 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 17 ms. Found 5 JPA repository interfaces.
+2022-08-30 17:43:17.212  INFO 11752 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-08-30 17:43:17.212  INFO 11752 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-08-30 17:43:17.212  INFO 11752 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-08-30 17:43:17.239  INFO 11752 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-08-30 17:43:17.239  INFO 11752 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 215 ms
+2022-08-30 17:43:17.273  INFO 11752 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Starting...
+2022-08-30 17:43:17.285  INFO 11752 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Start completed.
+2022-08-30 17:43:17.359  INFO 11752 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-08-30 17:43:17.414  WARN 11752 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-08-30 17:43:17.448 DEBUG 11752 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2022-08-30 17:43:17.459 DEBUG 11752 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 4 mappings in 'requestMappingHandlerMapping'
+2022-08-30 17:43:17.464 DEBUG 11752 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2022-08-30 17:43:17.469 DEBUG 11752 --- [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2022-08-30 17:43:17.548  INFO 11752 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-08-30 17:43:17.557  INFO 11752 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-08-30 17:43:17.560  INFO 11752 --- [restartedMain] com.cog.BookServiceApplication           : Started BookServiceApplication in 0.555 seconds (JVM running for 562.989)
+2022-08-30 17:43:17.561  INFO 11752 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-08-30 17:43:18.984  INFO 11752 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2022-08-30 17:43:19.006  INFO 11752 --- [Thread-31] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-08-30 17:43:19.015  INFO 11752 --- [Thread-31] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-08-30 17:43:19.015  INFO 11752 --- [Thread-31] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Shutdown initiated...
+2022-08-30 17:43:19.027  INFO 11752 --- [Thread-31] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Shutdown completed.
+2022-08-30 17:43:19.110  INFO 11752 --- [restartedMain] com.cog.BookServiceApplication           : Starting BookServiceApplication using Java 17.0.4 on LTIN411775 with PID 11752 (C:\Users\2216990\Documents\CaseStudy\Backend\book-service\target\classes started by 2216990 in C:\Users\2216990\Documents\CaseStudy\Backend\book-service)
+2022-08-30 17:43:19.111  INFO 11752 --- [restartedMain] com.cog.BookServiceApplication           : No active profile set, falling back to 1 default profile: "default"
+2022-08-30 17:43:19.242  INFO 11752 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-08-30 17:43:19.257  INFO 11752 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 14 ms. Found 5 JPA repository interfaces.
+2022-08-30 17:43:19.325  INFO 11752 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-08-30 17:43:19.325  INFO 11752 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-08-30 17:43:19.325  INFO 11752 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-08-30 17:43:19.346  INFO 11752 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-08-30 17:43:19.346  INFO 11752 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 235 ms
+2022-08-30 17:43:19.383  INFO 11752 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-9 - Starting...
+2022-08-30 17:43:19.399  INFO 11752 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-9 - Start completed.
+2022-08-30 17:43:19.478  INFO 11752 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-08-30 17:43:19.538  WARN 11752 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-08-30 17:43:19.568 DEBUG 11752 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2022-08-30 17:43:19.582 DEBUG 11752 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 4 mappings in 'requestMappingHandlerMapping'
+2022-08-30 17:43:19.588 DEBUG 11752 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2022-08-30 17:43:19.592 DEBUG 11752 --- [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2022-08-30 17:43:19.671  INFO 11752 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-08-30 17:43:19.682  INFO 11752 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-08-30 17:43:19.689  INFO 11752 --- [restartedMain] com.cog.BookServiceApplication           : Started BookServiceApplication in 0.598 seconds (JVM running for 565.118)
+2022-08-30 17:43:19.691  INFO 11752 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-08-30 17:44:33.092  INFO 11752 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2022-08-30 17:44:33.105  INFO 11752 --- [Thread-35] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-08-30 17:44:33.109  INFO 11752 --- [Thread-35] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-08-30 17:44:33.110  INFO 11752 --- [Thread-35] com.zaxxer.hikari.HikariDataSource       : HikariPool-9 - Shutdown initiated...
+2022-08-30 17:44:33.117  INFO 11752 --- [Thread-35] com.zaxxer.hikari.HikariDataSource       : HikariPool-9 - Shutdown completed.
+2022-08-30 17:44:33.196  INFO 11752 --- [restartedMain] com.cog.BookServiceApplication           : Starting BookServiceApplication using Java 17.0.4 on LTIN411775 with PID 11752 (C:\Users\2216990\Documents\CaseStudy\Backend\book-service\target\classes started by 2216990 in C:\Users\2216990\Documents\CaseStudy\Backend\book-service)
+2022-08-30 17:44:33.196  INFO 11752 --- [restartedMain] com.cog.BookServiceApplication           : No active profile set, falling back to 1 default profile: "default"
+2022-08-30 17:44:33.343  INFO 11752 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-08-30 17:44:33.361  INFO 11752 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 17 ms. Found 5 JPA repository interfaces.
+2022-08-30 17:44:33.428  INFO 11752 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-08-30 17:44:33.428  INFO 11752 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-08-30 17:44:33.428  INFO 11752 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-08-30 17:44:33.455  INFO 11752 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-08-30 17:44:33.455  INFO 11752 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 256 ms
+2022-08-30 17:44:33.485  INFO 11752 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-10 - Starting...
+2022-08-30 17:44:33.499  INFO 11752 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-10 - Start completed.
+2022-08-30 17:44:33.568  INFO 11752 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-08-30 17:44:33.612  WARN 11752 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-08-30 17:44:33.649 DEBUG 11752 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2022-08-30 17:44:33.664 DEBUG 11752 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 4 mappings in 'requestMappingHandlerMapping'
+2022-08-30 17:44:33.672 DEBUG 11752 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2022-08-30 17:44:33.679 DEBUG 11752 --- [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2022-08-30 17:44:33.764  INFO 11752 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-08-30 17:44:33.771  INFO 11752 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-08-30 17:44:33.775  INFO 11752 --- [restartedMain] com.cog.BookServiceApplication           : Started BookServiceApplication in 0.605 seconds (JVM running for 639.204)
+2022-08-30 17:44:33.776  INFO 11752 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-08-30 17:45:31.943  INFO 11752 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2022-08-30 17:45:31.961  INFO 11752 --- [Thread-39] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-08-30 17:45:31.966  INFO 11752 --- [Thread-39] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-08-30 17:45:31.967  INFO 11752 --- [Thread-39] com.zaxxer.hikari.HikariDataSource       : HikariPool-10 - Shutdown initiated...
+2022-08-30 17:45:31.973  INFO 11752 --- [Thread-39] com.zaxxer.hikari.HikariDataSource       : HikariPool-10 - Shutdown completed.
+2022-08-30 17:45:32.037  INFO 11752 --- [restartedMain] com.cog.BookServiceApplication           : Starting BookServiceApplication using Java 17.0.4 on LTIN411775 with PID 11752 (C:\Users\2216990\Documents\CaseStudy\Backend\book-service\target\classes started by 2216990 in C:\Users\2216990\Documents\CaseStudy\Backend\book-service)
+2022-08-30 17:45:32.037  INFO 11752 --- [restartedMain] com.cog.BookServiceApplication           : No active profile set, falling back to 1 default profile: "default"
+2022-08-30 17:45:32.163  INFO 11752 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-08-30 17:45:32.180  INFO 11752 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 16 ms. Found 5 JPA repository interfaces.
+2022-08-30 17:45:32.247  INFO 11752 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-08-30 17:45:32.248  INFO 11752 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-08-30 17:45:32.248  INFO 11752 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-08-30 17:45:32.267  INFO 11752 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-08-30 17:45:32.267  INFO 11752 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 229 ms
+2022-08-30 17:45:32.295  INFO 11752 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-11 - Starting...
+2022-08-30 17:45:32.309  INFO 11752 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-11 - Start completed.
+2022-08-30 17:45:32.376  INFO 11752 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-08-30 17:45:32.435  WARN 11752 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-08-30 17:45:32.468 DEBUG 11752 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2022-08-30 17:45:32.479 DEBUG 11752 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 4 mappings in 'requestMappingHandlerMapping'
+2022-08-30 17:45:32.486 DEBUG 11752 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2022-08-30 17:45:32.491 DEBUG 11752 --- [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2022-08-30 17:45:32.577  INFO 11752 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-08-30 17:45:32.585  INFO 11752 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-08-30 17:45:32.590  INFO 11752 --- [restartedMain] com.cog.BookServiceApplication           : Started BookServiceApplication in 0.572 seconds (JVM running for 698.019)
+2022-08-30 17:45:32.592  INFO 11752 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-08-30 17:47:08.252  INFO 11752 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2022-08-30 17:47:08.264  INFO 11752 --- [Thread-43] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-08-30 17:47:08.268  INFO 11752 --- [Thread-43] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-08-30 17:47:08.269  INFO 11752 --- [Thread-43] com.zaxxer.hikari.HikariDataSource       : HikariPool-11 - Shutdown initiated...
+2022-08-30 17:47:08.275  INFO 11752 --- [Thread-43] com.zaxxer.hikari.HikariDataSource       : HikariPool-11 - Shutdown completed.
+2022-08-30 17:47:08.342  INFO 11752 --- [restartedMain] com.cog.BookServiceApplication           : Starting BookServiceApplication using Java 17.0.4 on LTIN411775 with PID 11752 (C:\Users\2216990\Documents\CaseStudy\Backend\book-service\target\classes started by 2216990 in C:\Users\2216990\Documents\CaseStudy\Backend\book-service)
+2022-08-30 17:47:08.342  INFO 11752 --- [restartedMain] com.cog.BookServiceApplication           : No active profile set, falling back to 1 default profile: "default"
+2022-08-30 17:47:08.462  INFO 11752 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-08-30 17:47:08.478  INFO 11752 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 15 ms. Found 5 JPA repository interfaces.
+2022-08-30 17:47:08.547  INFO 11752 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-08-30 17:47:08.547  INFO 11752 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-08-30 17:47:08.547  INFO 11752 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-08-30 17:47:08.572  INFO 11752 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-08-30 17:47:08.572  INFO 11752 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 228 ms
+2022-08-30 17:47:08.598  INFO 11752 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-12 - Starting...
+2022-08-30 17:47:08.609  INFO 11752 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-12 - Start completed.
+2022-08-30 17:47:08.672  INFO 11752 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-08-30 17:47:08.720  WARN 11752 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-08-30 17:47:08.755 DEBUG 11752 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2022-08-30 17:47:08.765 DEBUG 11752 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 4 mappings in 'requestMappingHandlerMapping'
+2022-08-30 17:47:08.772 DEBUG 11752 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2022-08-30 17:47:08.777 DEBUG 11752 --- [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2022-08-30 17:47:08.873  INFO 11752 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-08-30 17:47:08.882  INFO 11752 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-08-30 17:47:08.886  INFO 11752 --- [restartedMain] com.cog.BookServiceApplication           : Started BookServiceApplication in 0.565 seconds (JVM running for 794.315)
+2022-08-30 17:47:08.887  INFO 11752 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-08-30 17:47:22.474  INFO 11752 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2022-08-30 17:47:22.485  INFO 11752 --- [Thread-47] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-08-30 17:47:22.491  INFO 11752 --- [Thread-47] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-08-30 17:47:22.491  INFO 11752 --- [Thread-47] com.zaxxer.hikari.HikariDataSource       : HikariPool-12 - Shutdown initiated...
+2022-08-30 17:47:22.495  INFO 11752 --- [Thread-47] com.zaxxer.hikari.HikariDataSource       : HikariPool-12 - Shutdown completed.
+2022-08-30 17:47:22.562  INFO 11752 --- [restartedMain] com.cog.BookServiceApplication           : Starting BookServiceApplication using Java 17.0.4 on LTIN411775 with PID 11752 (C:\Users\2216990\Documents\CaseStudy\Backend\book-service\target\classes started by 2216990 in C:\Users\2216990\Documents\CaseStudy\Backend\book-service)
+2022-08-30 17:47:22.562  INFO 11752 --- [restartedMain] com.cog.BookServiceApplication           : No active profile set, falling back to 1 default profile: "default"
+2022-08-30 17:47:22.690  INFO 11752 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-08-30 17:47:22.712  INFO 11752 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 21 ms. Found 5 JPA repository interfaces.
+2022-08-30 17:47:22.768  INFO 11752 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-08-30 17:47:22.769  INFO 11752 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-08-30 17:47:22.769  INFO 11752 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-08-30 17:47:22.788  INFO 11752 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-08-30 17:47:22.789  INFO 11752 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 225 ms
+2022-08-30 17:47:22.828  INFO 11752 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-13 - Starting...
+2022-08-30 17:47:22.842  INFO 11752 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-13 - Start completed.
+2022-08-30 17:47:22.909  INFO 11752 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-08-30 17:47:22.969  WARN 11752 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-08-30 17:47:23.002 DEBUG 11752 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2022-08-30 17:47:23.015 DEBUG 11752 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 4 mappings in 'requestMappingHandlerMapping'
+2022-08-30 17:47:23.023 DEBUG 11752 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2022-08-30 17:47:23.029 DEBUG 11752 --- [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2022-08-30 17:47:23.136  INFO 11752 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-08-30 17:47:23.146  INFO 11752 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-08-30 17:47:23.152  INFO 11752 --- [restartedMain] com.cog.BookServiceApplication           : Started BookServiceApplication in 0.61 seconds (JVM running for 808.581)
+2022-08-30 17:47:23.153  INFO 11752 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-08-30 17:47:25.585  INFO 11752 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2022-08-30 17:47:25.596  INFO 11752 --- [Thread-51] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-08-30 17:47:25.601  INFO 11752 --- [Thread-51] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-08-30 17:47:25.602  INFO 11752 --- [Thread-51] com.zaxxer.hikari.HikariDataSource       : HikariPool-13 - Shutdown initiated...
+2022-08-30 17:47:25.608  INFO 11752 --- [Thread-51] com.zaxxer.hikari.HikariDataSource       : HikariPool-13 - Shutdown completed.
+2022-08-30 17:47:25.677  INFO 11752 --- [restartedMain] com.cog.BookServiceApplication           : Starting BookServiceApplication using Java 17.0.4 on LTIN411775 with PID 11752 (C:\Users\2216990\Documents\CaseStudy\Backend\book-service\target\classes started by 2216990 in C:\Users\2216990\Documents\CaseStudy\Backend\book-service)
+2022-08-30 17:47:25.678  INFO 11752 --- [restartedMain] com.cog.BookServiceApplication           : No active profile set, falling back to 1 default profile: "default"
+2022-08-30 17:47:25.801  INFO 11752 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-08-30 17:47:25.815  INFO 11752 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 14 ms. Found 5 JPA repository interfaces.
+2022-08-30 17:47:25.869  INFO 11752 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-08-30 17:47:25.869  INFO 11752 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-08-30 17:47:25.869  INFO 11752 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-08-30 17:47:25.896  INFO 11752 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-08-30 17:47:25.896  INFO 11752 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 217 ms
+2022-08-30 17:47:25.928  INFO 11752 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-14 - Starting...
+2022-08-30 17:47:25.938  INFO 11752 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-14 - Start completed.
+2022-08-30 17:47:25.993  INFO 11752 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-08-30 17:47:26.049  WARN 11752 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-08-30 17:47:26.084 DEBUG 11752 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2022-08-30 17:47:26.093 DEBUG 11752 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 4 mappings in 'requestMappingHandlerMapping'
+2022-08-30 17:47:26.100 DEBUG 11752 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2022-08-30 17:47:26.105 DEBUG 11752 --- [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2022-08-30 17:47:26.195  INFO 11752 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-08-30 17:47:26.208  INFO 11752 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-08-30 17:47:26.214  INFO 11752 --- [restartedMain] com.cog.BookServiceApplication           : Started BookServiceApplication in 0.556 seconds (JVM running for 811.642)
+2022-08-30 17:47:26.214  INFO 11752 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-08-30 17:47:48.886  INFO 11752 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2022-08-30 17:47:48.908  INFO 11752 --- [Thread-55] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-08-30 17:47:48.912  INFO 11752 --- [Thread-55] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-08-30 17:47:48.913  INFO 11752 --- [Thread-55] com.zaxxer.hikari.HikariDataSource       : HikariPool-14 - Shutdown initiated...
+2022-08-30 17:47:48.917  INFO 11752 --- [Thread-55] com.zaxxer.hikari.HikariDataSource       : HikariPool-14 - Shutdown completed.
+2022-08-30 17:47:48.980  INFO 11752 --- [restartedMain] com.cog.BookServiceApplication           : Starting BookServiceApplication using Java 17.0.4 on LTIN411775 with PID 11752 (C:\Users\2216990\Documents\CaseStudy\Backend\book-service\target\classes started by 2216990 in C:\Users\2216990\Documents\CaseStudy\Backend\book-service)
+2022-08-30 17:47:48.980  INFO 11752 --- [restartedMain] com.cog.BookServiceApplication           : No active profile set, falling back to 1 default profile: "default"
+2022-08-30 17:47:49.096  INFO 11752 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-08-30 17:47:49.117  INFO 11752 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 20 ms. Found 5 JPA repository interfaces.
+2022-08-30 17:47:49.168  INFO 11752 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-08-30 17:47:49.168  INFO 11752 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-08-30 17:47:49.168  INFO 11752 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-08-30 17:47:49.189  INFO 11752 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-08-30 17:47:49.189  INFO 11752 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 207 ms
+2022-08-30 17:47:49.216  INFO 11752 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-15 - Starting...
+2022-08-30 17:47:49.228  INFO 11752 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-15 - Start completed.
+2022-08-30 17:47:49.286  INFO 11752 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-08-30 17:47:49.328  WARN 11752 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-08-30 17:47:49.353 DEBUG 11752 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2022-08-30 17:47:49.363 DEBUG 11752 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 4 mappings in 'requestMappingHandlerMapping'
+2022-08-30 17:47:49.369 DEBUG 11752 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2022-08-30 17:47:49.372 DEBUG 11752 --- [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2022-08-30 17:47:49.460  INFO 11752 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-08-30 17:47:49.469  INFO 11752 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-08-30 17:47:49.474  INFO 11752 --- [restartedMain] com.cog.BookServiceApplication           : Started BookServiceApplication in 0.508 seconds (JVM running for 834.903)
+2022-08-30 17:47:49.475  INFO 11752 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-08-30 17:50:23.869  INFO 11752 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2022-08-30 17:50:23.879  INFO 11752 --- [Thread-59] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-08-30 17:50:23.883  INFO 11752 --- [Thread-59] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-08-30 17:50:23.883  INFO 11752 --- [Thread-59] com.zaxxer.hikari.HikariDataSource       : HikariPool-15 - Shutdown initiated...
+2022-08-30 17:50:23.889  INFO 11752 --- [Thread-59] com.zaxxer.hikari.HikariDataSource       : HikariPool-15 - Shutdown completed.
+2022-08-30 17:50:23.958  INFO 11752 --- [restartedMain] com.cog.BookServiceApplication           : Starting BookServiceApplication using Java 17.0.4 on LTIN411775 with PID 11752 (C:\Users\2216990\Documents\CaseStudy\Backend\book-service\target\classes started by 2216990 in C:\Users\2216990\Documents\CaseStudy\Backend\book-service)
+2022-08-30 17:50:23.959  INFO 11752 --- [restartedMain] com.cog.BookServiceApplication           : No active profile set, falling back to 1 default profile: "default"
+2022-08-30 17:50:24.064  INFO 11752 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-08-30 17:50:24.079  INFO 11752 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 14 ms. Found 5 JPA repository interfaces.
+2022-08-30 17:50:24.148  INFO 11752 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-08-30 17:50:24.149  INFO 11752 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-08-30 17:50:24.149  INFO 11752 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-08-30 17:50:24.178  INFO 11752 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-08-30 17:50:24.178  INFO 11752 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 218 ms
+2022-08-30 17:50:24.210  INFO 11752 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-16 - Starting...
+2022-08-30 17:50:24.225  INFO 11752 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-16 - Start completed.
+2022-08-30 17:50:24.291  INFO 11752 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-08-30 17:50:24.352  WARN 11752 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-08-30 17:50:24.387 DEBUG 11752 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2022-08-30 17:50:24.399 DEBUG 11752 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 4 mappings in 'requestMappingHandlerMapping'
+2022-08-30 17:50:24.406 DEBUG 11752 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2022-08-30 17:50:24.411 DEBUG 11752 --- [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2022-08-30 17:50:24.514  INFO 11752 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-08-30 17:50:24.527  INFO 11752 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-08-30 17:50:24.532  INFO 11752 --- [restartedMain] com.cog.BookServiceApplication           : Started BookServiceApplication in 0.591 seconds (JVM running for 989.961)
+2022-08-30 17:50:24.533  INFO 11752 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-08-30 17:50:26.968  INFO 11752 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2022-08-30 17:50:26.983  INFO 11752 --- [Thread-63] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-08-30 17:50:26.987  INFO 11752 --- [Thread-63] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-08-30 17:50:26.987  INFO 11752 --- [Thread-63] com.zaxxer.hikari.HikariDataSource       : HikariPool-16 - Shutdown initiated...
+2022-08-30 17:50:26.993  INFO 11752 --- [Thread-63] com.zaxxer.hikari.HikariDataSource       : HikariPool-16 - Shutdown completed.
+2022-08-30 17:50:27.075  INFO 11752 --- [restartedMain] com.cog.BookServiceApplication           : Starting BookServiceApplication using Java 17.0.4 on LTIN411775 with PID 11752 (C:\Users\2216990\Documents\CaseStudy\Backend\book-service\target\classes started by 2216990 in C:\Users\2216990\Documents\CaseStudy\Backend\book-service)
+2022-08-30 17:50:27.075  INFO 11752 --- [restartedMain] com.cog.BookServiceApplication           : No active profile set, falling back to 1 default profile: "default"
+2022-08-30 17:50:27.228  INFO 11752 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-08-30 17:50:27.246  INFO 11752 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 18 ms. Found 5 JPA repository interfaces.
+2022-08-30 17:50:27.339  INFO 11752 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-08-30 17:50:27.339  INFO 11752 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-08-30 17:50:27.340  INFO 11752 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-08-30 17:50:27.366  INFO 11752 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-08-30 17:50:27.366  INFO 11752 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 289 ms
+2022-08-30 17:50:27.412  INFO 11752 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-17 - Starting...
+2022-08-30 17:50:27.424  INFO 11752 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-17 - Start completed.
+2022-08-30 17:50:27.499  INFO 11752 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-08-30 17:50:27.573  WARN 11752 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-08-30 17:50:27.624 DEBUG 11752 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2022-08-30 17:50:27.640 DEBUG 11752 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 4 mappings in 'requestMappingHandlerMapping'
+2022-08-30 17:50:27.653 DEBUG 11752 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2022-08-30 17:50:27.658 DEBUG 11752 --- [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2022-08-30 17:50:27.756  INFO 11752 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-08-30 17:50:27.767  INFO 11752 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-08-30 17:50:27.773  INFO 11752 --- [restartedMain] com.cog.BookServiceApplication           : Started BookServiceApplication in 0.726 seconds (JVM running for 993.201)
+2022-08-30 17:50:27.774  INFO 11752 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-08-30 17:52:02.337  INFO 11752 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2022-08-30 17:52:02.350  INFO 11752 --- [Thread-67] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-08-30 17:52:02.355  INFO 11752 --- [Thread-67] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-08-30 17:52:02.356  INFO 11752 --- [Thread-67] com.zaxxer.hikari.HikariDataSource       : HikariPool-17 - Shutdown initiated...
+2022-08-30 17:52:02.361  INFO 11752 --- [Thread-67] com.zaxxer.hikari.HikariDataSource       : HikariPool-17 - Shutdown completed.
+2022-08-30 17:52:02.436  INFO 11752 --- [restartedMain] com.cog.BookServiceApplication           : Starting BookServiceApplication using Java 17.0.4 on LTIN411775 with PID 11752 (C:\Users\2216990\Documents\CaseStudy\Backend\book-service\target\classes started by 2216990 in C:\Users\2216990\Documents\CaseStudy\Backend\book-service)
+2022-08-30 17:52:02.438  INFO 11752 --- [restartedMain] com.cog.BookServiceApplication           : No active profile set, falling back to 1 default profile: "default"
+2022-08-30 17:52:02.576  INFO 11752 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-08-30 17:52:02.600  INFO 11752 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 24 ms. Found 5 JPA repository interfaces.
+2022-08-30 17:52:02.666  INFO 11752 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-08-30 17:52:02.666  INFO 11752 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-08-30 17:52:02.666  INFO 11752 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-08-30 17:52:02.687  INFO 11752 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-08-30 17:52:02.687  INFO 11752 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 248 ms
+2022-08-30 17:52:02.718  INFO 11752 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-18 - Starting...
+2022-08-30 17:52:02.729  INFO 11752 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-18 - Start completed.
+2022-08-30 17:52:02.807  INFO 11752 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-08-30 17:52:02.873  WARN 11752 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-08-30 17:52:02.907 DEBUG 11752 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2022-08-30 17:52:02.918 DEBUG 11752 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 4 mappings in 'requestMappingHandlerMapping'
+2022-08-30 17:52:02.926 DEBUG 11752 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2022-08-30 17:52:02.931 DEBUG 11752 --- [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2022-08-30 17:52:03.007  INFO 11752 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-08-30 17:52:03.014  INFO 11752 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-08-30 17:52:03.019  INFO 11752 --- [restartedMain] com.cog.BookServiceApplication           : Started BookServiceApplication in 0.602 seconds (JVM running for 1088.447)
+2022-08-30 17:52:03.020  INFO 11752 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged

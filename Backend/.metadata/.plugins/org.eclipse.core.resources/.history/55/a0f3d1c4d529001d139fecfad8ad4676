@@ -1,0 +1,16 @@
+package com.cog.service;
+
+import org.springframework.stereotype.Service;
+
+import com.cog.dto.BookDto;
+import com.cog.dto.ResponseDto;
+
+@Service
+public class BookService {
+
+	public ResponseDto saveBook(BookDto bookDto) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

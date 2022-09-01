@@ -1,0 +1,108 @@
+package com.cog.config;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.config.http.SessionCreationPolicy;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+
+import com.cog.jwt.AuthEntryPointJwt;
+import com.cog.jwt.AuthTokenFilter;
+import com.cog.service.UserDetailsServiceImpl;
+
+@Configuration
+@EnableWebSecurity
+@EnableGlobalMethodSecurity(prePostEnabled = true)
+
+public class WebSecurityConfig  {
+	@Autowired
+	private UserDetailsServiceImpl userDetailsService;
+
+	@Autowired
+	private AuthEntryPointJwt unauthorizedHandler;
+	@Autowired
+	PasswordEncoder encoder;
+
+	@Bean
+	public AuthTokenFilter authenticationJwtTokenFilter() {
+		return new AuthTokenFilter();
+	}
+
+	/*@Override
+	public void configure(AuthenticationManagerBuilder authenticationManagerBuilder) throws Exception {
+		authenticationManagerBuilder.userDetailsService(userDetailsService).passwordEncoder(encoder);
+	}*/
+
+	@Bean
+	@Override
+	public AuthenticationManager authenticationManagerBean() throws Exception {
+		return super.authenticationManagerBean();
+	}
+
+	/*@Override
+	protected void configure(HttpSecurity http) throws Exception {
+		http.cors().and().csrf().disable().exceptionHandling().authenticationEntryPoint(unauthorizedHandler).and()
+				.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and().authorizeRequests()
+				.antMatchers("/api/v1/digitalbooks/author/signup", "/api/v1/digitalbooks/author/login").permitAll()
+
+				.anyRequest().authenticated();
+
+		http.addFilterBefore(authenticationJwtTokenFilter(), UsernamePasswordAuthenticationFilter.class);
+	}*/
+	
+	@Bean
+	public DaoAuthenticationProvider authenticationProvider() {
+	    DaoAuthenticationProvider authProvider = new DaoAuthenticationProvider();
+	     
+	    authProvider.setUserDetailsService(userService);
+	    authProvider.setPasswordEncoder(encoder);
+	 
+	    return authProvider;
+	}
+	
+	    @Bean
+	    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+	     
+		//autheticate and authorize urls
+		http.authorizeRequests().antMatchers("/bank/").permitAll()
+		                                                  .antMatchers("/user/register","/user/showLogin").permitAll()
+		                                                 .antMatchers("/bank/offers").authenticated()
+		                                                 .antMatchers("/bank/balance").hasAnyAuthority("MANAGER","CUSTOMER")
+		                                                 .antMatchers("/bank/approveLoan").hasAuthority("MANAGER")
+		                                                 .anyRequest().authenticated()
+		                                                
+		       // To enable BASIC Authentication (uses thr browser supplied dialog box)
+		    // .and().httpBasic()
+		           // To enable FORM based Authentication
+		        .and().formLogin().defaultSuccessUrl("/bank/",true)
+		        .loginPage("/user/showLogin")
+		        .loginProcessingUrl("/login")
+		        .failureUrl("/user/showLogin?error")
+		        // Enables  remember ME option in Form Based Authentication
+			       .and().rememberMe()
+			       
+			       // enable logout
+			       //.and().logout()
+			       //enable logout with custom url
+			       .and().logout().logoutRequestMatcher(new  AntPathRequestMatcher("/bank/signout"))
+			       .logoutSuccessUrl("/user/showLogin?logout")
+			   
+		       // cofigure custom error page for 403 error
+		       .and().exceptionHandling().accessDeniedPage("/bank/denied")
+		       // session max concurrency control
+		       .and().sessionManagement().maximumSessions(2).maxSessionsPreventsLogin(true);
+		
+		       //specify AuthenticationProvider
+		  http.authenticationProvider(authenticationProvider());
+		return http.build();
+	     
+	}
+}

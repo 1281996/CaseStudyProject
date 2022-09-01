@@ -1,0 +1,25 @@
+package com.cog.service;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Service;
+
+import com.cog.dto.BookDto;
+import com.cog.dto.ResponseDto;
+import com.cog.entity.Book;
+
+@Service
+public class BookService {
+	private static final Logger LOGGER = LoggerFactory.getLogger(UserMappingService.class);
+
+	public ResponseDto saveBook(BookDto bookDto) {
+		Book book=setBook(bookDto);
+		return null;
+	}
+
+	private Book setBook(BookDto bookDto) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

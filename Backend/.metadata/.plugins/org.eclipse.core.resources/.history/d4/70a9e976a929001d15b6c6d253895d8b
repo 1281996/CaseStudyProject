@@ -1,0 +1,20 @@
+package com.cog.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.cog.dao.UserMappingRepository;
+import com.cog.entity.UserMapping;
+
+@Service
+public class UserMappingService {
+
+	@Autowired
+	UserMappingRepository userMappingRepository;
+
+	List<UserMapping> findByUserId(int userId){
+	  userMappingRepository.findByUserId(userId);
+  }
+}

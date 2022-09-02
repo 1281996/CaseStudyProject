@@ -1,5 +1,5 @@
 package com.cog.enums;
 
 public enum Event {
-	ACTIVE, DELETED
+	ACTIVE, DELETED,BLOCK,UNBLOCK
 }

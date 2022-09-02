@@ -1,0 +1,30 @@
+package com.cog.service;
+
+import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.when;
+
+import java.util.Optional;
+
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.junit.jupiter.MockitoExtension;
+
+import com.cog.entity.Role;
+import com.cog.repository.RoleRepository;
+@ExtendWith(MockitoExtension.class)
+class RoleServiceTest {
+
+	@Mock
+	RoleRepository repository;
+	
+	@InjectMocks
+	RoleService roleService;
+	@Test
+	void testFindById() {
+		Optional<Role> role=Optional.of(new Role());
+		when(repository.findById(1)).thenReturn(role);
+	}
+
+}

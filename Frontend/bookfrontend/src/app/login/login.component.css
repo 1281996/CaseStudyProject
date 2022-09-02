@@ -1,0 +1,8 @@
+.container-fluid {
+    width: 400px;
+    margin: 0 auto;
+    background-color: bisque;
+}
+.bg-color{
+    background-color: aliceblue;
+}

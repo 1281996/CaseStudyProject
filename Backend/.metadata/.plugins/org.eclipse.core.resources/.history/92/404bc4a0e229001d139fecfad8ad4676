@@ -1,0 +1,75 @@
+package com.cog.service;
+
+import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.when;
+
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.junit.jupiter.MockitoExtension;
+
+import org.springframework.security.crypto.password.PasswordEncoder;
+
+import com.cog.dto.UserDto;
+import com.cog.entity.Role;
+import com.cog.entity.User;
+import com.cog.repository.UserRepository;
+import com.cog.util.Constant;
+
+
+@ExtendWith(MockitoExtension.class)
+class UserDetailsServiceImplTest {
+
+	@Mock
+	private UserRepository userRepository;
+
+	@Mock
+	private PasswordEncoder passwordEncoder;
+
+	@Mock
+	private UserMappingService userMappingService;
+
+	@Mock
+	private RoleService roleService;
+
+	@InjectMocks
+	private UserDetailsServiceImpl detailsServiceImpl;
+
+	@Test
+	void testSaveUser() {
+		UserDto userDto = new UserDto();
+		userDto.setEmailId("kamma.mallika@gmail.com");
+		userDto.setFirstName("kamma");
+		userDto.setLastName("mallika");
+		userDto.setPassword("mkllll");
+		userDto.setRole(Constant.ROLE_AUTHOR);
+
+		User user = new User();
+		user.setEmailId("kamma.mallika@gmail.com");
+		user.setFirstName("kamma");
+		user.setLastName("mallika");
+		user.setPassword("mkllll");
+		user.setId(1);
+		
+		Role role =new Role();
+		role.setId(1);
+		role.setRoleName(Constant.ROLE_AUTHOR);
+
+		when(userRepository.findByEmailId(userDto.getEmailId())).thenReturn(null);
+		when(userRepository.save(user)).thenReturn(user);
+		when(roleService.findById(1)).thenReturn(role);
+		assertEquals(Constant.USER_CHECK_CREDENTAILS_SUCESS, detailsServiceImpl.saveUser(userDto));
+	}
+
+	@Test
+	void testLoadUserByUsername() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	void testFindByUserId() {
+		fail("Not yet implemented");
+	}
+
+}

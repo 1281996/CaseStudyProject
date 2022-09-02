@@ -2,3 +2,5 @@
 1662003648124	Delete element
 1662007791046	Rename type 'UserServiceImpl'
 1662022555248	Rename package 'com.cog.dao'
+1662046473484	Rename type 'UserController'
+1662097616049	Rename type 'BookController'

@@ -1,0 +1,19 @@
+<body class="bg-color">
+<div class="container-fluid justify-content-between">
+<form #frmLogin="ngForm" (submit)="LoginClick(frmLogin.value)">
+    <dl>
+        <dt>Login Page</dt>
+        <dt>Email Id</dt>
+        <dd><input type="text" name="emailId" ngModel #emailId="ngModel"></dd>
+        <dt>Password</dt>
+        <dd><input type="password" name="password" ngModel #password="ngModel"></dd>
+    </dl>
+    <button class="btn btn-danger">Login</button>
+</form>
+
+</div>
+</body>
+<div class="container">
+
+    
+</div>

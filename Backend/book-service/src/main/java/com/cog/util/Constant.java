@@ -10,5 +10,7 @@ public class Constant {
 	public static final String ROLE_GUEST = "ROLE_GUEST";
 	public static final int ROLE_AUTHOR_ID = 1;
 	public static final String ACTIVE = "ACTIVE";
-
+	public static final String BOOK_MSG_FALIURE = "Book cereation failed Due to some internal problem";
+	public static final String BOOK_MSG_SUCCESS= "Book cereated Successfully";
+	public static final String UPDATED_SUCCESS_MSG="Updated Succssfully";
 }

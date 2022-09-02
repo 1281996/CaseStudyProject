@@ -1,0 +1,19 @@
+package com.cog.service;
+
+
+
+import org.junit.jupiter.api.Test;
+
+class UserMappingServiceTest {
+
+	@Test
+	void testFindByUserId() {
+		
+	}
+
+	@Test
+	void testCreateMapping() {
+		
+	}
+
+}

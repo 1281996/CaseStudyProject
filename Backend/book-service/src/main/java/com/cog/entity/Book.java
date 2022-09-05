@@ -1,5 +1,6 @@
 package com.cog.entity;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
 import javax.persistence.CascadeType;
@@ -16,17 +17,22 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="book_tran")
-public class Book {
+public class Book implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -3902187577963531742L;
+
 	@Id
 	@SequenceGenerator(name = "gen1", sequenceName = "book_sequence")
 	@GeneratedValue(generator = "gen1", strategy = GenerationType.SEQUENCE)
 	private Integer id;
 	
-	@ManyToOne(targetEntity = User.class, cascade = CascadeType.MERGE, fetch = FetchType.LAZY)
+	@ManyToOne(targetEntity = User.class, cascade = CascadeType.MERGE)
 	@JoinColumn(name = "user_id", referencedColumnName = "id")
 	private User user;
 
-	@ManyToOne(targetEntity = Role.class, cascade = CascadeType.MERGE, fetch = FetchType.LAZY)
+	@ManyToOne(targetEntity = Role.class, cascade = CascadeType.MERGE)
 	@JoinColumn(name = "role_id", referencedColumnName = "id")
 	private Role role;
 	

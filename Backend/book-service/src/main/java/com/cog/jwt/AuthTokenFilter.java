@@ -1,4 +1,4 @@
-package com.cog.jwt;
+/*package com.cog.jwt;
 
 import java.io.IOException;
 
@@ -62,3 +62,4 @@ public class AuthTokenFilter extends OncePerRequestFilter {
 		return null;
 	}
 }
+*/

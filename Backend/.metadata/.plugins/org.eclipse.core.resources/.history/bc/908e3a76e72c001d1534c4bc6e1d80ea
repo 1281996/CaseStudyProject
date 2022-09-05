@@ -1,0 +1,24 @@
+package com.cog.service;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+class BookServiceTest {
+
+	@Test
+	void testSaveBook() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	void testEditBook() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	void testGetAllMyBooks() {
+		fail("Not yet implemented");
+	}
+
+}

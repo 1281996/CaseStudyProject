@@ -1,4 +1,4 @@
-package com.cog.config;
+/*package com.cog.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -60,3 +60,4 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	
 	
 }
+*/

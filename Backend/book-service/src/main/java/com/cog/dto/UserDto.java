@@ -4,6 +4,8 @@ import java.io.Serializable;
 
 import javax.validation.constraints.NotBlank;
 
+import com.cog.util.Constant;
+
 public class UserDto implements Serializable {
 
 	private static final long serialVersionUID = -3324069780098960854L;
@@ -19,7 +21,7 @@ public class UserDto implements Serializable {
 
 	private String password;
 
-	private String role;
+	private String role=Constant.ROLE_AUTHOR;
 
 	public UserDto() {
 

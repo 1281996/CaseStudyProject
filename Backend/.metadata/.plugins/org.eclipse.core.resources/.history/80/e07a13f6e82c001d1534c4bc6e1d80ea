@@ -1,0 +1,62 @@
+package com.cog.service;
+
+import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.when;
+
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.Mock;
+import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.cog.entity.Book;
+import com.cog.entity.Role;
+import com.cog.entity.User;
+import com.cog.repository.BookRepository;
+
+@ExtendWith(MockitoExtension.class)
+class BookServiceTest {
+	@Mock
+	BookRepository bookRepository;
+	@Mock
+	RoleService roleService;
+	@Mock
+	UserDetailsServiceImpl userServiceImpl;
+
+	@Test
+	void testSaveBook() {
+
+	}
+
+	@Test
+	void testEditBook() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	void testGetAllMyBooks() {
+		when(bookRepository.findAll()).thenReturn(getBookDto());
+	}
+
+	List<Book> getBookDto() {
+		List<Book> books = new ArrayList<>();
+		Book book = new Book();
+		book.setCategory("Fictional");
+		book.setContent("...");
+		book.setId(1);
+		book.setImage("assests/img.jpg");
+		book.setPrice(250.0);
+		book.setPublisher("Rupa");
+		book.setReleasedDate(LocalDateTime.now());
+		book.setRole(new Role());
+		book.setStatus("Active");
+		book.setTitle("Harry Poter");
+		book.setUser(new User());
+		books.add(book);
+		return books;
+	}
+}

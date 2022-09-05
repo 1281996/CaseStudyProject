@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="UserDetailsServiceImplTest" project="book-service" tests="3" started="3" failures="0" errors="0" ignored="0">
+  <testsuite name="com.cog.service.UserDetailsServiceImplTest" time="0.603" displayname="UserDetailsServiceImplTest" uniqueid="[engine:junit-jupiter]/[class:com.cog.service.UserDetailsServiceImplTest]">
+    <testcase name="testFindByUserId" classname="com.cog.service.UserDetailsServiceImplTest" time="0.589" displayname="testFindByUserId()" uniqueid="[engine:junit-jupiter]/[class:com.cog.service.UserDetailsServiceImplTest]/[method:testFindByUserId()]"/>
+    <testcase name="testSaveUser1" classname="com.cog.service.UserDetailsServiceImplTest" time="0.011" displayname="testSaveUser1()" uniqueid="[engine:junit-jupiter]/[class:com.cog.service.UserDetailsServiceImplTest]/[method:testSaveUser1()]"/>
+    <testcase name="testSaveUser2" classname="com.cog.service.UserDetailsServiceImplTest" time="0.002" displayname="testSaveUser2()" uniqueid="[engine:junit-jupiter]/[class:com.cog.service.UserDetailsServiceImplTest]/[method:testSaveUser2()]"/>
+  </testsuite>
+</testrun>

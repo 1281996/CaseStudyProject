@@ -1,27 +1,39 @@
 package com.cog.dto;
 
 import java.io.Serializable;
+import java.time.LocalDateTime;
+
+import com.cog.entity.Role;
+import com.cog.entity.User;
 
 public class BookDto implements Serializable {
 
 	private static final long serialVersionUID = 4405087152380643868L;
 
-    private String publisher;
-	
+	private String publisher;
+
 	private String title;
-	
+
 	private String category;
-	
+
 	private String image;
-	
+
 	private Double price;
-	
+
 	private String content;
-	
+
 	private String status;
 
+	private Integer id;
+
+	private User user;
+
+	private Role role;
+
+	private LocalDateTime releasedDate;
+
 	public BookDto() {
-		
+
 	}
 
 	public String getPublisher() {
@@ -80,11 +92,45 @@ public class BookDto implements Serializable {
 		this.status = status;
 	}
 
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+	public Role getRole() {
+		return role;
+	}
+
+	public void setRole(Role role) {
+		this.role = role;
+	}
+
+	public LocalDateTime getReleasedDate() {
+		return releasedDate;
+	}
+
+	public void setReleasedDate(LocalDateTime releasedDate) {
+		this.releasedDate = releasedDate;
+	}
+
 	@Override
 	public String toString() {
 		return "BookDto [publisher=" + publisher + ", title=" + title + ", category=" + category + ", image=" + image
-				+ ", price=" + price + ", content=" + content + "]";
+				+ ", price=" + price + ", content=" + content + ", status=" + status + ", id=" + id + ", user=" + user
+				+ ", role=" + role + ", releasedDate=" + releasedDate + "]";
 	}
+
 	
-	
+
 }

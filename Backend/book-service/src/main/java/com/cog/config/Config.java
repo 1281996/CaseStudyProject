@@ -1,4 +1,4 @@
-package com.cog.config;
+/*package com.cog.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -11,3 +11,4 @@ public class Config {
 		return new BCryptPasswordEncoder();
 	}
 }
+*/

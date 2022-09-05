@@ -1,8 +1,7 @@
 package com.cog.service;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.mockito.Mockito.atLeastOnce;
-import static org.mockito.Mockito.verify;
+
 import static org.mockito.Mockito.when;
 
 import java.time.LocalDateTime;
@@ -56,4 +55,11 @@ class UserMappingServiceTest {
 
 	
 
+	public static UserMapping getUsergetUserMapping() {
+		UserMapping mapping = new UserMapping();
+		mapping.setRole(new Role());
+		mapping.setUser(new User());
+		mapping.setStatus(Constant.ACTIVE);
+		return mapping;
+	}
 }

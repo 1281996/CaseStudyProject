@@ -1,4 +1,4 @@
-package com.cog.service;
+/*package com.cog.service;
 
 import java.util.Collection;
 import java.util.List;
@@ -99,3 +99,4 @@ public class UserDetailsImpl implements UserDetails {
 		return Objects.equals(id, user.id);
 	}
 }
+*/

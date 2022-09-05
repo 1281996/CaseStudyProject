@@ -1,4 +1,4 @@
-package com.cog.jwt;
+/*package com.cog.jwt;
 
 import java.util.Date;
 
@@ -57,3 +57,4 @@ public class JwtUtils {
 		return false;
 	}
 }
+*/

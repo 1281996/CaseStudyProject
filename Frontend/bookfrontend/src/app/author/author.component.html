@@ -1,0 +1,190 @@
+<div class="container-fluid">
+    <div class="row flex-nowrap">
+        <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0">
+            <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+
+                <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+
+                    <li class="nav-item mt-3">
+
+                        <button type="button" class="btn btn-danger" (click)="openModal()">
+                            New Book
+                        </button>
+
+                    </li>
+
+                    <li class="nav-item mt-3">
+                        <button type="button" class="btn btn-danger" (click)="openBooksModal()">
+                            My Books
+                        </button>
+                    </li>
+
+
+
+
+                </ul>
+
+
+            </div>
+        </div>
+        <div class="col py-3">
+            <div class="row gy-3 my-3">
+
+
+                <div class="col-md-3" *ngFor="let book of bookdata">
+                    <div class="card">
+                        <img [src]="book.image"  width="100" height="150" class="card-img-top" alt="...">
+                        <div class="card-body">
+
+
+                            <label>Title: </label> <input type="text" class="card-text" [(ngModel)]="book.title">
+                            <label>Publisher: </label> <input type="text" class="card-text"
+                                [(ngModel)]="book.publisher">
+                            <label>Category: </label> <input type="text" class="card-text" [(ngModel)]="book.category">
+                            <label>Content: </label> <input type="text" class="card-text" [(ngModel)]="book.content">
+                            <p class="card-text">
+                                <small>Price: </small> {{book.price| currency:'INR'}}
+                            </p>
+                            <button type="submit" class="btn btn-danger" (click)='EditBook(book)'>Save Data</button>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--my books model-->
+
+
+<div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':display}">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Create Book</h4>
+                <button type="button" class="close" aria-label="Close" (click)="onCloseHandled()"><span
+                        aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body">
+
+                <div class="login col-lg-11">
+
+                    <form [formGroup]="frmCreateBook" (ngSubmit)="CreateBookClick(frmCreateBook.value)">
+                        <div class="form-group">
+                            <label for="Author Id">Author Id</label>
+                            <input type="number" class="form-control" formControlName="authorId" name="authorId">
+                        </div>
+                        <dd class="text-danger" *ngIf="authorId.touched && authorId.invalid">
+                            <span *ngIf="authorId.errors?.['required']">Author Id Required</span>
+                        </dd>
+
+                        <div class="form-group">
+                            <label for="Publisher Name">Publisher Name</label>
+                            <input type="text" class="form-control" formControlName="publisher" name="publisher">
+                        </div>
+                        <dd class="text-danger" *ngIf="publisher.touched && publisher.invalid">
+                            <span *ngIf="publisher.errors?.['required']">Publisher Required</span>
+                        </dd>
+
+                        <div class="form-group">
+                            <label for="Title">Title</label>
+                            <input type="text" class="form-control" formControlName="title" name="title">
+                        </div>
+                        <dd class="text-danger" *ngIf="title.touched && title.invalid">
+                            <span *ngIf="title.errors?.['required']">Title Required</span>
+                        </dd>
+
+                        <div class="form-group">
+                            <label for="Category">Category</label>
+                            <input type="text" class="form-control" formControlName="category" name="category">
+                        </div>
+                        <dd class="text-danger" *ngIf="category.touched && category.invalid">
+                            <span *ngIf="category.errors?.['required']">Title Required</span>
+                        </dd>
+
+
+                        <div class="form-group">
+                            <label for="Image">Image</label>
+                            <input type="text" class="form-control" formControlName="image" name="image">
+                        </div>
+                        <dd class="text-danger" *ngIf="image.touched && image.invalid">
+                            <span *ngIf="image.errors?.['required']">Image Required</span>
+                        </dd>
+
+                        <div class="form-group">
+                            <label for="Price">Price</label>
+                            <input type="text" class="form-control" formControlName="price" name="price">
+                        </div>
+                        <dd class="text-danger" *ngIf="price.touched && price.invalid">
+                            <span *ngIf="price.errors?.['required']">Price Required</span>
+                        </dd>
+
+
+                        <div class="form-group">
+                            <label for="Content">Content</label>
+                            <input type="text" class="form-control" formControlName="content" name="content">
+                        </div>
+                        <dd class="text-danger" *ngIf="content.touched && content.invalid">
+                            <span *ngIf="content.errors?.['required']">Title Required</span>
+                        </dd>
+
+                        <button type="submit" [disabled]="frmCreateBook.invalid" class="btn btn-danger col-lg-12">Submit</button>
+
+                    </form>
+
+                </div>
+
+
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+<!--my books pop up-->
+
+<div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':displayBooks}">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">My Books</h4>
+                <button type="button" class="close" aria-label="Close" (click)="onBooksCloseHandled()"><span
+                        aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body">
+
+                <div class="login col-lg-11">
+
+                    <form [formGroup]="frmCreateBook" (ngSubmit)="BooksDisplay(frmCreateBook.value)">
+                        <div class="form-group">
+                            <label for="Author Id">Author Id</label>
+                            <input type="number" class="form-control" formControlName="authorId" name="authorId">
+                        </div>
+                        
+                        <dd class="text-danger" *ngIf="authorId.touched && authorId.invalid">
+                            <span *ngIf="authorId.errors?.['required']">Author IdRequired</span>
+                        </dd>
+
+
+
+                        <button type="submit"  class="btn btn-danger col-lg-12">Submit</button>
+
+                    </form>
+
+                </div>
+
+
+
+            </div>
+
+        </div>
+    </div>
+</div>

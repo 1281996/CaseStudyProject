@@ -1,0 +1,23 @@
+.span{
+    color: white;
+    font-size: bold;
+}
+.col-auto {
+    background-color: rgb(229, 228, 228);
+}
+.modal-content{
+    width: 70%;
+}
+small{
+    font-weight: bold;
+}
+.card-text {
+    background-color:transparent;
+    border: 0px solid;
+    height:30px;
+    width:260px;
+    font-weight: bold;
+}
+.card-text:focus {
+    outline:none;
+}

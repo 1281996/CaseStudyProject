@@ -1,8 +1,19 @@
-.container-fluid {
-    width: 400px;
-    margin: 0 auto;
-    background-color: bisque;
+.loginnow
+{
+    background-image: url("/assets/login_bg.jpg");
+    padding: 140px 100px;
 }
-.bg-color{
-    background-color: aliceblue;
+.login
+{
+    background-color: #ffffff;
+    padding: 20px 30px;
+}
+
+@media screen and (max-width:600px)
+{
+
+    .joinnow
+{
+    padding: 140px 30px;
+}
 }

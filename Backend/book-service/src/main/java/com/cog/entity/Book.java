@@ -145,12 +145,7 @@ public class Book implements Serializable {
 		this.status = status;
 	}
 
-	@Override
-	public String toString() {
-		return "Book [id=" + id + ", user=" + user + ", role=" + role + ", publisher=" + publisher + ", title=" + title
-				+ ", category=" + category + ", image=" + image + ", price=" + price + ", content=" + content
-				+ ", releasedDate=" + releasedDate + ", status=" + status + "]";
-	}
+	
 
 	
 	

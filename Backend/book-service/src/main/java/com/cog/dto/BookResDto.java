@@ -37,13 +37,6 @@ public class BookResDto implements Serializable {
 		this.response = response;
 	}
 
-	public static long getSerialversionuid() {
-		return serialVersionUID;
-	}
-
-	@Override
-	public String toString() {
-		return "BookResDto [bookDto=" + bookDto + ", response=" + response + "]";
-	}
+	
 
 }

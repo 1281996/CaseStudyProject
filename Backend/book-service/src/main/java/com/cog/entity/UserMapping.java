@@ -34,13 +34,7 @@ public class UserMapping {
 		
 	}
 
-	public Integer getId() {
-		return id;
-	}
-
-	public void setId(Integer id) {
-		this.id = id;
-	}
+	
 
 	public User getUser() {
 		return user;
@@ -58,18 +52,13 @@ public class UserMapping {
 		this.role = role;
 	}
 
-	public String getStatus() {
-		return status;
-	}
+	
 
 	public void setStatus(String status) {
 		this.status = status;
 	}
 
-	@Override
-	public String toString() {
-		return "UserMapping [id=" + id + ", user=" + user + ", role=" + role + ", status=" + status + "]";
-	}
+	
 	
 }
 

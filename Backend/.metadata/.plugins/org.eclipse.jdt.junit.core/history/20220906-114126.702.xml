@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="BookServiceTest" project="book-service" tests="5" started="5" failures="0" errors="0" ignored="0">
+  <testsuite name="com.cog.service.BookServiceTest" time="0.743" displayname="BookServiceTest" uniqueid="[engine:junit-jupiter]/[class:com.cog.service.BookServiceTest]">
+    <testcase name="testEditBook" classname="com.cog.service.BookServiceTest" time="0.718" displayname="testEditBook()" uniqueid="[engine:junit-jupiter]/[class:com.cog.service.BookServiceTest]/[method:testEditBook()]"/>
+    <testcase name="testSaveBook" classname="com.cog.service.BookServiceTest" time="0.008" displayname="testSaveBook()" uniqueid="[engine:junit-jupiter]/[class:com.cog.service.BookServiceTest]/[method:testSaveBook()]"/>
+    <testcase name="testEditBook1" classname="com.cog.service.BookServiceTest" time="0.005" displayname="testEditBook1()" uniqueid="[engine:junit-jupiter]/[class:com.cog.service.BookServiceTest]/[method:testEditBook1()]"/>
+    <testcase name="testGetAllMyBooks" classname="com.cog.service.BookServiceTest" time="0.003" displayname="testGetAllMyBooks()" uniqueid="[engine:junit-jupiter]/[class:com.cog.service.BookServiceTest]/[method:testGetAllMyBooks()]"/>
+    <testcase name="testSaveBook1" classname="com.cog.service.BookServiceTest" time="0.004" displayname="testSaveBook1()" uniqueid="[engine:junit-jupiter]/[class:com.cog.service.BookServiceTest]/[method:testSaveBook1()]"/>
+  </testsuite>
+</testrun>

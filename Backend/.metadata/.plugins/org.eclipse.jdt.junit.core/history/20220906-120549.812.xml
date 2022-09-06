@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="UserMappingServiceTest" project="book-service" tests="2" started="2" failures="0" errors="0" ignored="0">
+  <testsuite name="com.cog.service.UserMappingServiceTest" time="0.716" displayname="UserMappingServiceTest" uniqueid="[engine:junit-jupiter]/[class:com.cog.service.UserMappingServiceTest]">
+    <testcase name="testFindByUserId" classname="com.cog.service.UserMappingServiceTest" time="0.708" displayname="testFindByUserId()" uniqueid="[engine:junit-jupiter]/[class:com.cog.service.UserMappingServiceTest]/[method:testFindByUserId()]"/>
+    <testcase name="testCreateMapping" classname="com.cog.service.UserMappingServiceTest" time="0.007" displayname="testCreateMapping()" uniqueid="[engine:junit-jupiter]/[class:com.cog.service.UserMappingServiceTest]/[method:testCreateMapping()]"/>
+  </testsuite>
+</testrun>

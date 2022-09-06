@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testrun name="BookServiceTest" project="book-service" tests="4" started="4" failures="0" errors="0" ignored="0">
-  <testsuite name="com.cog.service.BookServiceTest" time="0.652" displayname="BookServiceTest" uniqueid="[engine:junit-jupiter]/[class:com.cog.service.BookServiceTest]">
-    <testcase name="testEditBook" classname="com.cog.service.BookServiceTest" time="0.636" displayname="testEditBook()" uniqueid="[engine:junit-jupiter]/[class:com.cog.service.BookServiceTest]/[method:testEditBook()]"/>
-    <testcase name="testSaveBook" classname="com.cog.service.BookServiceTest" time="0.007" displayname="testSaveBook()" uniqueid="[engine:junit-jupiter]/[class:com.cog.service.BookServiceTest]/[method:testSaveBook()]"/>
-    <testcase name="testEditBook1" classname="com.cog.service.BookServiceTest" time="0.004" displayname="testEditBook1()" uniqueid="[engine:junit-jupiter]/[class:com.cog.service.BookServiceTest]/[method:testEditBook1()]"/>
-    <testcase name="testGetAllMyBooks" classname="com.cog.service.BookServiceTest" time="0.002" displayname="testGetAllMyBooks()" uniqueid="[engine:junit-jupiter]/[class:com.cog.service.BookServiceTest]/[method:testGetAllMyBooks()]"/>
-  </testsuite>
-</testrun>

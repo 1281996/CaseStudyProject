@@ -27,9 +27,5 @@ public class LoginDto  implements Serializable{
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	@Override
-	public String toString() {
-		return "LoginDto [emailId=" + emailId + ", password=" + password + "]";
-	}
 	
 }

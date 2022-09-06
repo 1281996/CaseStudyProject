@@ -16,6 +16,7 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import com.cog.dto.LoginDto;
 import com.cog.dto.UserDto;
 import com.cog.entity.Role;
 import com.cog.entity.User;
@@ -78,6 +79,20 @@ class UserDetailsServiceImplTest {
 		when(userRepository.findById(2)).thenReturn(user);
 		assertEquals(1, detailsServiceImpl.findByUserId(2).getId());
 	}
+	@Test
+	void testVaidateUser() {
+		User user=getUser();
+		LoginDto loginDto=getLoginDto();
+		when(userRepository.findByEmailIdAndPassword("kamma.mallika@gmail.com", "mkllll")).thenReturn(user);
+		assertEquals("Logged in Successfully "+user.getId(), detailsServiceImpl.vaidateUser(loginDto).getResponse());
+	}
+	@Test
+	void testVaidateUser1() {
+		
+		LoginDto loginDto=getLoginDto();
+		when(userRepository.findByEmailIdAndPassword("kamma.mallika@gmail.com", "mkllll")).thenReturn(null);
+		assertEquals("Invalid Credentails", detailsServiceImpl.vaidateUser(loginDto).getResponse());
+	}
 
 	public static UserDto getUserDto() {
 		UserDto userDto = new UserDto();
@@ -99,5 +114,11 @@ class UserDetailsServiceImplTest {
 		user.setStatus(Event.ACTIVE);
 		user.setRegisteredDate(LocalDateTime.now());
 		return user;
+	}
+	public static LoginDto getLoginDto() {
+		LoginDto dto = new LoginDto();
+		dto.setEmailId("kamma.mallika@gmail.com");
+		dto.setPassword("mkllll");
+		return dto;
 	}
 }

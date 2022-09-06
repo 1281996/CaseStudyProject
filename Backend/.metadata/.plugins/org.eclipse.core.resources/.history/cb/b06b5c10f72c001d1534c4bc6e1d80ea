@@ -1,0 +1,34 @@
+package com.cog.controller;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+class AuthorControllerTest {
+
+	@Test
+	void testCreateUser() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	void testLoginUser() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	void testCreateBook() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	void testUpdateBook() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	void testGetAllMyBooks() {
+		fail("Not yet implemented");
+	}
+
+}

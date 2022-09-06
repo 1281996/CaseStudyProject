@@ -38,50 +38,5 @@ public class Payment {
 		
 	}
 
-	public Integer getId() {
-		return id;
-	}
-
-	public void setId(Integer id) {
-		this.id = id;
-	}
-
-	public Book getBook() {
-		return book;
-	}
-
-	public void setBook(Book book) {
-		this.book = book;
-	}
-
-	public LocalDateTime getPaymentDate() {
-		return paymentDate;
-	}
-
-	public void setPaymentDate(LocalDateTime paymentDate) {
-		this.paymentDate = paymentDate;
-	}
-
-	public Double getPrice() {
-		return price;
-	}
-
-	public void setPrice(Double price) {
-		this.price = price;
-	}
-
-	public String getPaymentType() {
-		return paymentType;
-	}
-
-	public void setPaymentType(String paymentType) {
-		this.paymentType = paymentType;
-	}
-
-	@Override
-	public String toString() {
-		return "Payment [id=" + id + ", book=" + book + ", paymentDate=" + paymentDate + ", price=" + price
-				+ ", paymentType=" + paymentType + "]";
-	}
-
+	
 }

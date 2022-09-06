@@ -1,6 +1,7 @@
 package com.cog.service;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.lenient;
 import static org.mockito.Mockito.when;
 
 import java.time.LocalDateTime;
@@ -37,7 +38,8 @@ class BookServiceTest {
 	@Test
 	void testSaveBook() {
 		Book book = getBook();
-		Mockito.lenient().when(bookRepository.save(book)).thenReturn(book);
+		
+		lenient().when(bookRepository.save(book)).thenReturn(book);
 		when(bookRepository.findAll()).thenReturn(getBookDtoList());
 		when(roleService.findById(Constant.ROLE_AUTHOR_ID)).thenReturn(new Role());
 		when(userServiceImpl.findByUserId(1)).thenReturn(new User());

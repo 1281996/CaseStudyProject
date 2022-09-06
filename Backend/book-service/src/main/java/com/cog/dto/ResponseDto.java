@@ -24,9 +24,6 @@ public class ResponseDto implements Serializable {
 		this.response = response;
 	}
 
-	@Override
-	public String toString() {
-		return "ResponseDto [response=" + response + "]";
-	}
+	
 
 }

@@ -1,0 +1,17 @@
+package com.cog.dto;
+
+import java.io.Serializable;
+
+import java.util.List;
+
+import lombok.Data;
+
+@Data
+public class BookResDto implements Serializable {
+
+	private static final long serialVersionUID = -6631725384732301237L;
+
+	private List<BookDto> bookDto;
+	private String response;
+
+}

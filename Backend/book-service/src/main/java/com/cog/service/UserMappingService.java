@@ -11,7 +11,7 @@ import com.cog.entity.Role;
 import com.cog.entity.User;
 import com.cog.entity.UserMapping;
 import com.cog.repository.UserMappingRepository;
-import com.cog.util.Constant;
+
 
 @Service
 public class UserMappingService {
@@ -30,7 +30,7 @@ public class UserMappingService {
 		UserMapping mapping = new UserMapping();
 		mapping.setRole(role);
 		mapping.setUser(userRes);
-		mapping.setStatus(Constant.ACTIVE);
+
 		userMappingRepository.save(mapping);
 	}
 }

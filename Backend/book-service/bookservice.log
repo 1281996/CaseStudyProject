@@ -160,3 +160,219 @@
 2022-09-06 12:21:32.672  INFO 16104 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2022-09-06 12:21:32.674  INFO 16104 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2022-09-06 12:21:32.683  INFO 16104 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-09-06 16:03:47.040  INFO 13704 --- [main] com.cog.BookServiceApplicationTests      : Starting BookServiceApplicationTests using Java 17.0.4 on LTIN411775 with PID 13704 (started by 2216990 in C:\Users\2216990\Documents\CaseStudy\Backend\book-service)
+2022-09-06 16:03:47.070  INFO 13704 --- [main] com.cog.BookServiceApplicationTests      : No active profile set, falling back to 1 default profile: "default"
+2022-09-06 16:03:47.437 DEBUG 13704 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@3c62f69a
+2022-09-06 16:03:50.709  INFO 13704 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-09-06 16:03:51.049  INFO 13704 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 289 ms. Found 5 JPA repository interfaces.
+2022-09-06 16:03:56.732  INFO 13704 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-09-06 16:03:58.387  INFO 13704 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-09-06 16:04:02.556  INFO 13704 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-09-06 16:04:06.339  WARN 13704 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-09-06 16:04:07.651 DEBUG 13704 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2022-09-06 16:04:08.283 DEBUG 13704 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 7 mappings in 'requestMappingHandlerMapping'
+2022-09-06 16:04:08.559 DEBUG 13704 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2022-09-06 16:04:08.632 DEBUG 13704 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2022-09-06 16:04:09.773  INFO 13704 --- [main] com.cog.BookServiceApplicationTests      : Started BookServiceApplicationTests in 25.341 seconds (JVM running for 38.319)
+2022-09-06 16:04:10.038 DEBUG 13704 --- [SpringApplicationShutdownHook] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@3c62f69a, started on Tue Sep 06 16:03:47 IST 2022
+2022-09-06 16:04:10.058  INFO 13704 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-09-06 16:04:10.072  INFO 13704 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-09-06 16:04:10.127  INFO 13704 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-09-06 16:56:57.183  INFO 32180 --- [main] com.cog.BookServiceApplicationTests      : Starting BookServiceApplicationTests using Java 17.0.4 on LTIN411775 with PID 32180 (started by 2216990 in C:\Users\2216990\Documents\CaseStudy\Backend\book-service)
+2022-09-06 16:56:57.197  INFO 32180 --- [main] com.cog.BookServiceApplicationTests      : No active profile set, falling back to 1 default profile: "default"
+2022-09-06 16:56:57.762 DEBUG 32180 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@59278072
+2022-09-06 16:57:06.802  INFO 32180 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-09-06 16:57:07.637  INFO 32180 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 671 ms. Found 5 JPA repository interfaces.
+2022-09-06 16:57:15.723  INFO 32180 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-09-06 16:57:18.240  INFO 32180 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-09-06 16:57:24.202  INFO 32180 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-09-06 16:57:28.617  WARN 32180 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-09-06 16:57:29.908 DEBUG 32180 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2022-09-06 16:57:31.011 DEBUG 32180 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 7 mappings in 'requestMappingHandlerMapping'
+2022-09-06 16:57:31.476 DEBUG 32180 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2022-09-06 16:57:31.608 DEBUG 32180 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2022-09-06 16:57:33.469  INFO 32180 --- [main] com.cog.BookServiceApplicationTests      : Started BookServiceApplicationTests in 41.487 seconds (JVM running for 67.102)
+2022-09-06 16:57:34.130 DEBUG 32180 --- [SpringApplicationShutdownHook] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@59278072, started on Tue Sep 06 16:56:57 IST 2022
+2022-09-06 16:57:40.538  INFO 32180 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-09-06 16:57:40.546  INFO 32180 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-09-06 16:57:40.587  INFO 32180 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-09-06 18:57:58.688  INFO 3620 --- [main] com.cog.BookServiceApplicationTests      : Starting BookServiceApplicationTests using Java 17.0.4 on LTIN411775 with PID 3620 (started by 2216990 in C:\Users\2216990\Documents\CaseStudy\Backend\book-service)
+2022-09-06 18:57:58.689  INFO 3620 --- [main] com.cog.BookServiceApplicationTests      : No active profile set, falling back to 1 default profile: "default"
+2022-09-06 18:57:58.757 DEBUG 3620 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@45273d40
+2022-09-06 18:57:59.729  INFO 3620 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-09-06 18:57:59.845  INFO 3620 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 94 ms. Found 5 JPA repository interfaces.
+2022-09-06 18:58:01.003  INFO 3620 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-09-06 18:58:01.529  INFO 3620 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-09-06 18:58:02.698  INFO 3620 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-09-06 18:58:03.621  WARN 3620 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-09-06 18:58:03.955 DEBUG 3620 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2022-09-06 18:58:04.165 DEBUG 3620 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 7 mappings in 'requestMappingHandlerMapping'
+2022-09-06 18:58:04.216 DEBUG 3620 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2022-09-06 18:58:04.244 DEBUG 3620 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2022-09-06 18:58:04.515  INFO 3620 --- [main] com.cog.BookServiceApplicationTests      : Started BookServiceApplicationTests in 6.379 seconds (JVM running for 10.877)
+2022-09-06 18:58:04.576 DEBUG 3620 --- [SpringApplicationShutdownHook] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@45273d40, started on Tue Sep 06 18:57:58 IST 2022
+2022-09-06 18:58:05.732  INFO 3620 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-09-06 18:58:05.735  INFO 3620 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-09-06 18:58:05.745  INFO 3620 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-09-06 18:59:57.682  INFO 7816 --- [main] com.cog.BookServiceApplicationTests      : Starting BookServiceApplicationTests using Java 17.0.4 on LTIN411775 with PID 7816 (started by 2216990 in C:\Users\2216990\Documents\CaseStudy\Backend\book-service)
+2022-09-06 18:59:57.684  INFO 7816 --- [main] com.cog.BookServiceApplicationTests      : No active profile set, falling back to 1 default profile: "default"
+2022-09-06 18:59:57.739 DEBUG 7816 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@74c04377
+2022-09-06 18:59:58.614  INFO 7816 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-09-06 18:59:58.698  INFO 7816 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 69 ms. Found 5 JPA repository interfaces.
+2022-09-06 18:59:59.847  INFO 7816 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-09-06 19:00:00.350  INFO 7816 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-09-06 19:00:01.345  INFO 7816 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-09-06 19:00:02.188  WARN 7816 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-09-06 19:00:02.473 DEBUG 7816 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2022-09-06 19:00:02.635 DEBUG 7816 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 7 mappings in 'requestMappingHandlerMapping'
+2022-09-06 19:00:02.687 DEBUG 7816 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2022-09-06 19:00:02.714 DEBUG 7816 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2022-09-06 19:00:02.969  INFO 7816 --- [main] com.cog.BookServiceApplicationTests      : Started BookServiceApplicationTests in 5.769 seconds (JVM running for 8.856)
+2022-09-06 19:00:03.022 DEBUG 7816 --- [SpringApplicationShutdownHook] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@74c04377, started on Tue Sep 06 18:59:57 IST 2022
+2022-09-06 19:00:04.150  INFO 7816 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-09-06 19:00:04.151  INFO 7816 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-09-06 19:00:04.160  INFO 7816 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-09-06 19:29:56.427  INFO 16744 --- [main] com.cog.BookServiceApplicationTests      : Starting BookServiceApplicationTests using Java 17.0.4 on LTIN411775 with PID 16744 (started by 2216990 in C:\Users\2216990\Documents\CaseStudy\Backend\book-service)
+2022-09-06 19:29:56.430  INFO 16744 --- [main] com.cog.BookServiceApplicationTests      : No active profile set, falling back to 1 default profile: "default"
+2022-09-06 19:29:56.498 DEBUG 16744 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@3c46e6f6
+2022-09-06 19:29:57.564  INFO 16744 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-09-06 19:29:57.662  INFO 16744 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 81 ms. Found 5 JPA repository interfaces.
+2022-09-06 19:29:58.981  INFO 16744 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-09-06 19:29:59.639  INFO 16744 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-09-06 19:30:01.093  INFO 16744 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-09-06 19:30:02.185  WARN 16744 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-09-06 19:30:02.569 DEBUG 16744 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2022-09-06 19:30:02.786 DEBUG 16744 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 7 mappings in 'requestMappingHandlerMapping'
+2022-09-06 19:30:02.853 DEBUG 16744 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2022-09-06 19:30:02.882 DEBUG 16744 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2022-09-06 19:30:03.181  INFO 16744 --- [main] com.cog.BookServiceApplicationTests      : Started BookServiceApplicationTests in 7.302 seconds (JVM running for 11.734)
+2022-09-06 19:30:03.243 DEBUG 16744 --- [SpringApplicationShutdownHook] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@3c46e6f6, started on Tue Sep 06 19:29:56 IST 2022
+2022-09-06 19:30:04.416  INFO 16744 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-09-06 19:30:04.419  INFO 16744 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-09-06 19:30:04.444  INFO 16744 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-09-06 19:37:40.466  INFO 16224 --- [main] com.cog.BookServiceApplicationTests      : Starting BookServiceApplicationTests using Java 17.0.4 on LTIN411775 with PID 16224 (started by 2216990 in C:\Users\2216990\Documents\CaseStudy\Backend\book-service)
+2022-09-06 19:37:40.469  INFO 16224 --- [main] com.cog.BookServiceApplicationTests      : No active profile set, falling back to 1 default profile: "default"
+2022-09-06 19:37:40.540 DEBUG 16224 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@2e4339c1
+2022-09-06 19:37:41.566  INFO 16224 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-09-06 19:37:41.684  INFO 16224 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 98 ms. Found 5 JPA repository interfaces.
+2022-09-06 19:37:43.062  INFO 16224 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-09-06 19:37:43.687  INFO 16224 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-09-06 19:37:45.177  INFO 16224 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-09-06 19:37:46.586  WARN 16224 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-09-06 19:37:47.083 DEBUG 16224 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2022-09-06 19:37:47.326 DEBUG 16224 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 7 mappings in 'requestMappingHandlerMapping'
+2022-09-06 19:37:47.405 DEBUG 16224 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2022-09-06 19:37:47.440 DEBUG 16224 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2022-09-06 19:37:47.760  INFO 16224 --- [main] com.cog.BookServiceApplicationTests      : Started BookServiceApplicationTests in 7.908 seconds (JVM running for 12.238)
+2022-09-06 19:37:47.824 DEBUG 16224 --- [SpringApplicationShutdownHook] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@2e4339c1, started on Tue Sep 06 19:37:40 IST 2022
+2022-09-06 19:37:49.376  INFO 16224 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-09-06 19:37:49.378  INFO 16224 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-09-06 19:37:49.411  INFO 16224 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-09-06 19:41:17.579  INFO 5904 --- [main] com.cog.BookServiceApplicationTests      : Starting BookServiceApplicationTests using Java 17.0.4 on LTIN411775 with PID 5904 (started by 2216990 in C:\Users\2216990\Documents\CaseStudy\Backend\book-service)
+2022-09-06 19:41:17.583  INFO 5904 --- [main] com.cog.BookServiceApplicationTests      : No active profile set, falling back to 1 default profile: "default"
+2022-09-06 19:41:17.667 DEBUG 5904 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@7f41d979
+2022-09-06 19:41:18.725  INFO 5904 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-09-06 19:41:18.838  INFO 5904 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 96 ms. Found 5 JPA repository interfaces.
+2022-09-06 19:41:20.138  INFO 5904 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-09-06 19:41:20.717  INFO 5904 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-09-06 19:41:21.895  INFO 5904 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-09-06 19:41:23.048  WARN 5904 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-09-06 19:41:23.475 DEBUG 5904 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2022-09-06 19:41:23.680 DEBUG 5904 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 7 mappings in 'requestMappingHandlerMapping'
+2022-09-06 19:41:23.747 DEBUG 5904 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2022-09-06 19:41:23.771 DEBUG 5904 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2022-09-06 19:41:24.078  INFO 5904 --- [main] com.cog.BookServiceApplicationTests      : Started BookServiceApplicationTests in 7.09 seconds (JVM running for 11.108)
+2022-09-06 19:41:24.144 DEBUG 5904 --- [SpringApplicationShutdownHook] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@7f41d979, started on Tue Sep 06 19:41:17 IST 2022
+2022-09-06 19:41:25.464  INFO 5904 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-09-06 19:41:25.466  INFO 5904 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-09-06 19:41:25.478  INFO 5904 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-09-06 19:49:54.229  INFO 4836 --- [main] com.cog.BookServiceApplicationTests      : Starting BookServiceApplicationTests using Java 17.0.4 on LTIN411775 with PID 4836 (started by 2216990 in C:\Users\2216990\Documents\CaseStudy\Backend\book-service)
+2022-09-06 19:49:54.233  INFO 4836 --- [main] com.cog.BookServiceApplicationTests      : No active profile set, falling back to 1 default profile: "default"
+2022-09-06 19:49:54.311 DEBUG 4836 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@5906ebfb
+2022-09-06 19:49:55.336  INFO 4836 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-09-06 19:49:55.453  INFO 4836 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 100 ms. Found 5 JPA repository interfaces.
+2022-09-06 19:49:56.822  INFO 4836 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-09-06 19:49:57.389  INFO 4836 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-09-06 19:49:58.645  INFO 4836 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-09-06 19:49:59.708  WARN 4836 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-09-06 19:50:00.130 DEBUG 4836 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2022-09-06 19:50:00.386 DEBUG 4836 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 7 mappings in 'requestMappingHandlerMapping'
+2022-09-06 19:50:00.472 DEBUG 4836 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2022-09-06 19:50:00.515 DEBUG 4836 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2022-09-06 19:50:00.888  INFO 4836 --- [main] com.cog.BookServiceApplicationTests      : Started BookServiceApplicationTests in 7.276 seconds (JVM running for 11.315)
+2022-09-06 19:50:00.951 DEBUG 4836 --- [SpringApplicationShutdownHook] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@5906ebfb, started on Tue Sep 06 19:49:54 IST 2022
+2022-09-06 19:50:02.383  INFO 4836 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-09-06 19:50:02.385  INFO 4836 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-09-06 19:50:02.397  INFO 4836 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-09-06 19:52:18.258  INFO 4332 --- [main] com.cog.BookServiceApplicationTests      : Starting BookServiceApplicationTests using Java 17.0.4 on LTIN411775 with PID 4332 (started by 2216990 in C:\Users\2216990\Documents\CaseStudy\Backend\book-service)
+2022-09-06 19:52:18.262  INFO 4332 --- [main] com.cog.BookServiceApplicationTests      : No active profile set, falling back to 1 default profile: "default"
+2022-09-06 19:52:18.334 DEBUG 4332 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@5906ebfb
+2022-09-06 19:52:19.352  INFO 4332 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-09-06 19:52:19.471  INFO 4332 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 95 ms. Found 5 JPA repository interfaces.
+2022-09-06 19:52:20.796  INFO 4332 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-09-06 19:52:21.386  INFO 4332 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-09-06 19:52:22.562  INFO 4332 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-09-06 19:52:23.635  WARN 4332 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-09-06 19:52:24.039 DEBUG 4332 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2022-09-06 19:52:24.243 DEBUG 4332 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 7 mappings in 'requestMappingHandlerMapping'
+2022-09-06 19:52:24.306 DEBUG 4332 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2022-09-06 19:52:24.334 DEBUG 4332 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2022-09-06 19:52:24.658  INFO 4332 --- [main] com.cog.BookServiceApplicationTests      : Started BookServiceApplicationTests in 7.015 seconds (JVM running for 11.171)
+2022-09-06 19:52:24.715 DEBUG 4332 --- [SpringApplicationShutdownHook] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@5906ebfb, started on Tue Sep 06 19:52:18 IST 2022
+2022-09-06 19:52:25.913  INFO 4332 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-09-06 19:52:25.915  INFO 4332 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-09-06 19:52:25.923  INFO 4332 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-09-06 19:53:57.593  INFO 6264 --- [main] com.cog.BookServiceApplicationTests      : Starting BookServiceApplicationTests using Java 17.0.4 on LTIN411775 with PID 6264 (started by 2216990 in C:\Users\2216990\Documents\CaseStudy\Backend\book-service)
+2022-09-06 19:53:57.596  INFO 6264 --- [main] com.cog.BookServiceApplicationTests      : No active profile set, falling back to 1 default profile: "default"
+2022-09-06 19:53:57.669 DEBUG 6264 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@63a7af06
+2022-09-06 19:53:58.759  INFO 6264 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-09-06 19:53:58.886  INFO 6264 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 106 ms. Found 5 JPA repository interfaces.
+2022-09-06 19:54:00.216  INFO 6264 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-09-06 19:54:00.846  INFO 6264 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-09-06 19:54:02.315  INFO 6264 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-09-06 19:54:03.400  WARN 6264 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-09-06 19:54:03.779 DEBUG 6264 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2022-09-06 19:54:04.025 DEBUG 6264 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 7 mappings in 'requestMappingHandlerMapping'
+2022-09-06 19:54:04.129 DEBUG 6264 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2022-09-06 19:54:04.171 DEBUG 6264 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2022-09-06 19:54:04.638  INFO 6264 --- [main] com.cog.BookServiceApplicationTests      : Started BookServiceApplicationTests in 7.625 seconds (JVM running for 11.712)
+2022-09-06 19:54:04.714 DEBUG 6264 --- [SpringApplicationShutdownHook] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@63a7af06, started on Tue Sep 06 19:53:57 IST 2022
+2022-09-06 19:54:06.136  INFO 6264 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-09-06 19:54:06.139  INFO 6264 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-09-06 19:54:06.149  INFO 6264 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-09-06 20:03:19.374  INFO 4232 --- [main] com.cog.BookServiceApplicationTests      : Starting BookServiceApplicationTests using Java 17.0.4 on LTIN411775 with PID 4232 (started by 2216990 in C:\Users\2216990\Documents\CaseStudy\Backend\book-service)
+2022-09-06 20:03:19.377  INFO 4232 --- [main] com.cog.BookServiceApplicationTests      : No active profile set, falling back to 1 default profile: "default"
+2022-09-06 20:03:19.446 DEBUG 4232 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@3b576ee3
+2022-09-06 20:03:20.499  INFO 4232 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-09-06 20:03:20.621  INFO 4232 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 104 ms. Found 5 JPA repository interfaces.
+2022-09-06 20:03:21.989  INFO 4232 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-09-06 20:03:22.667  INFO 4232 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-09-06 20:03:23.890  INFO 4232 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-09-06 20:03:24.856  WARN 4232 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-09-06 20:03:25.219 DEBUG 4232 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2022-09-06 20:03:25.416 DEBUG 4232 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 7 mappings in 'requestMappingHandlerMapping'
+2022-09-06 20:03:25.517 DEBUG 4232 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2022-09-06 20:03:25.544 DEBUG 4232 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2022-09-06 20:03:25.890  INFO 4232 --- [main] com.cog.BookServiceApplicationTests      : Started BookServiceApplicationTests in 7.116 seconds (JVM running for 11.234)
+2022-09-06 20:03:25.965 DEBUG 4232 --- [SpringApplicationShutdownHook] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@3b576ee3, started on Tue Sep 06 20:03:19 IST 2022
+2022-09-06 20:03:26.936  INFO 4232 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-09-06 20:03:26.939  INFO 4232 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-09-06 20:03:26.951  INFO 4232 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-09-06 20:04:55.085  INFO 3768 --- [main] com.cog.BookServiceApplicationTests      : Starting BookServiceApplicationTests using Java 17.0.4 on LTIN411775 with PID 3768 (started by 2216990 in C:\Users\2216990\Documents\CaseStudy\Backend\book-service)
+2022-09-06 20:04:55.087  INFO 3768 --- [main] com.cog.BookServiceApplicationTests      : No active profile set, falling back to 1 default profile: "default"
+2022-09-06 20:04:55.150 DEBUG 3768 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@34e07e65
+2022-09-06 20:04:56.297  INFO 3768 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-09-06 20:04:56.407  INFO 3768 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 91 ms. Found 5 JPA repository interfaces.
+2022-09-06 20:04:57.860  INFO 3768 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-09-06 20:04:58.590  INFO 3768 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-09-06 20:04:59.857  INFO 3768 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-09-06 20:05:00.858  WARN 3768 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-09-06 20:05:01.242 DEBUG 3768 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2022-09-06 20:05:01.473 DEBUG 3768 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 7 mappings in 'requestMappingHandlerMapping'
+2022-09-06 20:05:01.536 DEBUG 3768 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2022-09-06 20:05:01.564 DEBUG 3768 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2022-09-06 20:05:01.840  INFO 3768 --- [main] com.cog.BookServiceApplicationTests      : Started BookServiceApplicationTests in 7.307 seconds (JVM running for 11.42)
+2022-09-06 20:05:01.895 DEBUG 3768 --- [SpringApplicationShutdownHook] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@34e07e65, started on Tue Sep 06 20:04:55 IST 2022
+2022-09-06 20:05:03.160  INFO 3768 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-09-06 20:05:03.163  INFO 3768 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-09-06 20:05:03.173  INFO 3768 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

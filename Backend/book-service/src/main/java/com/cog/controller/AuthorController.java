@@ -27,20 +27,18 @@ import com.cog.dto.LoginDto;
 import com.cog.dto.ResponseDto;
 import com.cog.dto.UserDto;
 import com.cog.service.BookService;
-import com.cog.service.UserDetailsServiceImpl;
+import com.cog.service.UserService;
 
 @RestController
-@RequestMapping("/api/v1/digitalbooks/author")
+@RequestMapping("/digitalbooks/author")
 @CrossOrigin
 public class AuthorController {
 	@Autowired
-	UserDetailsServiceImpl userService;
+	UserService userService;
 
 	@Autowired
 	BookService bookService;
 
-	// @Autowired
-	// JwtUtils jwtUtils;
 	private static final Logger LOGGER = LoggerFactory.getLogger(AuthorController.class);
 
 	@PostMapping(path = "/signup")
@@ -78,6 +76,7 @@ public class AuthorController {
 		return bookService.getAllMyBooks();
 
 	}
+
 	// Error handling
 	@ExceptionHandler(MethodArgumentNotValidException.class)
 	Map<String, String> handleMethodArumentException(MethodArgumentNotValidException ex) {

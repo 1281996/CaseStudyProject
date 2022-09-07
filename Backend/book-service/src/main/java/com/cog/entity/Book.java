@@ -1,12 +1,14 @@
 package com.cog.entity;
 
 import java.io.Serializable;
-import java.time.LocalDateTime;
+import java.time.LocalDate;
+
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -15,8 +17,16 @@ import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+import com.cog.enums.Category;
+import com.cog.enums.Event;
+
+import lombok.Getter;
+import lombok.Setter;
+
 @Entity
-@Table(name="book_tran")
+@Table(name = "book_tran")
+@Getter
+@Setter
 public class Book implements Serializable {
 	/**
 	 * 
@@ -27,7 +37,7 @@ public class Book implements Serializable {
 	@SequenceGenerator(name = "gen1", sequenceName = "book_sequence")
 	@GeneratedValue(generator = "gen1", strategy = GenerationType.SEQUENCE)
 	private Integer id;
-	
+
 	@ManyToOne(targetEntity = User.class, cascade = CascadeType.MERGE)
 	@JoinColumn(name = "user_id", referencedColumnName = "id")
 	private User user;
@@ -35,120 +45,24 @@ public class Book implements Serializable {
 	@ManyToOne(targetEntity = Role.class, cascade = CascadeType.MERGE)
 	@JoinColumn(name = "role_id", referencedColumnName = "id")
 	private Role role;
-	
+
 	private String publisher;
-	
+
 	private String title;
-	
-	private String category;
-	
+	@Enumerated(EnumType.STRING)
+	private Category category;
+
 	private String image;
-	
+
 	private Double price;
-	
+
 	private String content;
-	
-	@Column(name="released_date")
-	private LocalDateTime releasedDate;
-	
-	private String status;
 
-	public Book() {
-	
-	}
+	@Column(name = "published_date")
+	private LocalDate publishedDate;
 
-	public Integer getId() {
-		return id;
-	}
+	@Column(name = "status")
+	@Enumerated(EnumType.STRING)
+	private Event status ;
 
-	public void setId(Integer id) {
-		this.id = id;
-	}
-
-	public User getUser() {
-		return user;
-	}
-
-	public void setUser(User user) {
-		this.user = user;
-	}
-
-	public Role getRole() {
-		return role;
-	}
-
-	public void setRole(Role role) {
-		this.role = role;
-	}
-
-	public String getPublisher() {
-		return publisher;
-	}
-
-	public void setPublisher(String publisher) {
-		this.publisher = publisher;
-	}
-
-	public String getTitle() {
-		return title;
-	}
-
-	public void setTitle(String title) {
-		this.title = title;
-	}
-
-	public String getCategory() {
-		return category;
-	}
-
-	public void setCategory(String category) {
-		this.category = category;
-	}
-
-	public String getImage() {
-		return image;
-	}
-
-	public void setImage(String image) {
-		this.image = image;
-	}
-
-	public Double getPrice() {
-		return price;
-	}
-
-	public void setPrice(Double price) {
-		this.price = price;
-	}
-
-	public String getContent() {
-		return content;
-	}
-
-	public void setContent(String content) {
-		this.content = content;
-	}
-
-	public LocalDateTime getReleasedDate() {
-		return releasedDate;
-	}
-
-	public void setReleasedDate(LocalDateTime releasedDate) {
-		this.releasedDate = releasedDate;
-	}
-
-	public String getStatus() {
-		return status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
-	}
-
-	
-
-	
-	
-	
-	
 }

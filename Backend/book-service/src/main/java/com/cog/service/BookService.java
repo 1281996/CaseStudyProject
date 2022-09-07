@@ -1,6 +1,7 @@
 package com.cog.service;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,6 +16,7 @@ import com.cog.dto.BookResDto;
 import com.cog.entity.Book;
 import com.cog.entity.Role;
 import com.cog.entity.User;
+import com.cog.enums.Event;
 import com.cog.repository.BookRepository;
 import com.cog.util.Constant;
 
@@ -26,7 +28,7 @@ public class BookService {
 	@Autowired
 	RoleService roleService;
 	@Autowired
-	UserDetailsServiceImpl userServiceImpl;
+	UserService userServiceImpl;
 
 	public BookResDto saveBook(BookDto bookDto, Integer authorId) {
 		LOGGER.info("save book");
@@ -34,12 +36,17 @@ public class BookService {
 		setBook(bookDto, authorId, book);
 
 		Book bookRes = bookRepository.save(book);
-
+		BookResDto bookResDto = new BookResDto();
+		bookResDto.setBookDto(getAllMyBooks());
 		if (bookRes != null) {
-			return new BookResDto(getAllMyBooks(), Constant.BOOK_MSG_SUCCESS);
 
+			bookResDto.setResponse(Constant.UPDATED_SUCCESS_MSG);
+
+		} else {
+			bookResDto.setResponse(Constant.BOOK_MSG_FALIURE);
 		}
-		return new BookResDto(getAllMyBooks(), Constant.BOOK_MSG_FALIURE);
+
+		return bookResDto;
 	}
 
 	private Book setBook(BookDto bookDto, Integer authorId, Book book) {
@@ -54,8 +61,8 @@ public class BookService {
 		book.setRole(role);
 		User user = userServiceImpl.findByUserId(authorId);
 		book.setUser(user);
-		book.setStatus(Constant.ACTIVE);
-		book.setReleasedDate(LocalDateTime.now());
+		book.setStatus(Event.ACTIVE);
+		book.setPublishedDate(LocalDate.now());
 		return book;
 	}
 
@@ -64,7 +71,10 @@ public class BookService {
 				.orElseThrow(() -> new NullPointerException("Book Not Found with BookId: " + bookId));
 		setBook(bookDto, authorId, book);
 		bookRepository.save(book);
-		return new BookResDto(getAllMyBooks(), Constant.UPDATED_SUCCESS_MSG);
+		BookResDto bookResDto = new BookResDto();
+		bookResDto.setBookDto(getAllMyBooks());
+		bookResDto.setResponse(Constant.UPDATED_SUCCESS_MSG);
+		return bookResDto;
 	}
 
 	public List<BookDto> getAllMyBooks() {
@@ -77,7 +87,7 @@ public class BookService {
 			dto.setImage(book.getImage());
 			dto.setPrice(book.getPrice());
 			dto.setPublisher(book.getPublisher());
-			dto.setReleasedDate(book.getReleasedDate());
+			dto.setPublishedDate(book.getPublishedDate());
 			dto.setRole(book.getRole());
 			dto.setStatus(book.getStatus());
 			dto.setTitle(book.getTitle());

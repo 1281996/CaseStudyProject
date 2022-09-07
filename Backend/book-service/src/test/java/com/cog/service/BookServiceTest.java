@@ -4,7 +4,8 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.lenient;
 import static org.mockito.Mockito.when;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -15,12 +16,14 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
-import org.springframework.beans.factory.annotation.Autowired;
+
 
 import com.cog.dto.BookDto;
 import com.cog.entity.Book;
 import com.cog.entity.Role;
 import com.cog.entity.User;
+import com.cog.enums.Category;
+import com.cog.enums.Event;
 import com.cog.repository.BookRepository;
 import com.cog.util.Constant;
 
@@ -31,7 +34,7 @@ class BookServiceTest {
 	@Mock
 	RoleService roleService;
 	@Mock
-	UserDetailsServiceImpl userServiceImpl;
+	UserService userServiceImpl;
 	@InjectMocks
 	BookService bookService;
 
@@ -80,15 +83,15 @@ class BookServiceTest {
 	public static List<Book> getBookDtoList() {
 		List<Book> books = new ArrayList<>();
 		Book book = new Book();
-		book.setCategory("Fictional");
+		book.setCategory(Category.FANTASY);
 		book.setContent("...");
 		book.setId(1);
 		book.setImage("assests/img.jpg");
 		book.setPrice(250.0);
 		book.setPublisher("Rupa");
-		book.setReleasedDate(LocalDateTime.now());
+		book.setPublishedDate(LocalDate.now());
 		book.setRole(new Role());
-		book.setStatus("Active");
+		book.setStatus(Event.ACTIVE);
 		book.setTitle("Harry Poter");
 		book.setUser(new User());
 		books.add(book);
@@ -98,15 +101,15 @@ class BookServiceTest {
 	public static Book getBook() {
 
 		Book book = new Book();
-		book.setCategory("Fictional");
+		book.setCategory(Category.FANTASY);
 		book.setContent("...");
 		book.setId(1);
 		book.setImage("assests/img.jpg");
 		book.setPrice(250.0);
 		book.setPublisher("Rupa");
-		book.setReleasedDate(LocalDateTime.now());
+		book.setPublishedDate(LocalDate.now());
 		book.setRole(new Role());
-		book.setStatus("Active");
+		book.setStatus(Event.ACTIVE);
 		book.setTitle("Harry Poter");
 		book.setUser(new User());
 
@@ -116,15 +119,15 @@ class BookServiceTest {
 	public static BookDto getBookDto() {
 
 		BookDto book = new BookDto();
-		book.setCategory("Fictional");
+		book.setCategory(Category.FANTASY);
 		book.setContent("...");
 		book.setId(1);
 		book.setImage("assests/img.jpg");
 		book.setPrice(250.0);
 		book.setPublisher("Rupa");
-		book.setReleasedDate(LocalDateTime.now());
+		book.setPublishedDate(LocalDate.now());
 		book.setRole(new Role());
-		book.setStatus("Active");
+		book.setStatus(Event.ACTIVE);
 		book.setTitle("Harry Poter");
 		book.setUser(new User());
 

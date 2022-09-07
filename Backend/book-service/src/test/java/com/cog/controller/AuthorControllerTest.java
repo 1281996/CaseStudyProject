@@ -3,8 +3,10 @@ package com.cog.controller;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.when;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
+
 import java.util.ArrayList;
+
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -13,6 +15,10 @@ import org.mockito.Mock;
 
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import org.springframework.validation.BindException;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.MethodArgumentNotValidException;
+
 import com.cog.dto.BookDto;
 import com.cog.dto.BookResDto;
 import com.cog.dto.LoginDto;
@@ -20,14 +26,16 @@ import com.cog.dto.ResponseDto;
 import com.cog.dto.UserDto;
 import com.cog.entity.Role;
 import com.cog.entity.User;
+import com.cog.enums.Category;
+import com.cog.enums.Event;
 import com.cog.service.BookService;
-import com.cog.service.UserDetailsServiceImpl;
+import com.cog.service.UserService;
 import com.cog.util.Constant;
 
 @ExtendWith(MockitoExtension.class)
 class AuthorControllerTest {
 	@Mock
-	UserDetailsServiceImpl userService;
+	UserService userService;
 
 	@Mock
 	BookService bookService;
@@ -37,14 +45,18 @@ class AuthorControllerTest {
 	@Test
 	void testCreateUser() {
 		UserDto dto = getUserDto();
-		when(userService.saveUser(dto)).thenReturn(new ResponseDto(Constant.USER_REGISTER_SUCCESS));
+		ResponseDto responseDto = new ResponseDto();
+		responseDto.setResponse(Constant.USER_REGISTER_SUCCESS);
+		when(userService.saveUser(dto)).thenReturn(responseDto);
 		assertEquals(Constant.USER_REGISTER_SUCCESS, authorController.createUser(dto).getResponse());
 	}
 
 	@Test
 	void testLoginUser() {
 		LoginDto dto = getLoginDto();
-		when(userService.vaidateUser(dto)).thenReturn(new ResponseDto(Constant.USER_CHECK_CREDENTAILS_SUCESS));
+		ResponseDto responseDto = new ResponseDto();
+		responseDto.setResponse(Constant.USER_CHECK_CREDENTAILS_SUCESS);
+		when(userService.vaidateUser(dto)).thenReturn(responseDto);
 		assertEquals(Constant.USER_CHECK_CREDENTAILS_SUCESS, authorController.loginUser(dto).getResponse());
 	}
 
@@ -69,19 +81,25 @@ class AuthorControllerTest {
 		assertEquals(0, authorController.getAllMyBooks(1).size());
 
 	}
+	@Test
+	void testHandleMethodArumentException() {
+		BindingResult bindingResult=new BindException("msg", "msg");
+		MethodArgumentNotValidException exception=new MethodArgumentNotValidException(null, bindingResult);
+		assertEquals(0,authorController.handleMethodArumentException(exception).size());
+	}
 
 	public static BookDto getBookDto() {
 
 		BookDto book = new BookDto();
-		book.setCategory("Fictional");
+		book.setCategory(Category.FANTASY);
 		book.setContent("...");
 		book.setId(1);
 		book.setImage("assests/img.jpg");
 		book.setPrice(250.0);
 		book.setPublisher("Rupa");
-		book.setReleasedDate(LocalDateTime.now());
+		book.setPublishedDate(LocalDate.now());
 		book.setRole(new Role());
-		book.setStatus("Active");
+		book.setStatus(Event.ACTIVE);
 		book.setTitle("Harry Poter");
 		book.setUser(new User());
 

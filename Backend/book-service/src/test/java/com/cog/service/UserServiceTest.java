@@ -20,7 +20,6 @@ import com.cog.dto.UserDto;
 import com.cog.entity.Role;
 import com.cog.entity.User;
 
-
 import com.cog.repository.UserRepository;
 import com.cog.util.Constant;
 
@@ -40,28 +39,23 @@ class UserServiceTest {
 	private UserService detailsServiceImpl;
 
 	@Test
-	void testSaveUser1() {
+	void testSaveUserWhenSuccess() {
 		UserDto userDto = getUserDto();
-
 		User user = getUser();
-
 		Role role = new Role();
 		role.setId(1);
 		role.setRoleName(Constant.ROLE_AUTHOR);
-
-		when(userRepository.findByEmailId(userDto.getEmailId())).thenReturn(null);
-		Mockito.lenient().when(userRepository.save(user)).thenReturn(user);
+		when(userRepository.save(Mockito.any(User.class))).thenReturn(user);
 		when(roleService.findById(1)).thenReturn(role);
 		assertEquals(Constant.USER_REGISTER_SUCCESS, detailsServiceImpl.saveUser(userDto).getResponse());
 	}
 
 	@Test
-	void testSaveUser2() {
+	void testSaveUserWhenFailure() {
 		UserDto userDto = getUserDto();
 		User user = getUser();
-
-		when(userRepository.findByEmailId(userDto.getEmailId())).thenReturn(user);
-
+		user.setId(null);
+		when(userRepository.save(Mockito.any(User.class))).thenReturn(user);
 		assertEquals(Constant.USER_REGISTER_ERROR, detailsServiceImpl.saveUser(userDto).getResponse());
 	}
 
@@ -73,14 +67,13 @@ class UserServiceTest {
 		user.get().setLastName("mallika");
 		user.get().setPassword("mkllll");
 		user.get().setId(1);
-
 		user.get().setRegisteredDate(LocalDate.now());
 		when(userRepository.findById(2)).thenReturn(user);
 		assertEquals(1, detailsServiceImpl.findByUserId(2).getId());
 	}
 
 	@Test
-	void testVaidateUser() {
+	void testVaidateUserWhenSuccess() {
 		User user = getUser();
 		LoginDto loginDto = getLoginDto();
 		when(userRepository.findByEmailIdAndPassword("kamma.mallika@gmail.com", "mkllll")).thenReturn(user);
@@ -88,11 +81,10 @@ class UserServiceTest {
 	}
 
 	@Test
-	void testVaidateUser1() {
-
+	void testVaidateUserWhenFailure() {
 		LoginDto loginDto = getLoginDto();
 		when(userRepository.findByEmailIdAndPassword("kamma.mallika@gmail.com", "mkllll")).thenReturn(null);
-		assertEquals("Invalid Credentails", detailsServiceImpl.vaidateUser(loginDto).getResponse());
+		assertEquals(false, detailsServiceImpl.vaidateUser(loginDto).isFlag());
 	}
 
 	public static UserDto getUserDto() {
@@ -112,7 +104,6 @@ class UserServiceTest {
 		user.setLastName("mallika");
 		user.setPassword("mkllll");
 		user.setId(1);
-
 		user.setRegisteredDate(LocalDate.now());
 		return user;
 	}

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, Validators } from '@angular/forms';
+import { BookService } from '../book.service';
 
 @Component({
   selector: 'app-home',
@@ -7,10 +8,18 @@ import { FormBuilder, FormControl, Validators } from '@angular/forms';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  bookData: any;
 
-  constructor(private fb:FormBuilder) { }
+  constructor(private fb:FormBuilder,private bookService:BookService ) { }
 
   ngOnInit(): void {
+    const promise = this.bookService.getAllReadersBooks();
+    promise.subscribe((res: any) => {
+      console.log(res);
+      this.bookData = res;
+    }, (error: any) => {
+      console.log(error);
+    });
   }
   display = "none";
  
@@ -32,5 +41,7 @@ openModal() {
     console.log(emailId);
     this.onCloseHandled() 
   }
-  
+  Buy(book:any){
+
+  }
 }

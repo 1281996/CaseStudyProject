@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="UserServiceTest" project="book-service" tests="5" started="5" failures="0" errors="0" ignored="0">
+  <testsuite name="com.cog.service.UserServiceTest" time="1.39" displayname="UserServiceTest" uniqueid="[engine:junit-jupiter]/[class:com.cog.service.UserServiceTest]">
+    <testcase name="testFindByUserId" classname="com.cog.service.UserServiceTest" time="1.357" displayname="testFindByUserId()" uniqueid="[engine:junit-jupiter]/[class:com.cog.service.UserServiceTest]/[method:testFindByUserId()]"/>
+    <testcase name="testSaveUser1" classname="com.cog.service.UserServiceTest" time="0.021" displayname="testSaveUser1()" uniqueid="[engine:junit-jupiter]/[class:com.cog.service.UserServiceTest]/[method:testSaveUser1()]"/>
+    <testcase name="testSaveUser2" classname="com.cog.service.UserServiceTest" time="0.003" displayname="testSaveUser2()" uniqueid="[engine:junit-jupiter]/[class:com.cog.service.UserServiceTest]/[method:testSaveUser2()]"/>
+    <testcase name="testVaidateUser" classname="com.cog.service.UserServiceTest" time="0.003" displayname="testVaidateUser()" uniqueid="[engine:junit-jupiter]/[class:com.cog.service.UserServiceTest]/[method:testVaidateUser()]"/>
+    <testcase name="testVaidateUser1" classname="com.cog.service.UserServiceTest" time="0.004" displayname="testVaidateUser1()" uniqueid="[engine:junit-jupiter]/[class:com.cog.service.UserServiceTest]/[method:testVaidateUser1()]"/>
+  </testsuite>
+</testrun>

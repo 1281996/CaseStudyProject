@@ -10,11 +10,11 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class BookResDto implements Serializable {
+public class BookResDto extends ResponseDto implements Serializable  {
 
 	private static final long serialVersionUID = -6631725384732301237L;
 
 	private List<BookDto> bookDto;
-	private String response;
+	
 
 }

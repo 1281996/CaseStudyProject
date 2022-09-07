@@ -1,8 +1,8 @@
 package com.cog.entity;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.time.LocalDate;
-
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -54,7 +54,7 @@ public class Book implements Serializable {
 
 	private String image;
 
-	private Double price;
+	private BigDecimal price;
 
 	private String content;
 
@@ -63,6 +63,6 @@ public class Book implements Serializable {
 
 	@Column(name = "status")
 	@Enumerated(EnumType.STRING)
-	private Event status ;
+	private Event status;
 
 }

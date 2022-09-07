@@ -1,6 +1,5 @@
 package com.cog.entity;
 
-
 import java.time.LocalDateTime;
 
 import javax.persistence.CascadeType;
@@ -14,9 +13,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
-
-
-
 
 @Entity
 @Table(name = "payment_tran")
@@ -33,8 +29,6 @@ public class Payment {
 
 	@Column(name = "payment_date")
 	private LocalDateTime paymentDate;
-
-	private Double price;
 
 	@Column(name = "payment_type")
 	private String paymentType;

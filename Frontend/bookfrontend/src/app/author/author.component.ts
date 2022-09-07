@@ -12,6 +12,10 @@ export class AuthorComponent implements OnInit {
   constructor(private fb: FormBuilder, private bookService: BookService) { }
 
   ngOnInit(): void {
+    
+    
+
+
   }
   public editBooks: any;
   bookdata: any;
@@ -88,8 +92,9 @@ export class AuthorComponent implements OnInit {
   }
 
 
-  EditBook(editBook: any) {
+  EditBook(editBook: any,status:any) {
     console.log(editBook)
+    editBook.status=status;
     const promise = this.bookService.editBook(editBook,editBook.user.id,editBook.id);
     promise.subscribe((res: any) => {
       console.log(res);

@@ -1,7 +1,5 @@
 package com.cog.entity;
 
-
-
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 
@@ -13,7 +11,6 @@ import javax.persistence.ManyToOne;
 
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
-
 
 import lombok.Getter;
 import lombok.Setter;
@@ -35,7 +32,5 @@ public class UserMapping {
 	@ManyToOne(targetEntity = Role.class, cascade = CascadeType.MERGE)
 	@JoinColumn(name = "role_id", referencedColumnName = "id")
 	private Role role;
-
-	
 
 }

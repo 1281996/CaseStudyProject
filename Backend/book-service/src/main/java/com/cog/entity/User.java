@@ -2,7 +2,6 @@ package com.cog.entity;
 
 import java.time.LocalDate;
 
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 
@@ -11,7 +10,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
-
 
 import lombok.Getter;
 import lombok.Setter;
@@ -39,7 +37,5 @@ public class User {
 
 	@Column(name = "registered_date")
 	private LocalDate registeredDate;
-
-	
 
 }

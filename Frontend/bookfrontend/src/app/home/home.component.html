@@ -33,72 +33,39 @@
         </div>
         <div class="col py-3">
             <div class="row gy-3 my-3">
-                <div class="col-md-3">
+
+                <div class="col-md-3" *ngFor="let book of bookData">
                     <div class="card">
-                        <img src="..." class="card-img-top" alt="...">
+                        <img [src]="book.image" width="100" height="150" class="card-img-top" alt="...">
                         <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of the card's
-                                content.</p>
-                            <a href="#" class="btn btn-danger">Buy</a>
+
+
+                            <label>Title: </label>
+                            <p>{{book.title}}</p>
+                            <label>Publisher: </label>
+                            <p>{{book.publisher}}</p>
+                            <label>Category: </label>
+                            <p>{{book.category}}</p>
+                            <label>Content: </label>
+
+                            <p class="card-text">
+                                <small>Price: </small> {{book.price| currency:'INR'}}
+                            </p>
+
+                            <button type="submit" class="btn btn-danger" (click)='Buy(book)'>Buy</button>
+
+
                         </div>
                     </div>
                 </div>
 
 
-                <div class="col-md-3">
-                    <div class="card">
-                        <img src="..." class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of the card's
-                                content.</p>
-                            <a href="#" class="btn btn-danger">Go somewhere</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-3">
-                    <div class="card">
-                        <img src="..." class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of the card's
-                                content.</p>
-                            <a href="#" class="btn btn-danger">Go somewhere</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-3">
-                    <div class="card">
-                        <img src="..." class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of the card's
-                                content.</p>
-                            <a href="#" class="btn btn-danger">Go somewhere</a>
-                        </div>
-                    </div>
-                </div>
 
 
-                <div class="col-md-3">
-                    <div class="card">
-                        <img src="..." class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of the card's
-                                content.</p>
-                            <a href="#" class="btn btn-danger">Go somewhere</a>
-                        </div>
-                    </div>
-                </div>
+
+
+
+
 
 
             </div>

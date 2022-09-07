@@ -33,7 +33,7 @@
 
                 <div class="col-md-3" *ngFor="let book of bookdata">
                     <div class="card">
-                        <img [src]="book.image"  width="100" height="150" class="card-img-top" alt="...">
+                        <img [src]="book.image" width="100" height="150" class="card-img-top" alt="...">
                         <div class="card-body">
 
 
@@ -45,7 +45,14 @@
                             <p class="card-text">
                                 <small>Price: </small> {{book.price| currency:'INR'}}
                             </p>
-                            <button type="submit" class="btn btn-danger" (click)='EditBook(book)'>Save Data</button>
+                            <div class="btn-group" role="group" aria-label="Book example">
+                                <button type="submit" class="btn btn-danger"
+                                    (click)='EditBook(book,"ACTIVE")'>Edit</button>
+                                <button type="submit" class="btn btn-danger"
+                                    (click)='EditBook(book,"BLOCK")'>Block</button>
+                                <button type="submit" class="btn btn-danger"
+                                    (click)='EditBook(book,"UNBLOCK")'>UnBlock</button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -133,7 +140,8 @@
                             <span *ngIf="content.errors?.['required']">Title Required</span>
                         </dd>
 
-                        <button type="submit" [disabled]="frmCreateBook.invalid" class="btn btn-danger col-lg-12">Submit</button>
+                        <button type="submit" [disabled]="frmCreateBook.invalid"
+                            class="btn btn-danger col-lg-12">Submit</button>
 
                     </form>
 
@@ -168,14 +176,14 @@
                             <label for="Author Id">Author Id</label>
                             <input type="number" class="form-control" formControlName="authorId" name="authorId">
                         </div>
-                        
+
                         <dd class="text-danger" *ngIf="authorId.touched && authorId.invalid">
                             <span *ngIf="authorId.errors?.['required']">Author IdRequired</span>
                         </dd>
 
 
 
-                        <button type="submit"  class="btn btn-danger col-lg-12">Submit</button>
+                        <button type="submit" class="btn btn-danger col-lg-12">Submit</button>
 
                     </form>
 

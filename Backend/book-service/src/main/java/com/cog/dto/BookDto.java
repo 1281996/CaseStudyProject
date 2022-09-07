@@ -1,14 +1,16 @@
 package com.cog.dto;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.time.LocalDate;
 
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.validation.constraints.NotBlank;
 import com.cog.entity.Role;
 import com.cog.entity.User;
 import com.cog.enums.Category;
 import com.cog.enums.Event;
-
 
 import lombok.Getter;
 import lombok.Setter;
@@ -22,15 +24,14 @@ public class BookDto implements Serializable {
 	private String publisher;
 	@NotBlank(message = "Title can't be empty")
 	private String title;
-	@NotBlank(message = "Category can't be empty")
+	@Enumerated(EnumType.STRING)
 	private Category category;
 	@NotBlank(message = "Image can't be empty")
 	private String image;
-	@NotBlank(message = "Price can't be empty")
-	private Double price;
+	private BigDecimal price;
 	@NotBlank(message = "content can't be empty")
 	private String content;
-
+	@Enumerated(EnumType.STRING)
 	private Event status;
 
 	private Integer id;

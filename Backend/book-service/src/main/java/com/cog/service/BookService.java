@@ -61,7 +61,7 @@ public class BookService {
 		book.setRole(role);
 		User user = userServiceImpl.findByUserId(authorId);
 		book.setUser(user);
-		book.setStatus(Event.ACTIVE);
+		book.setStatus(bookDto.getStatus());
 		book.setPublishedDate(LocalDate.now());
 		return book;
 	}
@@ -95,6 +95,27 @@ public class BookService {
 			bookData.add(dto);
 		});
 		return bookData;
+	}
+
+	public List<BookDto> getReaderBooks() {
+		List<BookDto> bookData = new ArrayList<>();
+		 bookRepository.findByStatus(Event.UNBLOCK).forEach(book -> {
+				BookDto dto = new BookDto();
+				dto.setCategory(book.getCategory());
+				dto.setContent(book.getContent());
+				dto.setId(book.getId());
+				dto.setImage(book.getImage());
+				dto.setPrice(book.getPrice());
+				dto.setPublisher(book.getPublisher());
+				dto.setPublishedDate(book.getPublishedDate());
+				dto.setRole(book.getRole());
+				dto.setStatus(book.getStatus());
+				dto.setTitle(book.getTitle());
+				dto.setUser(book.getUser());
+				bookData.add(dto);
+			});
+			return bookData;
+
 	}
 
 }

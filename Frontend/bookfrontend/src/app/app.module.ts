@@ -13,6 +13,7 @@ import { RegisterComponent } from './register/register.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { HomeComponent } from './home/home.component';
 import { AuthorComponent } from './author/author.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { AuthorComponent } from './author/author.component';
     LoginComponent,
     RegisterComponent,
     HomeComponent,
-    AuthorComponent
+    AuthorComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

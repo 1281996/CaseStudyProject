@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AppComponent } from '../app.component';
 import { BookService } from '../book.service';
 import { NotificationService } from '../notification.service';
 
@@ -17,6 +18,8 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
   title: any = "Books.com"
+  public isLoggedIn: any = false;
+
   public frmLogin = this.fb.group({
     emailId: this.fb.control('', [Validators.required, Validators.minLength(4)]),
     password: this.fb.control('', [Validators.required])
@@ -36,12 +39,20 @@ export class LoginComponent implements OnInit {
     const promise = this.bookService.loginUser(login);
     promise.subscribe((res: any) => {
       console.log(res);
+      if (res.flag === true) {
+        this.isLoggedIn = res.flag;
+        localStorage.setItem('currentUser', this.isLoggedIn);
+        console.log(localStorage.getItem('currentUser'))
+        
+        
+        this.route.navigate(['/author']);
+      }
       this.showToasterSuccess(res.response);
     }, (error: any) => {
       console.log(error);
       this.showToasterError(error.response);
     });
-    this.route.navigate(['/author']);
+
   }
   showToasterSuccess(msg: any) {
     console.log("showToasterSuccess");

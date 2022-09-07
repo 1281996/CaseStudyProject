@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { map } from 'rxjs/operators';
 
-const AUTHOR_URL = "http://localhost:8080/api/v1/digitalbooks/author";
+
+const AUTHOR_URL = "http://localhost:8080/digitalbooks/author";
+const READER_URL = "http://localhost:8080/digitalbooks/readers";
 @Injectable({
   providedIn: 'root'
 })
@@ -22,13 +23,16 @@ export class BookService {
   public bookDisplay(authorId: any) {
     return this.http.get(AUTHOR_URL + '/' + authorId + '/books/display');
   }
-  public  editBook(editBook: any, authorId: any, id: any) {
-   
-    return this.http.put(AUTHOR_URL + '/' + authorId + '/books'+'/'+id, editBook);
+  public editBook(editBook: any, authorId: any, id: any) {
+
+    return this.http.put(AUTHOR_URL + '/' + authorId + '/books' + '/' + id, editBook);
   }
-  
+
   public registerUser(register: any) {
 
-    return this.http.post(AUTHOR_URL + '/signup' , register);
+    return this.http.post(AUTHOR_URL + '/signup', register);
+  }
+  public getAllReadersBooks() {
+    return this.http.get(READER_URL);
   }
 }

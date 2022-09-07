@@ -4,6 +4,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.lenient;
 import static org.mockito.Mockito.when;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 
 import java.util.ArrayList;
@@ -87,7 +88,7 @@ class BookServiceTest {
 		book.setContent("...");
 		book.setId(1);
 		book.setImage("assests/img.jpg");
-		book.setPrice(250.0);
+		book.setPrice(BigDecimal.valueOf(250));
 		book.setPublisher("Rupa");
 		book.setPublishedDate(LocalDate.now());
 		book.setRole(new Role());
@@ -105,7 +106,7 @@ class BookServiceTest {
 		book.setContent("...");
 		book.setId(1);
 		book.setImage("assests/img.jpg");
-		book.setPrice(250.0);
+		book.setPrice(BigDecimal.valueOf(250));
 		book.setPublisher("Rupa");
 		book.setPublishedDate(LocalDate.now());
 		book.setRole(new Role());
@@ -123,7 +124,7 @@ class BookServiceTest {
 		book.setContent("...");
 		book.setId(1);
 		book.setImage("assests/img.jpg");
-		book.setPrice(250.0);
+		book.setPrice(BigDecimal.valueOf(250));
 		book.setPublisher("Rupa");
 		book.setPublishedDate(LocalDate.now());
 		book.setRole(new Role());

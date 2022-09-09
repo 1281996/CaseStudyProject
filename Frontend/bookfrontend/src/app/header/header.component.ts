@@ -8,16 +8,24 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private route:Router) {console.log("hello1"); this.isLoggedIn=localStorage.getItem('currentUser');console.log(this.isLoggedIn)}
-  isLoggedIn:any;
-  ngOnInit(): void {
-    console.log("hello")
-    this.isLoggedIn=localStorage.getItem('currentUser');
-    console.log(this.isLoggedIn)
+  constructor(private route: Router) {
+    console.log("hello1");
   }
-  logout(){
+
+  ngOnInit(): void {
+
+  }
+  logout() {
     console.log("logout")
     localStorage.removeItem('currentUser');
+    localStorage.removeItem('emailId');
+    localStorage.removeItem('id');
     this.route.navigate(['/login']);
+  }
+  isLoggedIn() {
+    return localStorage.getItem('currentUser');
+  }
+  getLoggedInUserName() {
+    return localStorage.getItem('emailId');
   }
 }

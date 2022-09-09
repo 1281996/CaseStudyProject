@@ -1,28 +1,23 @@
 <section class="loginnow">
-
   <div class="login col-lg-4 m-auto shadow-lg">
     <h4>Login</h4>
-    <form [formGroup]="frmLogin" (ngSubmit)="LoginClick(frmLogin.value)">
+    <form [formGroup]="frmLogin" (ngSubmit)="loginClick(frmLogin.value)">
       <div class="form-group">
         <label for="Email">Email address</label>
         <input type="email" class="form-control" formControlName="emailId" name="emailId" aria-describedby="emailHelp">
       </div>
       <dd class="text-danger" *ngIf="emailId.touched && emailId.invalid">
         <span *ngIf="emailId.errors?.['required']">Email Id Required</span>
-       
-    </dd>
+      </dd>
       <div class="form-group">
         <label for="Password">Password</label>
-        <input type="password" class="form-control"formControlName="password" name="password" >
+        <input type="password" class="form-control" formControlName="password" name="password">
       </div>
       <dd class="text-danger" *ngIf="password.touched && password.invalid">
         <span *ngIf="password.errors?.['required']">Password Required</span>
         <span *ngIf="password.errors?.['pattern']">Password Invalid</span>
-    </dd>
-
-      <button type="submit"  [disabled]="frmLogin.invalid" class="btn btn-danger col-lg-12">Log In</button>
-
+      </dd>
+      <button type="submit" [disabled]="frmLogin.invalid" class="btn btn-danger col-lg-12">Log In</button>
     </form>
-
   </div>
 </section>

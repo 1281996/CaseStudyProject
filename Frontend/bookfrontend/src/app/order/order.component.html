@@ -1,0 +1,43 @@
+<!--Second Nav Bar-->
+<div class="col-sm-12 text-center mb-3">
+    <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav me-auto">
+                    <li><button class="btn btn-danger" type="button" (click)="backToHome()">Back</button></li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+</div>
+
+<!--Table display-->
+
+
+<table class="table">
+    <thead class="thead-danger">
+        <tr>
+            <th scope="col">Payment Id</th>
+            <th scope="col">Date</th>
+            <th scope="col">BookId</th>
+            <th scope="col">Book Name</th>
+            <th scope="col">Publisher</th>
+            <th scope="col">Price</th>
+            <th scope="col">Read</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let payment of payments">
+            <td>{{payment.id}}</td>
+            <td>{{payment.paymentDate}}</td>
+            <td>{{payment.book.id}}</td>
+            <td>{{payment.book.title}}</td>
+            <td>{{payment.book.publisher}}</td>
+            <td>{{payment.book.price }}</td>
+
+            <td>Read</td>
+        </tr>
+
+    </tbody>
+</table>

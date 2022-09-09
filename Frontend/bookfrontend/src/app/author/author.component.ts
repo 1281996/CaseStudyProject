@@ -8,20 +8,18 @@ import { BookService } from '../book.service';
   styleUrls: ['./author.component.css']
 })
 export class AuthorComponent implements OnInit {
-
-  constructor(private fb: FormBuilder, private bookService: BookService) { }
-
-  ngOnInit(): void {
-    
-    
-
-
-  }
+  flag: boolean = false;
   public editBooks: any;
   bookdata: any;
   display = "none";
-  displayBooks = "none";
+  authId: any;
   displayEditBooks = "none";
+  constructor(private fb: FormBuilder, private bookService: BookService) { }
+
+  ngOnInit(): void {
+
+  }
+
   openModal() {
     this.display = "block";
   }
@@ -29,14 +27,8 @@ export class AuthorComponent implements OnInit {
     this.display = "none";
   }
 
-  onBooksCloseHandled() {
-    this.displayBooks = "none";
-  }
-  openBooksModal() {
-    this.displayBooks = "block";
-  }
+
   public frmCreateBook = this.fb.group({
-    authorId: this.fb.control('', [Validators.required]),
     publisher: this.fb.control('', [Validators.required]),
     title: this.fb.control('', [Validators.required]),
     category: this.fb.control('', [Validators.required]),
@@ -45,9 +37,7 @@ export class AuthorComponent implements OnInit {
     content: this.fb.control('', [Validators.required])
   })
 
-  get authorId() {
-    return this.frmCreateBook.get("authorId") as FormControl;
-  }
+
   get publisher() {
     return this.frmCreateBook.get("publisher") as FormControl;
   }
@@ -66,9 +56,10 @@ export class AuthorComponent implements OnInit {
   get content() {
     return this.frmCreateBook.get("content") as FormControl;
   }
-  CreateBookClick(book: any) {
+  createBookClick(book: any) {
     console.log('Create Book clicked');
     this.onCloseHandled()
+    book.authorId = this.getAuthorId();
     const promise = this.bookService.createBook(book);
     promise.subscribe((res: any) => {
       console.log(res);
@@ -78,10 +69,10 @@ export class AuthorComponent implements OnInit {
     });
 
   }
-  BooksDisplay(author: any) {
+  booksDisplay() {
     console.log('Books Display');
-    this.onBooksCloseHandled();
-    const promise = this.bookService.bookDisplay(author.authorId);
+    this.authId = this.getAuthorId();
+    const promise = this.bookService.bookDisplay(this.authId);
     promise.subscribe((res: any) => {
       console.log(res);
       this.bookdata = res;
@@ -92,17 +83,21 @@ export class AuthorComponent implements OnInit {
   }
 
 
-  EditBook(editBook: any,status:any) {
+  editBook(editBook: any, status: any) {
     console.log(editBook)
-    editBook.status=status;
-    const promise = this.bookService.editBook(editBook,editBook.user.id,editBook.id);
-    promise.subscribe((res: any) => {
-      console.log(res);
-      this.bookdata =  res.bookDto;
-    }, (error: any) => {
-      console.log(error);
-    });
-
+    this.flag = confirm("Are u  sure")
+    if (this.flag) {
+      editBook.status = status;
+      const promise = this.bookService.editBook(editBook, editBook.user.id, editBook.id);
+      promise.subscribe((res: any) => {
+        console.log(res);
+        this.bookdata = res.bookDto;
+      }, (error: any) => {
+        console.log(error);
+      });
+    }
   }
-
+  public getAuthorId() {
+    return localStorage.getItem('id');
+  }
 }

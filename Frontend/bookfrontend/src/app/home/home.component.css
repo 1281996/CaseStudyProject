@@ -3,8 +3,15 @@
     font-size: bold;
 }
 .col-auto {
-    background-color: rgb(229, 228, 228);
+    background-color: white;
 }
-label{
+
+.modal-content{
+    width: 55%;
+}
+.form-check-input{
+    background-color: rgb(209, 47, 47);
+}
+.labelHeader{
     font-weight: bold;
 }

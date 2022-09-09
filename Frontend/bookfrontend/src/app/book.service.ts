@@ -4,15 +4,13 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 const AUTHOR_URL = "http://localhost:8080/digitalbooks/author";
 const READER_URL = "http://localhost:8080/digitalbooks/readers";
+const BOOKS_URL = "http://localhost:8080/digitalbooks/books"
 @Injectable({
   providedIn: 'root'
 })
 export class BookService {
 
-
   constructor(private http: HttpClient) { }
-
-
   public loginUser(login: any) {
     return this.http.post(AUTHOR_URL + '/login', login);
   }
@@ -34,5 +32,20 @@ export class BookService {
   }
   public getAllReadersBooks() {
     return this.http.get(READER_URL);
+  }
+  public getFilteredBooks(authorId: any, publisher: any, catageory: any, price: any) {
+    return this.http.get(BOOKS_URL + '/search/' + authorId + '/' + publisher + '/' + catageory + '/' + price);
+  }
+  public getAuthorsRoleUsers() {
+    return this.http.get(AUTHOR_URL + '/authorsRoles');
+  }
+  public getDistinctPublishers() {
+    return this.http.get(BOOKS_URL + '/publishers');
+  }
+  public buyBook(buy: any) {
+    return this.http.post(BOOKS_URL + '/buy', buy);
+  }
+  getAllPurchashsedBooks(emaildId: any) {
+    return this.http.get(READER_URL +'/' +emaildId+'/books');
   }
 }

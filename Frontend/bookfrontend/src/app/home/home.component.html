@@ -1,115 +1,201 @@
-<div class="container-fluid">
-    <div class="row flex-nowrap">
-        <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0">
-            <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
-
-                <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
-
-                    <li class="nav-item mt-3">
-
-                        <button type="button" class="btn btn-danger" (click)="openModal()">
-                            PurchasBook
-                        </button>
-
+<!--Second Nav Bar-->
+<div class="col-sm-12 text-center mb-3">
+    <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav me-auto">
+                    <li *ngFor="let catagory of catagories" class="nav-item p-3">
+                        <a (click)="filteredClick(catagory)"> {{catagory}}</a>
                     </li>
-
-                    <li class="nav-item mt-3">
-                        <button type="button" class="btn btn-danger" (click)="openModal()">
-                            Payment His
-                        </button>
-                    </li>
-
-                    <li class="nav-item mt-3">
-                        <button type="button" class="btn btn-danger" (click)="openModal()">
-                            Refund Amt
-                        </button>
-                    </li>
-
-
                 </ul>
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
 
-
+                        <div class="input-group">
+                            <div class="form-outline">
+                                <input type="search" [(ngModel)]="term" class="searchTerm" class="form-control" />
+                            </div>
+                            <button type="button" class="btn btn-danger">
+                                <i class="bi bi-search"></i>
+                            </button>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <button type="button" class="btn btn-light" (click)="openEmailPopUp()">Your Orders</button>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <button type="button" (click)="openModal()" class="btn btn-danger">
+                        Filter
+                    </button>
+                </ul>
             </div>
         </div>
-        <div class="col py-3">
-            <div class="row gy-3 my-3">
-
-                <div class="col-md-3" *ngFor="let book of bookData">
-                    <div class="card">
-                        <img [src]="book.image" width="100" height="150" class="card-img-top" alt="...">
-                        <div class="card-body">
-
-
-                            <label>Title: </label>
-                            <p>{{book.title}}</p>
-                            <label>Publisher: </label>
-                            <p>{{book.publisher}}</p>
-                            <label>Category: </label>
-                            <p>{{book.category}}</p>
-                            <label>Content: </label>
-
-                            <p class="card-text">
-                                <small>Price: </small> {{book.price| currency:'INR'}}
-                            </p>
-
-                            <button type="submit" class="btn btn-danger" (click)='Buy(book)'>Buy</button>
-
-
-                        </div>
-                    </div>
-                </div>
+    </nav>
+</div>
 
 
 
+<!--Cards display-->
 
 
-
-
-
-
-
+<div class="row gy-2 my-2">
+    <div class="col-sm-2" *ngFor="let book of bookData|filter:term">
+        <div class="card">
+            <img [src]="book.image" width="50" height="160" class="card-img-top" alt="...">
+            <div class="card-body">
+                <p class="card-text">
+                    <label>Title: </label>
+                    {{book.title}}
+                </p>
+                <p class="card-text">
+                    <label>Price: </label> {{book.price| currency:'INR'}}
+                </p>
+                <button type="submit" class="btn btn-danger" (click)='buy(book)'>Buy</button>
             </div>
         </div>
     </div>
+    <!--Carousel-->
+    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="/assets/carousel3.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="/assets/carousel2.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="/assets/carousel1.jpg" class="d-block w-100" alt="...">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
 </div>
 
-<!--my books model-->
 
+<!--model filter-->
 
 <div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':display}">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title">Model Title</h4>
-                <button type="button" class="close" aria-label="Close" (click)="onCloseHandled()"><span
-                        aria-hidden="true">&times;</span></button>
+                <h5 class="modal-title" id="exampleModalLabel">Filter</h5>
+                <button type="button" class="btn-close" (click)="closeModal()" data-bs-dismiss="modal"
+                    aria-label="Close"></button>
             </div>
             <div class="modal-body">
+                <form>
+                    <!--Author-->
+                    <label class="labelHeader">Authors</label>
+                    <div class="form-check" *ngFor="let user of users">
+                        <input class="form-check-input" type="checkbox"
+                            (change)="onCheckAuthors($event.target,user.user.id)" value="">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            {{user.user.firstName}}
+                        </label>
+                    </div>
+                    <!--Catageory-->
+                    <label class="labelHeader">Publisher</label>
+                    <div class="form-check" *ngFor="let publisher of publishers">
+                        <input class="form-check-input" type="checkbox" name="publisher"
+                            (change)="onCheckPublishers($event.target,publisher)">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            {{publisher}}
+                        </label>
+                    </div>
+                    <!--Publisher-->
+                    <label class="labelHeader">Catageory</label>
+                    <div class="form-check" *ngFor="let catageory of catagories">
+                        <input class="form-check-input" type="checkbox" value=""
+                            (change)="onCheckCatageory($event.target,catageory)">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            {{catageory}}
+                        </label>
+                    </div>
+                    <!--Price-->
+                    <label class="labelHeader">Price</label>
+                    <div class="input-group">
+                        <input type="number" class='form-control' [(ngModel)]="price" name="price">
+                    </div>
+                    <br>
+                    <button type="button" class="btn btn-danger" (click)="saveFilters()">Save
+                        changes</button>
 
-
-                <div class="login col-lg-7">
-
-                    <form [formGroup]="frmLogin" (ngSubmit)="MyBooksClick(frmLogin.value)">
-                        <div class="form-group">
-                            <label for="Email">Email address</label>
-                            <input type="email" class="form-control" formControlName="emailId" name="emailId"
-                                aria-describedby="emailHelp">
-                        </div>
-                        <dd class="text-danger" *ngIf="emailId.touched && emailId.invalid">
-                            <span *ngIf="emailId.errors?.['required']">Name Required</span>
-                            <span *ngIf="emailId.errors?.['minlength']">Name too Short..</span>
-                        </dd>
-                        <small>Please Enter Email </small>
-                        <button type="submit" class="btn btn-danger col-lg-12">Submit</button>
-
-                    </form>
-
-                </div>
-
-
-
+                </form>
             </div>
+        </div>
 
+    </div>
+</div>
+
+<!--model Buy-->
+
+<div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':displayBuy}">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Buy</h5>
+                <button type="button" class="btn-close" (click)="closeModalBuy()" data-bs-dismiss="modal"
+                    aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <label class="labelHeader">Email Id</label>
+                    <div class="input-group">
+                        <input type="email" class='form-control' [(ngModel)]="userInfo.email" name="email">
+                    </div>
+                    <label class="labelHeader">Name</label>
+                    <div class="input-group">
+                        <input type="text" class='form-control' [(ngModel)]="userInfo.name" name="name">
+                    </div>
+                    <label class="labelHeader">Card No</label>
+                    <div class="input-group">
+                        <input type="number" class='form-control' [(ngModel)]="userInfo.cardNumber" name="cardNumber">
+                    </div>
+                    <label class="labelHeader">CVC</label>
+                    <div class="input-group">
+                        <input type="password" class='form-control' [(ngModel)]="userInfo.cvc" name="cvc">
+                    </div>
+                    <br>
+                    <button type="button" class="btn btn-danger" (click)="procedeToBuy(bookId,userInfo)">ProcedeToBuy
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--modal order-->
+<div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':displayOrder}">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Order</h5>
+                <button type="button" class="btn-close" (click)="closeModalOrder()" data-bs-dismiss="modal"
+                    aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <label class="labelHeader">Email Id</label>
+                    <div class="input-group">
+                        <input type="email" class='form-control' [(ngModel)]="userInfo.email" name="email">
+                    </div>
+                    <br>
+                    <button type="button" class="btn btn-danger" (click)="routeToOrder(userInfo)">Procede
+                    </button>
+                </form>
+            </div>
         </div>
     </div>
 </div>

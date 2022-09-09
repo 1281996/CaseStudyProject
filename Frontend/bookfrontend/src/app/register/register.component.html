@@ -1,40 +1,36 @@
 <section class="loginnow">
-
-    <div class="login col-lg-4 m-auto shadow-lg">
-      <h4>Register</h4>
-      <form [formGroup]="frmRegister" (ngSubmit)="RegisterClick(frmRegister.value)">
-        <div class="form-group">
-          <label for="Firstname">First Name</label>
-          <input type="text" class="form-control" formControlName="firstName" name="Firstname">
-        </div>
-        <dd class="text-danger" *ngIf="firstName.touched && firstName.invalid">
-          <span *ngIf="firstName.errors?.['required']"> First Name Required</span>
+  <div class="login col-lg-4 m-auto shadow-lg">
+    <h4>Register</h4>
+    <form [formGroup]="frmRegister" (ngSubmit)="RegisterClick(frmRegister.value)">
+      <div class="form-group">
+        <label for="Firstname">First Name</label>
+        <input type="text" class="form-control" formControlName="firstName" name="Firstname">
+      </div>
+      <dd class="text-danger" *ngIf="firstName.touched && firstName.invalid">
+        <span *ngIf="firstName.errors?.['required']"> First Name Required</span>
       </dd>
-        <div class="form-group">
-          <label for="Lasttname">Last Name</label>
-          <input type="text" class="form-control"  formControlName="lastName" name="Lastname">
-        </div>
-        <dd class="text-danger" *ngIf="lastName.touched && lastName.invalid">
-          <span *ngIf="lastName.errors?.['required']"> Last Name Required</span>
+      <div class="form-group">
+        <label for="Lasttname">Last Name</label>
+        <input type="text" class="form-control" formControlName="lastName" name="Lastname">
+      </div>
+      <dd class="text-danger" *ngIf="lastName.touched && lastName.invalid">
+        <span *ngIf="lastName.errors?.['required']"> Last Name Required</span>
       </dd>
-        <div class="form-group">
-          <label for="Email1">Email address</label>
-          <input type="email" class="form-control" formControlName="emailId" name="Emailid" aria-describedby="emailHelp">
-        </div>
-        <dd class="text-danger" *ngIf="emailId.touched && emailId.invalid">
-          <span *ngIf="emailId.errors?.['required']"> Email Id Required</span>
+      <div class="form-group">
+        <label for="Email1">Email address</label>
+        <input type="email" class="form-control" formControlName="emailId" name="Emailid" aria-describedby="emailHelp">
+      </div>
+      <dd class="text-danger" *ngIf="emailId.touched && emailId.invalid">
+        <span *ngIf="emailId.errors?.['required']"> Email Id Required</span>
       </dd>
-        <div class="form-group">
-          <label for="Password1">Password</label>
-          <input type="password" class="form-control" formControlName="password" name="Password">
-        </div>
-        <dd class="text-danger" *ngIf="password.touched && password.invalid">
-          <span *ngIf="password.errors?.['required']"> password Required</span>
+      <div class="form-group">
+        <label for="Password1">Password</label>
+        <input type="password" class="form-control" formControlName="password" name="Password">
+      </div>
+      <dd class="text-danger" *ngIf="password.touched && password.invalid">
+        <span *ngIf="password.errors?.['required']"> password Required</span>
       </dd>
-  
-        <button type="submit"  [disabled]="frmRegister.invalid" class="btn btn-danger col-lg-12">Register</button>
-  
-      </form>
-  
-    </div>
-  </section>
+      <button type="submit" [disabled]="frmRegister.invalid" class="btn btn-danger col-lg-12">Register</button>
+    </form>
+  </div>
+</section>

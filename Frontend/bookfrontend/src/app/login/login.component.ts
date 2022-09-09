@@ -12,13 +12,12 @@ import { NotificationService } from '../notification.service';
 
 })
 export class LoginComponent implements OnInit {
-
+  title: any = "Books.com"
+  public isLoggedIn: any = false;
   constructor(public bookService: BookService, private fb: FormBuilder, private route: Router, private notifyService: NotificationService) { }
 
   ngOnInit(): void {
   }
-  title: any = "Books.com"
-  public isLoggedIn: any = false;
 
   public frmLogin = this.fb.group({
     emailId: this.fb.control('', [Validators.required, Validators.minLength(4)]),
@@ -31,10 +30,7 @@ export class LoginComponent implements OnInit {
   get password() {
     return this.frmLogin.get("password") as FormControl;
   }
-
-
-
-  LoginClick(login: any) {
+  loginClick(login: any) {
     console.log('Login clicked');
     const promise = this.bookService.loginUser(login);
     promise.subscribe((res: any) => {
@@ -42,9 +38,9 @@ export class LoginComponent implements OnInit {
       if (res.flag === true) {
         this.isLoggedIn = res.flag;
         localStorage.setItem('currentUser', this.isLoggedIn);
+        localStorage.setItem('emailId', login.emailId);
+        localStorage.setItem('id', res.id);
         console.log(localStorage.getItem('currentUser'))
-        
-        
         this.route.navigate(['/author']);
       }
       this.showToasterSuccess(res.response);

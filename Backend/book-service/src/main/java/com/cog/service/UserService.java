@@ -46,7 +46,6 @@ public class UserService {
 				// user mapping..mapping user to role
 				userMappingService.createMapping(userRes, role);
 				res.setResponse(Constant.USER_REGISTER_SUCCESS);
-
 			}
 		}
 		return res;
@@ -59,7 +58,6 @@ public class UserService {
 		user.setLastName(userDto.getLastName());
 		user.setPassword(userDto.getPassword());
 		user.setRegisteredDate(LocalDate.now());
-
 		return user;
 	}
 
@@ -70,13 +68,12 @@ public class UserService {
 	public ResponseDto vaidateUser(@Valid LoginDto loginDto) {
 		ResponseDto res = new ResponseDto();
 		res.setResponse("Invalid Credentails");
-
 		User user = userRepository.findByEmailIdAndPassword(loginDto.getEmailId(), loginDto.getPassword());
 		if (user != null) {
 			res.setResponse("Logged in Successfully " + user.getId());
 			res.setFlag(true);
+			res.setId(user.getId());
 		}
-
 		return res;
 	}
 }

@@ -19,7 +19,6 @@ public class UserDto extends LoginDto implements Serializable {
 	private String firstName;
 	@NotBlank(message = "LastName cannot be Empty")
 	private String lastName;
-
 	private String role = Constant.ROLE_AUTHOR;
 
 }

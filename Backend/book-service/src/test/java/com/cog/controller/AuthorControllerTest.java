@@ -1,21 +1,18 @@
 package com.cog.controller;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.when;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
-
 import java.util.ArrayList;
-
+import java.util.List;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-
 import org.mockito.junit.jupiter.MockitoExtension;
-
 import org.springframework.validation.BindException;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.MethodArgumentNotValidException;
@@ -27,9 +24,11 @@ import com.cog.dto.ResponseDto;
 import com.cog.dto.UserDto;
 import com.cog.entity.Role;
 import com.cog.entity.User;
+import com.cog.entity.UserMapping;
 import com.cog.enums.Category;
 import com.cog.enums.Event;
 import com.cog.service.BookService;
+import com.cog.service.UserMappingService;
 import com.cog.service.UserService;
 import com.cog.util.Constant;
 
@@ -40,6 +39,8 @@ class AuthorControllerTest {
 
 	@Mock
 	BookService bookService;
+	@Mock
+	UserMappingService userMappingService;
 	@InjectMocks
 	AuthorController authorController;
 
@@ -82,11 +83,21 @@ class AuthorControllerTest {
 		assertEquals(0, authorController.getAllMyBooks(1).size());
 
 	}
+
+	@Test
+	void testGetDistinctAuthorsList() {
+		List<UserMapping> userMappings = new ArrayList<>();
+		userMappings.add(getUsergetUserMapping());
+		when(userMappingService.findAuthorRoleUsers()).thenReturn(userMappings);
+		assertEquals(1, authorController.getDistinctAuthorsList().size());
+	}
+
 	@Test
 	void testHandleMethodArumentException() {
-		BindingResult bindingResult=new BindException("msg", "msg");
-		MethodArgumentNotValidException exception=new MethodArgumentNotValidException(null, bindingResult);
-		assertEquals(0,authorController.handleMethodArumentException(exception).size());
+		BindingResult bindingResult = new BindException("msg", "msg");
+		MethodArgumentNotValidException exception = new MethodArgumentNotValidException(null, bindingResult);
+		
+		assertEquals(0, authorController.handleMethodArumentException(exception).size());
 	}
 
 	public static BookDto getBookDto() {
@@ -128,5 +139,13 @@ class AuthorControllerTest {
 		BookResDto dto = new BookResDto();
 		dto.setResponse(Constant.BOOK_MSG_SUCCESS);
 		return dto;
+	}
+
+	public static UserMapping getUsergetUserMapping() {
+		UserMapping mapping = new UserMapping();
+		mapping.setRole(new Role());
+		mapping.setUser(new User());
+
+		return mapping;
 	}
 }

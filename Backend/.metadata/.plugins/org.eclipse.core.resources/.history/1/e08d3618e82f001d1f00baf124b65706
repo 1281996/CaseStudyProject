@@ -1,0 +1,24 @@
+package com.cog.controller;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+class BookControllerTest {
+
+	@Test
+	void testGetFilteredBooks() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	void testGetDistinctPublisherList() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	void testBuyBook() {
+		fail("Not yet implemented");
+	}
+
+}

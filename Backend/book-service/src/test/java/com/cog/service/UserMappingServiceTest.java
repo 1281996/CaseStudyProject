@@ -7,8 +7,9 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 import java.time.LocalDate;
-
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import org.junit.jupiter.api.Test;
@@ -74,4 +75,12 @@ class UserMappingServiceTest {
 
 	}
 
+	@Test
+	void testFindAuthorRoleUsers() {
+		List<UserMapping> userMappings = new ArrayList<>();
+		userMappings.add(getUsergetUserMapping());
+		when(userMappingRepository.findByRoleId(1)).thenReturn(userMappings);
+		assertEquals(1, mappingService.findAuthorRoleUsers().size());
+
+	}
 }

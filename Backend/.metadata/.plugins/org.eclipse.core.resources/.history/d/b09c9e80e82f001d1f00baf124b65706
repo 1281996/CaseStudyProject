@@ -1,0 +1,32 @@
+package com.cog.controller;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.Mock;
+import org.mockito.junit.jupiter.MockitoExtension;
+
+
+import com.cog.service.BookService;
+@ExtendWith(MockitoExtension.class)
+class BookControllerTest {
+	@Mock
+	BookService bookService;
+
+	@Test
+	void testGetFilteredBooks() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	void testGetDistinctPublisherList() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	void testBuyBook() {
+		fail("Not yet implemented");
+	}
+
+}

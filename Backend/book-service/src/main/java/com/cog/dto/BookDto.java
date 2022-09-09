@@ -32,7 +32,7 @@ public class BookDto implements Serializable {
 	@NotBlank(message = "content can't be empty")
 	private String content;
 	@Enumerated(EnumType.STRING)
-	private Event status;
+	private Event status=Event.UNBLOCK;
 
 	private Integer id;
 

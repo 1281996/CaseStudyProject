@@ -28,9 +28,6 @@ import lombok.Setter;
 @Getter
 @Setter
 public class Book implements Serializable {
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = -3902187577963531742L;
 
 	@Id
@@ -38,11 +35,11 @@ public class Book implements Serializable {
 	@GeneratedValue(generator = "gen1", strategy = GenerationType.SEQUENCE)
 	private Integer id;
 
-	@ManyToOne(targetEntity = User.class, cascade = CascadeType.MERGE)
+	@ManyToOne(targetEntity = User.class, cascade = CascadeType.ALL)
 	@JoinColumn(name = "user_id", referencedColumnName = "id")
 	private User user;
 
-	@ManyToOne(targetEntity = Role.class, cascade = CascadeType.MERGE)
+	@ManyToOne(targetEntity = Role.class, cascade = CascadeType.ALL)
 	@JoinColumn(name = "role_id", referencedColumnName = "id")
 	private Role role;
 

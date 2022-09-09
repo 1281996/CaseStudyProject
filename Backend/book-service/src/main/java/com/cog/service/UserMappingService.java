@@ -1,5 +1,6 @@
 package com.cog.service;
 
+import java.util.List;
 import java.util.Set;
 
 import org.slf4j.Logger;
@@ -11,7 +12,6 @@ import com.cog.entity.Role;
 import com.cog.entity.User;
 import com.cog.entity.UserMapping;
 import com.cog.repository.UserMappingRepository;
-
 
 @Service
 public class UserMappingService {
@@ -30,7 +30,11 @@ public class UserMappingService {
 		UserMapping mapping = new UserMapping();
 		mapping.setRole(role);
 		mapping.setUser(userRes);
-
 		userMappingRepository.save(mapping);
+	}
+
+	public List<UserMapping> findAuthorRoleUsers() {
+		return userMappingRepository.findByRoleId(1);
+
 	}
 }

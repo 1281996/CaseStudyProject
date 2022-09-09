@@ -14,4 +14,5 @@ public class Constant {
 	public static final String BOOK_MSG_SUCCESS= "Book cereated Successfully";
 	public static final String UPDATED_SUCCESS_MSG="Updated Succssfully";
 	public static final String UNBLOCK = "UNBLOCK";
+	public static final String CARD = "CARD";
 }

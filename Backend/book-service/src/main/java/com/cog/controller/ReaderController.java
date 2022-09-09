@@ -7,13 +7,12 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
-
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.cog.dto.BookDto;
-
-
+import com.cog.entity.Payment;
 import com.cog.service.BookService;
 
 @RequestMapping("/digitalbooks/readers")
@@ -29,5 +28,10 @@ public class ReaderController {
 	List<BookDto> getReaderBooks() {
 		LOGGER.info("getReaderBooks");
 		return bookService.getReaderBooks();
+	}
+	@GetMapping("{emailId}/books")
+	List<Payment> getPurchasedBooks(@PathVariable String emailId) {
+		LOGGER.info("getPurchasedBooks");
+		return bookService.getPurchasedBooks(emailId);
 	}
 }

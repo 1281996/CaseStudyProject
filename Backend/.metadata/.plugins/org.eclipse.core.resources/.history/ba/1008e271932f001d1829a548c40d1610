@@ -1,0 +1,33 @@
+package com.cog.repository;
+
+import java.math.BigDecimal;
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.stereotype.Repository;
+
+import com.cog.entity.Book;
+import com.cog.entity.User;
+import com.cog.enums.Category;
+import com.cog.enums.Event;
+@Repository
+public interface BookRepository extends JpaRepository<Book, Integer> {
+
+	
+
+	List<Book> findByStatus(Event unblock);
+
+	
+	@Query(value = "SELECT  * FROM book_tran b WHERE   user_id=?1 OR  price between 0 AND ?2 ",nativeQuery = true)
+	List<Book> findByCategoryUserIdPublisherPrice( Integer id,
+			BigDecimal price);
+
+
+   @Query(value = "SELECT distinct publisher FROM book_tran",nativeQuery = true)
+	List<String> findDistinctPublishers();
+
+
+
+
+}

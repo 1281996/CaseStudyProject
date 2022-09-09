@@ -26,7 +26,9 @@ import com.cog.dto.BookResDto;
 import com.cog.dto.LoginDto;
 import com.cog.dto.ResponseDto;
 import com.cog.dto.UserDto;
+import com.cog.entity.UserMapping;
 import com.cog.service.BookService;
+import com.cog.service.UserMappingService;
 import com.cog.service.UserService;
 
 @RestController
@@ -39,6 +41,9 @@ public class AuthorController {
 	@Autowired
 	BookService bookService;
 
+	@Autowired
+	UserMappingService userMappingService;
+
 	private static final Logger LOGGER = LoggerFactory.getLogger(AuthorController.class);
 
 	@PostMapping(path = "/signup")
@@ -50,7 +55,6 @@ public class AuthorController {
 	@PostMapping(path = "/login")
 	ResponseDto loginUser(@Valid @RequestBody LoginDto loginDto) {
 		LOGGER.info("loginUser");
-
 		return userService.vaidateUser(loginDto);
 
 	}
@@ -75,6 +79,12 @@ public class AuthorController {
 		LOGGER.info("createBook");
 		return bookService.getAllMyBooks();
 
+	}
+
+	@GetMapping("/authorsRoles")
+	List<UserMapping> getDistinctAuthorsList() {
+		LOGGER.info("getDistinctAuthorsList");
+		return userMappingService.findAuthorRoleUsers();
 	}
 
 	// Error handling

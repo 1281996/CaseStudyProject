@@ -100,4 +100,5 @@ export class AuthorComponent implements OnInit {
   public getAuthorId() {
     return localStorage.getItem('id');
   }
+  
 }

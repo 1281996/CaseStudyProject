@@ -98,7 +98,8 @@ export class HomeComponent implements OnInit {
     this.displayOrder = "none";
   }
 
-  saveFilters() {
+  saveFilters() {  
+    this.closeModal();               
     const promise = this.bookService.getFilteredBooks(this.bookCategory, this.bookAuthor, this.price, this.bookPublisher)
     promise.subscribe((res: any) => {
       console.log(res);

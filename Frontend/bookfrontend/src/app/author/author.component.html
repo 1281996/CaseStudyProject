@@ -93,7 +93,7 @@
                         </dd>
                         <div class="form-group">
                             <label for="Image">Image</label>
-                            <input type="text" class="form-control" formControlName="image" name="image">
+                            <input type="text" class="form-control" formControlName="image" name="image" >
                         </div>
                         <dd class="text-danger" *ngIf="image.touched && image.invalid">
                             <span *ngIf="image.errors?.['required']">Image Required</span>

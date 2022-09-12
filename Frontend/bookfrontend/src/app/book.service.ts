@@ -9,6 +9,7 @@ const BOOKS_URL = "http://localhost:8080/digitalbooks/books"
   providedIn: 'root'
 })
 export class BookService {
+  
 
   constructor(private http: HttpClient) { }
   public loginUser(login: any) {
@@ -47,5 +48,18 @@ export class BookService {
   }
   getAllPurchashsedBooks(emaildId: any) {
     return this.http.get(READER_URL +'/' +emaildId+'/books');
+  }
+  readContent(emailId: any, bookId: any) {
+    return this.http.get(READER_URL +'/' +emailId+'/books/'+bookId, {
+      responseType: 'blob'
+    });
+  }
+  refund(emailId: any, bookId: any) {
+    return this.http.get(READER_URL +'/' +emailId+'/books/'+bookId+'/refund');
+  }
+  searchByPaymentId(emailId: any, paymentId: any,payment:any) {
+    console.log(emailId)
+    console.log(paymentId)
+    return this.http.post(READER_URL +'/' +emailId+'/books'+'/'+paymentId,payment);
   }
 }

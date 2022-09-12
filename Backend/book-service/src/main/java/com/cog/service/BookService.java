@@ -1,10 +1,17 @@
 package com.cog.service;
 
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.FileNotFoundException;
+
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.List;
+
+
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -26,6 +33,13 @@ import com.cog.repository.BookRepository;
 
 import com.cog.repository.PaymentRepository;
 import com.cog.util.Constant;
+import com.itextpdf.text.BaseColor;
+import com.itextpdf.text.Chunk;
+import com.itextpdf.text.Document;
+import com.itextpdf.text.DocumentException;
+import com.itextpdf.text.Font;
+import com.itextpdf.text.FontFactory;
+import com.itextpdf.text.pdf.PdfWriter;
 
 @Service
 public class BookService {
@@ -127,8 +141,16 @@ public class BookService {
 	}
 
 	public ResponseDto buyBook(BuyDto buyDto) {
-		Payment payment = new Payment();
+
+		ResponseDto responseDto = new ResponseDto();
+		Payment paymentRes = paymentRepository.findByEmailAndBookId(buyDto.getEmail(), buyDto.getBookId());
+		if (paymentRes != null) {
+			System.out.println(paymentRes.getEmail());
+			responseDto.setResponse("Already Purchased Check in Your Books");
+			return responseDto;
+		}
 		Book book = bookRepository.findById(buyDto.getBookId()).get();
+		Payment payment = new Payment();
 		payment.setBook(book);
 		payment.setPaymentDate(LocalDateTime.now());
 		payment.setPaymentType(Constant.CARD);
@@ -136,7 +158,7 @@ public class BookService {
 		payment.setEmail(buyDto.getEmail());
 		payment.setName(buyDto.getName());
 		Payment paymentResponse = paymentRepository.save(payment);
-		ResponseDto responseDto = new ResponseDto();
+
 		if (paymentResponse.getId() != null) {
 			responseDto.setResponse("Payment Sucess");
 		} else {
@@ -146,8 +168,48 @@ public class BookService {
 	}
 
 	public List<Payment> getPurchasedBooks(String emailId) {
-		return paymentRepository.findByEmail(emailId);
-		 
+		List<Payment> payments = paymentRepository.findByEmail(emailId);
+		payments.forEach(payment -> {
+			LocalDateTime difference = LocalDateTime.from(payment.getPaymentDate());
+			long hours = difference.until(payment.getPaymentDate(), ChronoUnit.HOURS);
+			if (hours <= 24) {
+				payment.setRefundStatus(true);
+			}
+
+		});
+		return payments;
+	}
+
+	public ByteArrayInputStream getBookContent(String emailId, Integer bookId)
+			throws FileNotFoundException, DocumentException {
+		Payment paymentRes = paymentRepository.findByEmailAndBookId(emailId, bookId);
+		return createPdfDocument(paymentRes);
+
+	}
+
+	private ByteArrayInputStream createPdfDocument(Payment payment)
+			throws FileNotFoundException, DocumentException {
+		Document document = new Document();
+		ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+		PdfWriter.getInstance(document, outputStream);
+		document.open();
+		Font font = FontFactory.getFont(FontFactory.COURIER, 16, BaseColor.BLACK);
+		Chunk chunk = new Chunk(payment.getBook().getContent(), font);
+		document.add(chunk);
+		document.close();
+		return new ByteArrayInputStream(outputStream.toByteArray());
+
+	}
+
+	public List<Payment> refundAmount(String emailId, Integer bookId) {
+		Payment paymentRes = paymentRepository.findByEmailAndBookId(emailId, bookId);
+		paymentRepository.delete(paymentRes);
+		return getPurchasedBooks(emailId);
+	}
+
+	public List<Payment> serachBooksByPaymentId(String emailId, Integer paymentId) {
+		return paymentRepository.findByIdAndEmail(paymentId,emailId);
+		
 	}
 
 }

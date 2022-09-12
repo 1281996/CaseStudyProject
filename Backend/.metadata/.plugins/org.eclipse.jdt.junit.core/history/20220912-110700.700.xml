@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="BookServiceTest" project="book-service" tests="12" started="12" failures="0" errors="0" ignored="0">
+  <testsuite name="com.cog.service.BookServiceTest" time="1.664" displayname="BookServiceTest" uniqueid="[engine:junit-jupiter]/[class:com.cog.service.BookServiceTest]">
+    <testcase name="testEditBook" classname="com.cog.service.BookServiceTest" time="1.32" displayname="testEditBook()" uniqueid="[engine:junit-jupiter]/[class:com.cog.service.BookServiceTest]/[method:testEditBook()]"/>
+    <testcase name="testGetReaderBooks" classname="com.cog.service.BookServiceTest" time="0.002" displayname="testGetReaderBooks()" uniqueid="[engine:junit-jupiter]/[class:com.cog.service.BookServiceTest]/[method:testGetReaderBooks()]"/>
+    <testcase name="testSaveBookWhenSucess" classname="com.cog.service.BookServiceTest" time="0.013" displayname="testSaveBookWhenSucess()" uniqueid="[engine:junit-jupiter]/[class:com.cog.service.BookServiceTest]/[method:testSaveBookWhenSucess()]"/>
+    <testcase name="testEditBookWhenFailure" classname="com.cog.service.BookServiceTest" time="0.006" displayname="testEditBookWhenFailure()" uniqueid="[engine:junit-jupiter]/[class:com.cog.service.BookServiceTest]/[method:testEditBookWhenFailure()]"/>
+    <testcase name="testGetBookContent" classname="com.cog.service.BookServiceTest" time="0.286" displayname="testGetBookContent()" uniqueid="[engine:junit-jupiter]/[class:com.cog.service.BookServiceTest]/[method:testGetBookContent()]"/>
+    <testcase name="testGetPurchasedBooks" classname="com.cog.service.BookServiceTest" time="0.006" displayname="testGetPurchasedBooks()" uniqueid="[engine:junit-jupiter]/[class:com.cog.service.BookServiceTest]/[method:testGetPurchasedBooks()]"/>
+    <testcase name="testBuyBook" classname="com.cog.service.BookServiceTest" time="0.005" displayname="testBuyBook()" uniqueid="[engine:junit-jupiter]/[class:com.cog.service.BookServiceTest]/[method:testBuyBook()]"/>
+    <testcase name="testGetAllMyBooks" classname="com.cog.service.BookServiceTest" time="0.001" displayname="testGetAllMyBooks()" uniqueid="[engine:junit-jupiter]/[class:com.cog.service.BookServiceTest]/[method:testGetAllMyBooks()]"/>
+    <testcase name="testBuyBookWhenAlreadyPurchased" classname="com.cog.service.BookServiceTest" time="0.002" displayname="testBuyBookWhenAlreadyPurchased()" uniqueid="[engine:junit-jupiter]/[class:com.cog.service.BookServiceTest]/[method:testBuyBookWhenAlreadyPurchased()]"/>
+    <testcase name="testGetDistinctPublisherList" classname="com.cog.service.BookServiceTest" time="0.003" displayname="testGetDistinctPublisherList()" uniqueid="[engine:junit-jupiter]/[class:com.cog.service.BookServiceTest]/[method:testGetDistinctPublisherList()]"/>
+    <testcase name="testSaveBookWhenFailure" classname="com.cog.service.BookServiceTest" time="0.002" displayname="testSaveBookWhenFailure()" uniqueid="[engine:junit-jupiter]/[class:com.cog.service.BookServiceTest]/[method:testSaveBookWhenFailure()]"/>
+    <testcase name="testGetFilteredBooks" classname="com.cog.service.BookServiceTest" time="0.004" displayname="testGetFilteredBooks()" uniqueid="[engine:junit-jupiter]/[class:com.cog.service.BookServiceTest]/[method:testGetFilteredBooks()]"/>
+  </testsuite>
+</testrun>

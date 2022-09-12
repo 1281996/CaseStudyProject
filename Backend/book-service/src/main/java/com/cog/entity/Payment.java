@@ -13,6 +13,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -27,7 +28,7 @@ public class Payment {
 	@GeneratedValue(generator = "gen1", strategy = GenerationType.SEQUENCE)
 	private Integer id;
 
-	@ManyToOne(targetEntity = Book.class, cascade = CascadeType.ALL)
+	@ManyToOne(targetEntity = Book.class, cascade = CascadeType.MERGE)
 	@JoinColumn(name = "book_id", referencedColumnName = "id")
 	private Book book;
 
@@ -44,5 +45,7 @@ public class Payment {
 
 	private String email;
 	private String name;
+	@Transient
+	private boolean refundStatus;
 
 }

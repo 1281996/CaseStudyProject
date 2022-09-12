@@ -3,6 +3,8 @@ package com.cog.controller;
 import java.math.BigDecimal;
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,7 +26,7 @@ import com.cog.service.BookService;
 @RequestMapping("/digitalbooks/books")
 @RestController
 @CrossOrigin
-public class BookController {
+public class BookController extends BaseContoller {
 
 	@Autowired
 	BookService bookService;
@@ -44,7 +46,7 @@ public class BookController {
 	}
 
 	@PostMapping("/buy")
-	ResponseDto buyBook(@RequestBody BuyDto buyDto) {
+	ResponseDto buyBook(@Valid @RequestBody BuyDto buyDto) {
 		LOGGER.info("buyBook");
 		return bookService.buyBook(buyDto);
 	}

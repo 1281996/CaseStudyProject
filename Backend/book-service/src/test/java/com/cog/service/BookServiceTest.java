@@ -4,9 +4,10 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.lenient;
 import static org.mockito.Mockito.when;
 
+import java.io.FileNotFoundException;
 import java.math.BigDecimal;
 import java.time.LocalDate;
-
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -29,6 +30,7 @@ import com.cog.enums.Event;
 import com.cog.repository.BookRepository;
 import com.cog.repository.PaymentRepository;
 import com.cog.util.Constant;
+import com.itextpdf.text.DocumentException;
 
 @ExtendWith(MockitoExtension.class)
 class BookServiceTest {
@@ -109,12 +111,52 @@ class BookServiceTest {
 
 	@Test
 	void testBuyBook() {
-		BuyDto buyDto=getBuyDto();
-		Optional<Book> book=Optional.of(getBook());
+		BuyDto buyDto = getBuyDto();
+		Optional<Book> book = Optional.of(getBook());
 		when(bookRepository.findById(buyDto.getBookId())).thenReturn(book);
 		when(paymentRepository.save(Mockito.any(Payment.class))).thenReturn(getPayment());
 		assertEquals("Payment Failure", bookService.buyBook(buyDto).getResponse());
-	
+
+	}
+
+	@Test
+	void testBuyBookWhenAlreadyPurchased() {
+		BuyDto buyDto = getBuyDto();
+		when(paymentRepository.findByEmailAndBookId(buyDto.getEmail(), buyDto.getBookId())).thenReturn(getPayment());
+		assertEquals("Already Purchased Check in Your Books", bookService.buyBook(buyDto).getResponse());
+
+	}
+
+	@Test
+	void testGetPurchasedBooks() {
+		List<Payment> list = new ArrayList<>();
+		list.add(getPayment());
+		when(paymentRepository.findByEmail("kamma@gmail.com")).thenReturn(list);
+		assertEquals(1, bookService.getPurchasedBooks("kamma@gmail.com").size());
+	}
+
+	@Test
+	void testGetBookContent() throws FileNotFoundException, DocumentException {
+		when(paymentRepository.findByEmailAndBookId("kamma@gmail.com", 1)).thenReturn(getPayment());
+		assertEquals(891, bookService.getBookContent("kamma@gmail.com", 1).available());
+	}
+
+	@Test
+	void testRefundAmount() {
+		List<Payment> list = new ArrayList<>();
+		Payment paymentRes = getPayment();
+		list.add(paymentRes);
+		when(paymentRepository.findByEmailAndBookId("kamma@gmail.com", 1)).thenReturn(paymentRes);
+		assertEquals(0, bookService.refundAmount("kamma@gmail.com", 1).size());
+	}
+
+	@Test
+	void serachBooksByPaymentId() {
+		List<Payment> list = new ArrayList<>();
+		Payment paymentRes = getPayment();
+		list.add(paymentRes);
+		when(paymentRepository.findByIdAndEmail(1, "kamma@gmail.com")).thenReturn(list);
+		assertEquals(1, bookService.serachBooksByPaymentId("kamma@gmail.com", 1).size());
 	}
 
 	public static List<Book> getBookDtoList() {
@@ -198,8 +240,9 @@ class BookServiceTest {
 		payment.setCvc(6778L);
 		payment.setEmail("kamma@gmail.com");
 		payment.setName("kamma");
-		Book book=getBook();
+		Book book = getBook();
 		payment.setBook(book);
+		payment.setPaymentDate(LocalDateTime.now());
 		return payment;
 	}
 }

@@ -11,25 +11,31 @@ import { NotificationService } from '../notification.service';
 })
 export class HomeComponent implements OnInit {
   bookData: any;
-  catagories: any = ['FICTIONAL', 'HORROR', 'HISTORY', 'FANTACY'];
+  catagories: any = ['FICTIONAL', 'HORROR', 'HISTORY'];
   users: any;
   publishers: any;
   bookId: any;
   display = "none";
   displayBuy = "none";
   displayOrder = "none";
+  displayCard="none";
   term = '';
   price: any;
   bookCategory: any;
   bookPublisher: any;
   bookAuthor: any;
-
+  addToCart:any=[]; 
+  cartFlag=true; 
   userInfo = {
     name: "",
     email: "",
     cardNumber: "",
-    cvc: ""
+    cvc: "",
+    books:"",
+    amount:0
   }
+  addtoCartFilter: any=[];
+  cartTotal: number=0;
 
   constructor(private fb: FormBuilder, private bookService: BookService, private notifyService: NotificationService, private route: Router) { }
 
@@ -71,10 +77,26 @@ export class HomeComponent implements OnInit {
     console.log(emailId);
 
   }
-  buy(book: any) {
-    this.openModalBuy();
-    this.bookId = book.id;
-
+  addBookToCart(bookData: any) {
+    console.log(bookData);
+    console.log(this.addToCart.length)
+   
+    //
+    if(this.addToCart.length!=0){
+      console.log("if")
+    let index = this.addToCart.indexOf(bookData);
+    if(index<0){
+      console.log("if")
+      console.log(index)
+      this.addToCart.push(bookData);
+    }
+    }
+   //
+   if(this.addToCart.length==0){
+    console.log("2nd if")
+    this.addToCart.push(bookData);
+  }
+    
   }
   filteredClick(catagory: any) {
     console.log('filteredClick')
@@ -97,7 +119,12 @@ export class HomeComponent implements OnInit {
   closeModalOrder() {
     this.displayOrder = "none";
   }
-
+  openModelCard(){
+    this.displayCard= "block";
+  }
+  closeModalCard() {
+    this.displayCard = "none";
+  }
   saveFilters() {  
     this.closeModal();               
     const promise = this.bookService.getFilteredBooks(this.bookCategory, this.bookAuthor, this.price, this.bookPublisher)
@@ -131,6 +158,8 @@ export class HomeComponent implements OnInit {
     console.log(bookId)
     this.closeModalBuy();
     userInfo.bookId = bookId;
+    this.userInfo.books=this.addToCart;
+    this.userInfo.amount=this.cartTotal;
     console.log(userInfo);
     const promise = this.bookService.buyBook(this.userInfo)
     promise.subscribe((res: any) => {
@@ -138,7 +167,7 @@ export class HomeComponent implements OnInit {
         localStorage.setItem('emailId', userInfo.email);
         localStorage.setItem('currentUser', 'true');
       }
-      this.showToasterSuccess('sucess')
+      this.showToasterSuccess(res.response)
     }, (error: any) => {
       console.log(error);
     });
@@ -159,5 +188,27 @@ export class HomeComponent implements OnInit {
     else {
       this.route.navigate(["/order"])
     }
+  }
+  showCart(){
+    console.log('showCart')
+     this.cartTotal=0;
+    this.addToCart.filter((book:any)=>{
+      this.cartTotal= book.price+this.cartTotal;
+    })
+    this.cartFlag=false; 
+  }
+  removeFromCart(id:any){
+    this.addToCart = this.addToCart.filter((book:any) => book.id !== id)
+
+  }
+  saveCardDetails(cardInfo:any){
+    this.closeModalCard();               
+    const promise = this.bookService.saveCardDetails(cardInfo);
+    promise.subscribe((res: any) => {
+      console.log(res);
+      this.bookData = res;
+    }, (error: any) => {
+      console.log(error);
+    });
   }
 }

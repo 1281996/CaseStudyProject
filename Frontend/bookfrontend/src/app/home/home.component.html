@@ -1,11 +1,19 @@
+
+
 <!--Second Nav Bar-->
 <div class="col-sm-12 text-center mb-3">
     <nav class="navbar navbar-expand-lg bg-light">
         <div class="container-fluid">
             <div class="collapse navbar-collapse" id="navbarText">
                 <ul class="navbar-nav me-auto">
-                    <li *ngFor="let catagory of catagories" class="nav-item p-3">
-                        <a (click)="filteredClick(catagory)"> {{catagory}}</a>
+                    <li  class="nav-item p-3">
+                        <button class="btn btn-light" type="button" (click)="openModelCard()">Save Card Details</button>
+                    </li>
+                </ul>
+                <ul class="navbar-nav me-auto">
+                    <li  class="nav-item p-3">
+                        <span class="bi bi-cart"></span>
+                        <button class="btn btn-light" type="button" (click)="showCart()">Cart({{addToCart.length}})</button>
                     </li>
                 </ul>
                 <ul class="navbar-nav me-auto">
@@ -36,9 +44,56 @@
     </nav>
 </div>
 
+<!--cards display Cart-->
+<div class="row gy-2 my-2" *ngIf='!cartFlag'>
+    <div class="col-sm-2" *ngFor="let book of addToCart">
+        <div class="card">
+            <img [src]="book.image" width="50" height="160" class="card-img-top" alt="...">
+            <div class="card-body">
+                <p class="card-text">
+                    <label>Title: </label>
+                    {{book.title}}
+                </p>
+                <p class="card-text">
+                    <label>Price: </label> {{book.price| currency:'INR'}}
+                </p>
+                <button type="submit" class="btn btn-danger" (click)='removeFromCart(book.id)'>Remove</button>
+            </div>
+        </div>
+       
+    </div>
+    
+    </div>
+    <button type="button" class="btn btn-danger" *ngIf="!cartFlag&&this.addToCart.length!=0" (click)="openModalBuy()">ProcedToBuy {{cartTotal}}</button>
+
+  <!--Carousel-->
+  <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="/assets/carousel3.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+            <img src="/assets/carousel2.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+            <img src="/assets/carousel1.jpg" class="d-block w-100" alt="...">
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+        data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+        data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
 
 
-<!--Cards display-->
+
+    <!--Cards display Home-->
 
 
 <div class="row gy-2 my-2">
@@ -53,35 +108,12 @@
                 <p class="card-text">
                     <label>Price: </label> {{book.price| currency:'INR'}}
                 </p>
-                <button type="submit" class="btn btn-danger" (click)='buy(book)'>Buy</button>
+                <button type="submit" class="btn btn-danger" (click)="addBookToCart(book)">AddToCart</button>
             </div>
         </div>
     </div>
-    <!--Carousel-->
-    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="/assets/carousel3.jpg" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-                <img src="/assets/carousel2.jpg" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-                <img src="/assets/carousel1.jpg" class="d-block w-100" alt="...">
-            </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
-            data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
-            data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
-    </div>
-</div>
+  
+
 
 
 <!--model filter-->
@@ -193,6 +225,41 @@
                     </div>
                     <br>
                     <button type="button" class="btn btn-danger" (click)="routeToOrder(userInfo)">Procede
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--Save Card Details-->
+
+<!--modal order-->
+<div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':displayCard}">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Card</h5>
+                <button type="button" class="btn-close" (click)="closeModalCard()" data-bs-dismiss="modal"
+                    aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <label class="labelHeader">Email Id</label>
+                    <div class="input-group">
+                        <input type="email" required class='form-control' [(ngModel)]="userInfo.email" name="email">
+                    </div>
+                    <label class="labelHeader">Card No</label>
+                    <div class="input-group">
+                        <input type="number" required  class='form-control' [(ngModel)]="userInfo.cardNumber" name="cardNumber">
+                    </div>
+                    <label class="labelHeader">cvc</label>
+                    <div class="input-group">
+                        <input type="number" required class='form-control' [(ngModel)]="userInfo.cvc" name="cvc">
+                    </div>
+                    <br>
+                    <button type="button" class="btn btn-danger" (click)="saveCardDetails(userInfo)">Procede
                     </button>
                 </form>
             </div>

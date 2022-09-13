@@ -5,11 +5,13 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 const AUTHOR_URL = "http://localhost:8080/digitalbooks/author";
 const READER_URL = "http://localhost:8080/digitalbooks/readers";
 const BOOKS_URL = "http://localhost:8080/digitalbooks/books"
+
+const CARD_URL="http://localhost:8081/card"
 @Injectable({
   providedIn: 'root'
 })
 export class BookService {
-  
+ 
 
   constructor(private http: HttpClient) { }
   public loginUser(login: any) {
@@ -62,4 +64,8 @@ export class BookService {
     console.log(paymentId)
     return this.http.post(READER_URL +'/' +emailId+'/books'+'/'+paymentId,payment);
   }
+  saveCardDetails(cardInfo: any) {
+    return this.http.post(CARD_URL ,cardInfo);
+  }
+  
 }

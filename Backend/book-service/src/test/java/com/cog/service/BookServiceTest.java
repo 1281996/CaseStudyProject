@@ -18,9 +18,15 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.client.RestTemplate;
 
 import com.cog.dto.BookDto;
 import com.cog.dto.BuyDto;
+import com.cog.dto.ResponseDto;
 import com.cog.entity.Book;
 import com.cog.entity.Payment;
 import com.cog.entity.Role;
@@ -44,11 +50,12 @@ class BookServiceTest {
 	BookService bookService;
 	@Mock
 	PaymentRepository paymentRepository;
+	@Mock
+	RestTemplate restTemplate;
 
 	@Test
 	void testSaveBookWhenSucess() {
 		Book book = getBook();
-
 		lenient().when(bookRepository.save(book)).thenReturn(book);
 		when(bookRepository.findAll()).thenReturn(getBookDtoList());
 		when(roleService.findById(Constant.ROLE_AUTHOR_ID)).thenReturn(new Role());
@@ -60,7 +67,6 @@ class BookServiceTest {
 	void testSaveBookWhenFailure() {
 		Book book = getBook();
 		Mockito.lenient().when(bookRepository.save(book)).thenReturn(null);
-
 		assertEquals(Constant.BOOK_MSG_FALIURE, bookService.saveBook(getBookDto(), 1).getResponse());
 	}
 
@@ -112,21 +118,28 @@ class BookServiceTest {
 	@Test
 	void testBuyBook() {
 		BuyDto buyDto = getBuyDto();
-		Optional<Book> book = Optional.of(getBook());
-		when(bookRepository.findById(buyDto.getBookId())).thenReturn(book);
-		when(paymentRepository.save(Mockito.any(Payment.class))).thenReturn(getPayment());
-		assertEquals("Payment Failure", bookService.buyBook(buyDto).getResponse());
-
+		String uri = "http://localhost:8081/card/" + buyDto.getCardNumber();
+		when(restTemplate.getForObject(uri, BuyDto.class)).thenReturn(buyDto);
+		when(paymentRepository.findByEmailAndBookId(buyDto.getEmail(), 1)).thenReturn(null);
+		Optional<Book> optionalBook = Optional.of(getBook());
+		when(bookRepository.findById(1)).thenReturn(optionalBook);
+		String uriUpdate = "http://localhost:8081/card/" + buyDto.getCardNumber() + "/" + buyDto.getAmount();
+		ResponseDto dto = new ResponseDto();
+		dto.setResponse("");
+		ResponseEntity<ResponseDto> resEntity = new ResponseEntity<>(dto, HttpStatus.OK);
+		HttpEntity<BuyDto> entity = new HttpEntity<BuyDto>(buyDto);
+		when(restTemplate.exchange(uriUpdate, HttpMethod.PUT, entity, ResponseDto.class)).thenReturn(resEntity);
+		assertEquals("", bookService.buyBook(buyDto).getResponse());
 	}
-
 	@Test
-	void testBuyBookWhenAlreadyPurchased() {
-		BuyDto buyDto = getBuyDto();
-		when(paymentRepository.findByEmailAndBookId(buyDto.getEmail(), buyDto.getBookId())).thenReturn(getPayment());
-		assertEquals("Already Purchased Check in Your Books", bookService.buyBook(buyDto).getResponse());
-
+	void testBuyBookWhenInsuffientBalance() {
+		BuyDto input = getBuyDto();
+		BuyDto output = getBuyDto();
+		output.setAmount(5.0);
+		String uri = "http://localhost:8081/card/" + input.getCardNumber();
+		when(restTemplate.getForObject(uri, BuyDto.class)).thenReturn(output);
+		assertEquals("Insufficient Balance", bookService.buyBook(input).getResponse());
 	}
-
 	@Test
 	void testGetPurchasedBooks() {
 		List<Payment> list = new ArrayList<>();
@@ -231,6 +244,10 @@ class BookServiceTest {
 		buyDto.setCvc(6778L);
 		buyDto.setEmail("kamma@gmail.com");
 		buyDto.setName("kamma");
+		buyDto.setAmount(567.0);
+		List<BookDto> bookDtos = new ArrayList<>();
+		bookDtos.add(getBookDto());
+		buyDto.setBooks(bookDtos);
 		return buyDto;
 	}
 

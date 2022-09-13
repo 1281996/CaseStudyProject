@@ -9,14 +9,18 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
-import java.util.List;
 
+import java.util.List;
 
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
 
 import com.cog.dto.BookDto;
 import com.cog.dto.BookResDto;
@@ -29,6 +33,7 @@ import com.cog.entity.User;
 
 import com.cog.enums.Category;
 import com.cog.enums.Event;
+import com.cog.enums.PaymentStatus;
 import com.cog.repository.BookRepository;
 
 import com.cog.repository.PaymentRepository;
@@ -54,6 +59,9 @@ public class BookService {
 	UserMappingService userMappingService;
 	@Autowired
 	PaymentRepository paymentRepository;
+
+	@Autowired
+	RestTemplate restTemplate;
 
 	public BookResDto saveBook(BookDto bookDto, Integer authorId) {
 		LOGGER.info("save book");
@@ -141,29 +149,52 @@ public class BookService {
 	}
 
 	public ResponseDto buyBook(BuyDto buyDto) {
-
+		LOGGER.info("buyBookservce");
+		// checking balnace is sufficient or not
+		String uri = "http://localhost:8081/card/" + buyDto.getCardNumber();
+		LOGGER.info(uri);
+		BuyDto cardDetails = restTemplate.getForObject(uri, BuyDto.class);
 		ResponseDto responseDto = new ResponseDto();
-		Payment paymentRes = paymentRepository.findByEmailAndBookId(buyDto.getEmail(), buyDto.getBookId());
-		if (paymentRes != null) {
-			System.out.println(paymentRes.getEmail());
-			responseDto.setResponse("Already Purchased Check in Your Books");
+		responseDto = isBalanceSufficient(buyDto, cardDetails, responseDto);
+		if (!responseDto.isFlag()) {
 			return responseDto;
 		}
-		Book book = bookRepository.findById(buyDto.getBookId()).get();
-		Payment payment = new Payment();
-		payment.setBook(book);
-		payment.setPaymentDate(LocalDateTime.now());
-		payment.setPaymentType(Constant.CARD);
-		payment.setCardNumber(buyDto.getCardNumber());
-		payment.setEmail(buyDto.getEmail());
-		payment.setName(buyDto.getName());
-		Payment paymentResponse = paymentRepository.save(payment);
 
-		if (paymentResponse.getId() != null) {
-			responseDto.setResponse("Payment Sucess");
-		} else {
-			responseDto.setResponse("Payment Failure");
+		LOGGER.info(cardDetails.getAmount() + "amount");
+		// checking book is purchased already and saving data into payment
+		buyDto.getBooks().forEach(book -> {
+
+			Payment paymentRes = paymentRepository.findByEmailAndBookId(buyDto.getEmail(), book.getId());
+
+			if (paymentRes == null) {
+				Book bookRes = bookRepository.findById(book.getId()).get();
+				Payment payment = new Payment();
+				payment.setBook(bookRes);
+				payment.setPaymentDate(LocalDateTime.now());
+				payment.setPaymentType(Constant.CARD);
+				payment.setCardNumber(buyDto.getCardNumber());
+				payment.setEmail(buyDto.getEmail());
+				payment.setName(buyDto.getName());
+				payment.setPaymentStatus(PaymentStatus.SUCCESS);
+				paymentRepository.save(payment);
+			}
+		});
+		// debit amount in to card
+		String uriUpdate = "http://localhost:8081/card/" + buyDto.getCardNumber() + "/" + buyDto.getAmount();
+		HttpEntity<BuyDto> entity = new HttpEntity<BuyDto>(buyDto);
+		ResponseEntity<ResponseDto> dto = restTemplate.exchange(uriUpdate, HttpMethod.PUT, entity, ResponseDto.class);
+		responseDto.setResponse(dto.getBody().getResponse());
+		return responseDto;
+	}
+
+	private ResponseDto isBalanceSufficient(BuyDto buyDto, BuyDto bankDeatils, ResponseDto responseDto) {
+
+		if (buyDto != null) {
+			if (bankDeatils.getAmount() >= buyDto.getAmount()) {
+				responseDto.setFlag(true);
+			}
 		}
+		responseDto.setResponse("Insufficient Balance");
 		return responseDto;
 	}
 
@@ -187,8 +218,7 @@ public class BookService {
 
 	}
 
-	private ByteArrayInputStream createPdfDocument(Payment payment)
-			throws FileNotFoundException, DocumentException {
+	private ByteArrayInputStream createPdfDocument(Payment payment) throws FileNotFoundException, DocumentException {
 		Document document = new Document();
 		ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
 		PdfWriter.getInstance(document, outputStream);
@@ -203,13 +233,14 @@ public class BookService {
 
 	public List<Payment> refundAmount(String emailId, Integer bookId) {
 		Payment paymentRes = paymentRepository.findByEmailAndBookId(emailId, bookId);
-		paymentRepository.delete(paymentRes);
+		paymentRes.setPaymentStatus(PaymentStatus.CANCLLED);
+		paymentRepository.save(paymentRes);
 		return getPurchasedBooks(emailId);
 	}
 
 	public List<Payment> serachBooksByPaymentId(String emailId, Integer paymentId) {
-		return paymentRepository.findByIdAndEmail(paymentId,emailId);
-		
+		return paymentRepository.findByIdAndEmail(paymentId, emailId);
+
 	}
 
 }

@@ -3,7 +3,7 @@ package com.cog.controller;
 import java.math.BigDecimal;
 import java.util.List;
 
-import javax.validation.Valid;
+
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -46,7 +46,7 @@ public class BookController extends BaseContoller {
 	}
 
 	@PostMapping("/buy")
-	ResponseDto buyBook(@Valid @RequestBody BuyDto buyDto) {
+	ResponseDto buyBook(@RequestBody BuyDto buyDto) {
 		LOGGER.info("buyBook");
 		return bookService.buyBook(buyDto);
 	}

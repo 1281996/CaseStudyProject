@@ -5,8 +5,9 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.when;
 
 import java.time.LocalDate;
-
+import java.util.HashSet;
 import java.util.Optional;
+import java.util.Set;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -15,11 +16,13 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import org.springframework.security.crypto.password.PasswordEncoder;
+
 import com.cog.dto.LoginDto;
 import com.cog.dto.UserDto;
 import com.cog.entity.Role;
 import com.cog.entity.User;
-
+import com.cog.entity.UserMapping;
 import com.cog.repository.UserRepository;
 import com.cog.util.Constant;
 
@@ -34,6 +37,9 @@ class UserServiceTest {
 
 	@Mock
 	private RoleService roleService;
+
+	@Mock
+	private PasswordEncoder passwordEncoder;
 
 	@InjectMocks
 	private UserService detailsServiceImpl;
@@ -73,18 +79,15 @@ class UserServiceTest {
 	}
 
 	@Test
-	void testVaidateUserWhenSuccess() {
-		User user = getUser();
-		LoginDto loginDto = getLoginDto();
-		when(userRepository.findByEmailIdAndPassword("kamma.mallika@gmail.com", "mkllll")).thenReturn(user);
-		assertEquals("Logged in Successfully " + user.getId(), detailsServiceImpl.vaidateUser(loginDto).getResponse());
-	}
-
-	@Test
-	void testVaidateUserWhenFailure() {
-		LoginDto loginDto = getLoginDto();
-		when(userRepository.findByEmailIdAndPassword("kamma.mallika@gmail.com", "mkllll")).thenReturn(null);
-		assertEquals(false, detailsServiceImpl.vaidateUser(loginDto).isFlag());
+	void testLoadUserByUsername() {
+		UserMapping mapping = new UserMapping();
+		mapping.setId(1);
+		mapping.setRole(new Role());
+		mapping.setUser(getUser());
+		Set<UserMapping> sets = new HashSet<>();
+		when(userRepository.findByEmailId("kamma.mallika@gmail.com")).thenReturn(getUser());
+		when(userMappingService.findByUserId(1)).thenReturn(sets);
+		assertEquals(true, detailsServiceImpl.loadUserByUsername("kamma.mallika@gmail.com").isCredentialsNonExpired());
 	}
 
 	public static UserDto getUserDto() {

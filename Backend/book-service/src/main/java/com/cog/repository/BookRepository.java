@@ -22,4 +22,6 @@ public interface BookRepository extends JpaRepository<Book, Integer> {
 	@Query(value = "SELECT distinct publisher FROM book_tran", nativeQuery = true)
 	List<String> findDistinctPublishers();
 
+	List<Book> findByUserId(Integer authorId);
+
 }

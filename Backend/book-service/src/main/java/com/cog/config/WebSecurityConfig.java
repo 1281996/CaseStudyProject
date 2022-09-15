@@ -1,4 +1,4 @@
-/*package com.cog.config;
+package com.cog.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -10,13 +10,13 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.http.SessionCreationPolicy;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 import com.cog.jwt.AuthEntryPointJwt;
 import com.cog.jwt.AuthTokenFilter;
-import com.cog.service.UserDetailsServiceImpl;
+import com.cog.service.UserService;
 
 @Configuration
 @EnableWebSecurity
@@ -24,7 +24,7 @@ import com.cog.service.UserDetailsServiceImpl;
 
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Autowired
-	private UserDetailsServiceImpl userDetailsService;
+	private UserService userDetailsService;
 
 	@Autowired
 	private AuthEntryPointJwt unauthorizedHandler;
@@ -51,7 +51,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {
 		http.cors().and().csrf().disable().exceptionHandling().authenticationEntryPoint(unauthorizedHandler).and()
 				.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and().authorizeRequests()
-				.antMatchers("/api/v1/digitalbooks/author/signup", "/api/v1/digitalbooks/author/login").permitAll()
+				.antMatchers("/digitalbooks/author/signup", "/digitalbooks/author/login","/digitalbooks/readers/**","/digitalbooks/books/**","/digitalbooks/author/authorsRoles").permitAll()
 
 				.anyRequest().authenticated();
 
@@ -60,4 +60,3 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	
 	
 }
-*/

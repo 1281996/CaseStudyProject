@@ -1,4 +1,4 @@
-/*package com.cog.jwt;
+package com.cog.jwt;
 
 import java.io.IOException;
 
@@ -17,7 +17,7 @@ import org.springframework.security.web.authentication.WebAuthenticationDetailsS
 import org.springframework.util.StringUtils;
 import org.springframework.web.filter.OncePerRequestFilter;
 
-import com.cog.service.UserDetailsServiceImpl;
+import com.cog.service.UserService;
 
 
 
@@ -26,7 +26,7 @@ public class AuthTokenFilter extends OncePerRequestFilter {
 	private JwtUtils jwtUtils;
 
 	@Autowired
-	private UserDetailsServiceImpl userDetailsService;
+	private UserService userDetailsService;
 
 	private static final Logger logger = LoggerFactory.getLogger(AuthTokenFilter.class);
 
@@ -54,7 +54,7 @@ public class AuthTokenFilter extends OncePerRequestFilter {
 
 	private String parseJwt(HttpServletRequest request) {
 		String headerAuth = request.getHeader("Authorization");
-
+		System.out.println(headerAuth);
 		if (StringUtils.hasText(headerAuth) && headerAuth.startsWith("Bearer ")) {
 			return headerAuth.substring(7, headerAuth.length());
 		}
@@ -62,4 +62,3 @@ public class AuthTokenFilter extends OncePerRequestFilter {
 		return null;
 	}
 }
-*/

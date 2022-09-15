@@ -131,6 +131,7 @@ class BookServiceTest {
 		when(restTemplate.exchange(uriUpdate, HttpMethod.PUT, entity, ResponseDto.class)).thenReturn(resEntity);
 		assertEquals("", bookService.buyBook(buyDto).getResponse());
 	}
+
 	@Test
 	void testBuyBookWhenInsuffientBalance() {
 		BuyDto input = getBuyDto();
@@ -140,6 +141,16 @@ class BookServiceTest {
 		when(restTemplate.getForObject(uri, BuyDto.class)).thenReturn(output);
 		assertEquals("Insufficient Balance", bookService.buyBook(input).getResponse());
 	}
+
+	@Test
+	void testBuyBookWhenNullCardDetails() {
+		BuyDto input = getBuyDto();
+
+		String uri = "http://localhost:8081/card/" + input.getCardNumber();
+		when(restTemplate.getForObject(uri, BuyDto.class)).thenReturn(null);
+		assertEquals("Incorrect Card Number", bookService.buyBook(input).getResponse());
+	}
+
 	@Test
 	void testGetPurchasedBooks() {
 		List<Payment> list = new ArrayList<>();
@@ -188,6 +199,12 @@ class BookServiceTest {
 		book.setUser(new User());
 		books.add(book);
 		return books;
+	}
+
+	@Test
+	void testGetAllMyBooksByAuthorId() {
+		when(bookRepository.findByUserId(1)).thenReturn(getBookDtoList());
+		assertEquals(1, bookService.getAllMyBooksByAuthorId(1).size());
 	}
 
 	public static Book getBook() {

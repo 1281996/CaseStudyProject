@@ -26,11 +26,13 @@ public class CardService {
 	}
 
 	public ResponseDto updateDebitedAmount(Long cardNumber, Double amount) {
+		System.out.println(amount);
 		Card cardRes = cardRepository.findByCardNumber(cardNumber);
 		ResponseDto responseDto = new ResponseDto();
 		if (cardRes != null) {
 			cardRes.setAmount(cardRes.getAmount() - amount);
-			responseDto.setResponse("Amount debited sucessfully");
+			cardRepository.save(cardRes);
+			responseDto.setResponse("Transaction completed sucessfully");
 		} else {
 			responseDto.setResponse("Failure");
 		}

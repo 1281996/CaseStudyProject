@@ -12,7 +12,6 @@ import java.util.ArrayList;
 
 import java.util.List;
 
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -110,6 +109,11 @@ public class BookService {
 		return setBookData(books);
 	}
 
+	public List<BookDto> getAllMyBooksByAuthorId(Integer authorId) {
+		List<Book> books = bookRepository.findByUserId(authorId);
+		return setBookData(books);
+	}
+
 	private List<BookDto> setBookData(List<Book> books) {
 		List<BookDto> bookData = new ArrayList<>();
 		books.forEach(book -> {
@@ -155,8 +159,14 @@ public class BookService {
 		LOGGER.info(uri);
 		BuyDto cardDetails = restTemplate.getForObject(uri, BuyDto.class);
 		ResponseDto responseDto = new ResponseDto();
-		responseDto = isBalanceSufficient(buyDto, cardDetails, responseDto);
-		if (!responseDto.isFlag()) {
+		if (cardDetails != null) {
+			responseDto = isBalanceSufficient(buyDto, cardDetails, responseDto);
+			if (!responseDto.isFlag()) {
+
+				return responseDto;
+			}
+		} else {
+			responseDto.setResponse("Incorrect Card Number");
 			return responseDto;
 		}
 
@@ -182,6 +192,7 @@ public class BookService {
 		// debit amount in to card
 		String uriUpdate = "http://localhost:8081/card/" + buyDto.getCardNumber() + "/" + buyDto.getAmount();
 		HttpEntity<BuyDto> entity = new HttpEntity<BuyDto>(buyDto);
+		LOGGER.info("buyDto.getAmount()"+buyDto.getAmount());
 		ResponseEntity<ResponseDto> dto = restTemplate.exchange(uriUpdate, HttpMethod.PUT, entity, ResponseDto.class);
 		responseDto.setResponse(dto.getBody().getResponse());
 		return responseDto;
@@ -201,8 +212,9 @@ public class BookService {
 	public List<Payment> getPurchasedBooks(String emailId) {
 		List<Payment> payments = paymentRepository.findByEmail(emailId);
 		payments.forEach(payment -> {
-			LocalDateTime difference = LocalDateTime.from(payment.getPaymentDate());
-			long hours = difference.until(payment.getPaymentDate(), ChronoUnit.HOURS);
+
+			long hours = ChronoUnit.HOURS.between(payment.getPaymentDate(), LocalDateTime.now());
+			System.out.println(hours);
 			if (hours <= 24) {
 				payment.setRefundStatus(true);
 			}

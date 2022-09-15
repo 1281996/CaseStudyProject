@@ -6,19 +6,27 @@ import static org.mockito.Mockito.when;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.validation.BindException;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 
 import com.cog.dto.BookDto;
 import com.cog.dto.BookResDto;
+
 import com.cog.dto.LoginDto;
 import com.cog.dto.ResponseDto;
 import com.cog.dto.UserDto;
@@ -27,7 +35,9 @@ import com.cog.entity.User;
 import com.cog.entity.UserMapping;
 import com.cog.enums.Category;
 import com.cog.enums.Event;
+import com.cog.jwt.JwtUtils;
 import com.cog.service.BookService;
+import com.cog.service.UserDetailsImpl;
 import com.cog.service.UserMappingService;
 import com.cog.service.UserService;
 import com.cog.util.Constant;
@@ -44,6 +54,12 @@ class AuthorControllerTest {
 	@InjectMocks
 	AuthorController authorController;
 
+	@Mock
+	AuthenticationManager authenticationManager;
+
+	@Mock
+	JwtUtils jwtUtils;
+
 	@Test
 	void testCreateUser() {
 		UserDto dto = getUserDto();
@@ -51,15 +67,6 @@ class AuthorControllerTest {
 		responseDto.setResponse(Constant.USER_REGISTER_SUCCESS);
 		when(userService.saveUser(dto)).thenReturn(responseDto);
 		assertEquals(Constant.USER_REGISTER_SUCCESS, authorController.createUser(dto).getResponse());
-	}
-
-	@Test
-	void testLoginUser() {
-		LoginDto dto = getLoginDto();
-		ResponseDto responseDto = new ResponseDto();
-		responseDto.setResponse(Constant.USER_CHECK_CREDENTAILS_SUCESS);
-		when(userService.vaidateUser(dto)).thenReturn(responseDto);
-		assertEquals(Constant.USER_CHECK_CREDENTAILS_SUCESS, authorController.loginUser(dto).getResponse());
 	}
 
 	@Test
@@ -79,7 +86,7 @@ class AuthorControllerTest {
 
 	@Test
 	void testGetAllMyBooks() {
-		when(bookService.getAllMyBooks()).thenReturn(new ArrayList<>());
+		when(bookService.getAllMyBooksByAuthorId(1)).thenReturn(new ArrayList<>());
 		assertEquals(0, authorController.getAllMyBooks(1).size());
 
 	}
@@ -96,8 +103,26 @@ class AuthorControllerTest {
 	void testHandleMethodArumentException() {
 		BindingResult bindingResult = new BindException("msg", "msg");
 		MethodArgumentNotValidException exception = new MethodArgumentNotValidException(null, bindingResult);
-		
+
 		assertEquals(0, authorController.handleMethodArumentException(exception).size());
+	}
+
+	@Test
+	void testLoginUser() {
+		LoginDto loginDto = getLoginDto();
+		GrantedAuthority authoritie = new SimpleGrantedAuthority("ROLE_AUTHOR");
+		Set<GrantedAuthority> list = new HashSet<>();
+		list.add(authoritie);
+		UserDetailsImpl detailsImpl = new UserDetailsImpl(1L, "kammalli", loginDto.getEmailId(), loginDto.getPassword(),
+				list);
+
+		Authentication authentication = new UsernamePasswordAuthenticationToken(detailsImpl, list);
+		when(authenticationManager
+				.authenticate(new UsernamePasswordAuthenticationToken(loginDto.getEmailId(), loginDto.getPassword())))
+				.thenReturn(authentication);
+		when(jwtUtils.generateJwtToken(authentication)).thenReturn("yeyrbecbdc678");
+
+		assertEquals(loginDto.getEmailId(), authorController.loginUser(loginDto).getBody().getEmail());
 	}
 
 	public static BookDto getBookDto() {

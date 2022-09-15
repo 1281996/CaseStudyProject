@@ -43,7 +43,7 @@ class CardServiceTest {
 	@Test
 	void testUpdateDebitedAmount() {
 		when(cardRepository.findByCardNumber(12345L)).thenReturn(TestInputs.getCard());
-		assertEquals("Amount debited sucessfully", cardService.updateDebitedAmount(12345L, 123.0).getResponse());
+		assertEquals("Transaction completed sucessfully", cardService.updateDebitedAmount(12345L, 123.0).getResponse());
 	}
 	@Test
 	void testUpdateDebitedAmountWhenFaiure() {

@@ -51,7 +51,7 @@ public class ReaderController {
 	@GetMapping("/{emailId}/books/{bookId}")
 	public void exportBookContentToPDF(HttpServletResponse response, @PathVariable("emailId") String emailId,
 			@PathVariable Integer bookId) throws IOException, DocumentException {
-		LOGGER.info("exportBookContentToPDF"+response.getClass());
+		LOGGER.info("exportBookContentToPDF");
 		response.setContentType("application/pdf");
 		String headerKey = "Content-Disposition";
 		String headerValue = "attachment; filename=content" + LocalDateTime.now() + ".pdf";

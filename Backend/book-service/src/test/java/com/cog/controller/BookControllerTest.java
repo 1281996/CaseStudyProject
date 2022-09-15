@@ -44,9 +44,9 @@ class BookControllerTest {
 
 	@Test
 	void testBuyBook() {
-		ResponseDto responseDto=new ResponseDto();
+		ResponseDto responseDto = new ResponseDto();
 		responseDto.setResponse("Sucess");
-		BuyDto buyDto=getBuyDto();
+		BuyDto buyDto = getBuyDto();
 		when(bookService.buyBook(buyDto)).thenReturn(responseDto);
 		assertEquals("Sucess", bookController.buyBook(buyDto).getResponse());
 	}

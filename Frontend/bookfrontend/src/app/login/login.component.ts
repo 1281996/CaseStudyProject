@@ -2,8 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AppComponent } from '../app.component';
+import { AuthService } from '../auth.service';
 import { BookService } from '../book.service';
 import { NotificationService } from '../notification.service';
+import { TokenService } from '../token.service';
 
 @Component({
   selector: 'app-login',
@@ -14,9 +16,14 @@ import { NotificationService } from '../notification.service';
 export class LoginComponent implements OnInit {
   title: any = "Books.com"
   public isLoggedIn: any = false;
-  constructor(public bookService: BookService, private fb: FormBuilder, private route: Router, private notifyService: NotificationService) { }
+  roles: any=[];
+  constructor(public authService: AuthService,public tokenService:TokenService,private fb: FormBuilder, private route: Router, private notifyService: NotificationService) { }
 
   ngOnInit(): void {
+    if (this.tokenService.getToken()) {
+      this.isLoggedIn = true;
+      this.roles = this.tokenService.getUser().roles;
+    }
   }
 
   public frmLogin = this.fb.group({
@@ -32,17 +39,25 @@ export class LoginComponent implements OnInit {
   }
   loginClick(login: any) {
     console.log('Login clicked');
-    const promise = this.bookService.loginUser(login);
+    const promise = this.authService.loginUser(login);
     promise.subscribe((res: any) => {
-      console.log(res);
-      if (res.flag === true) {
-        this.isLoggedIn = res.flag;
-        localStorage.setItem('currentUser', this.isLoggedIn);
-        localStorage.setItem('emailId', login.emailId);
-        localStorage.setItem('id', res.id);
-        console.log(localStorage.getItem('currentUser'))
+     
+      //  localStorage.setItem('currentUser', this.isLoggedIn);
+       // localStorage.setItem('emailId', login.emailId);
+       // localStorage.setItem('id', res.id);
+       // console.log(localStorage.getItem('currentUser'))
+
+       this.tokenService.saveToken(res.token);
+       this.tokenService.saveUser(res);
+       this.tokenService.saveIsLoggedIn(true);
+
+    
+       this.isLoggedIn = true;
+       this.roles = this.tokenService.getUser().roles;
+      
+
         this.route.navigate(['/author']);
-      }
+      
       this.showToasterSuccess(res.response);
     }, (error: any) => {
       console.log(error);
@@ -58,4 +73,5 @@ export class LoginComponent implements OnInit {
     console.log("showToasterError");
     this.notifyService.showError(msg, this.title)
   }
+ 
 }

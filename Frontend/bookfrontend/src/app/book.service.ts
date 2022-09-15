@@ -29,10 +29,7 @@ export class BookService {
     return this.http.put(AUTHOR_URL + '/' + authorId + '/books' + '/' + id, editBook);
   }
 
-  public registerUser(register: any) {
-
-    return this.http.post(AUTHOR_URL + '/signup', register);
-  }
+ 
   public getAllReadersBooks() {
     return this.http.get(READER_URL);
   }

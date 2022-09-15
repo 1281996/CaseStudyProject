@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, Validators } from '@angular/forms';
 import { BookService } from '../book.service';
+import { TokenService } from '../token.service';
 
 @Component({
   selector: 'app-author',
@@ -14,10 +15,10 @@ export class AuthorComponent implements OnInit {
   display = "none";
   authId: any;
   displayEditBooks = "none";
-  constructor(private fb: FormBuilder, private bookService: BookService) { }
+  constructor(private fb: FormBuilder, private bookService: BookService,private tokenService:TokenService) { }
 
   ngOnInit(): void {
-
+   this.booksDisplay()
   }
 
   openModal() {
@@ -98,7 +99,7 @@ export class AuthorComponent implements OnInit {
     }
   }
   public getAuthorId() {
-    return localStorage.getItem('id');
+    return this.tokenService.getUser().id;
   }
   
 }

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
+import { TokenService } from '../token.service';
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -8,24 +10,32 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private route: Router) {
-    console.log("hello1");
+
+  constructor(private route: Router, private tokenService: TokenService) {
+
   }
 
   ngOnInit(): void {
 
   }
   logout() {
-    console.log("logout")
-    localStorage.removeItem('currentUser');
-    localStorage.removeItem('emailId');
-    localStorage.removeItem('id');
+    this.tokenService.signOut()
     this.route.navigate(['/login']);
+
   }
   isLoggedIn() {
-    return localStorage.getItem('currentUser');
+    return this.tokenService.getIsLoggedIn()
   }
   getLoggedInUserName() {
-    return localStorage.getItem('emailId');
+    return this.tokenService.getUser().email;
+  }
+  getRole() {
+    if (this.tokenService.getUser().roles != null) {
+      console.log(this.tokenService.getUser().roles[0])
+      return this.tokenService.getUser().roles[0]
+    }
+    else {
+      return "NOTLoggedIn"
+    }
   }
 }

@@ -17,6 +17,8 @@ import { AuthorComponent } from './author/author.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { OrderComponent } from './order/order.component';
+import { authInterceptorProviders } from './auth.interceptor';
+
 
 @NgModule({
   declarations: [
@@ -35,7 +37,7 @@ import { OrderComponent } from './order/order.component';
     ReactiveFormsModule, HttpClientModule, NgbModule, BrowserAnimationsModule, ToastrModule.forRoot()
     , Ng2SearchPipeModule
   ],
-  providers: [],
+  providers: [authInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

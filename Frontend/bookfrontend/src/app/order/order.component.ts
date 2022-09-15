@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { BookService } from '../book.service';
 
-import * as fileSaver from 'file-saver'; 
+import * as fileSaver from 'file-saver';
+import { TokenService } from '../token.service';
 
 @Component({
   selector: 'app-order',
@@ -10,13 +11,13 @@ import * as fileSaver from 'file-saver';
   styleUrls: ['./order.component.css']
 })
 export class OrderComponent implements OnInit {
-  payments:any=[];
-  paymentId:any;
+  payments: any = [];
+  paymentId: number = 0;
   bookData: any;
-  payment={
-    id:1
+  payment = {
+    id: 1
   }
-  constructor(private route: Router,private bookService:BookService) { }
+  constructor(private route: Router, private bookService: BookService, private tokenService: TokenService) { }
 
   ngOnInit(): void {
     const promise = this.bookService.getAllPurchashsedBooks(this.getEmailIdFromLocalStorage());
@@ -27,37 +28,55 @@ export class OrderComponent implements OnInit {
       console.log(error);
     });
   }
+
+
   backToHome() {
     this.route.navigate(['/'])
   }
-  getEmailIdFromLocalStorage(){
-   return localStorage.getItem('emailId');
+
+
+
+  getEmailIdFromLocalStorage() {
+    return this.tokenService.getUser().email;
   }
-  readContent(payment:any){
-    const promise = this.bookService.readContent(payment.email,payment.book.id);
-    promise.subscribe((res:any) =>this.saveFile(res) , (error: any) => {
+
+
+  readContent(payment: any) {
+    const promise = this.bookService.readContent(payment.email, payment.book.id);
+    promise.subscribe((res: any) => this.saveFile(res), (error: any) => {
       console.log(error);
     });
   }
+
+
   saveFile(data: any) {
-    const blob = new Blob([data], {type: 'application/pdf; charset=utf-8'});
+    const blob = new Blob([data], { type: 'application/pdf; charset=utf-8' });
     fileSaver.saveAs(blob, 'filename');
   }
-  refund(payment:any){
-   if(confirm('are u sure?')){
-    const promise = this.bookService.refund(payment.email,payment.book.id);
-    promise.subscribe((res:any) =>{
-      this.payments = res;
-    } , (error: any) => {
-      console.log(error);
-    });
+
+
+  refund(payment: any) {
+    if (confirm('are u sure?')) {
+      const promise = this.bookService.refund(payment.email, payment.book.id);
+      promise.subscribe((res: any) => {
+        this.payments = res;
+      }, (error: any) => {
+        console.log(error);
+      });
+    }
   }
-  }
-  searchByPaymentId(paymentId:any){
-    const promise = this.bookService.searchByPaymentId(this.getEmailIdFromLocalStorage(),paymentId,this.payment);
-    promise.subscribe((res:any) =>{
+
+
+
+  searchByPaymentId(paymentId: any) {
+    console.log(paymentId)
+    if (!paymentId) {
+      paymentId = 0;
+    }
+    const promise = this.bookService.searchByPaymentId(this.getEmailIdFromLocalStorage(), paymentId, this.payment);
+    promise.subscribe((res: any) => {
       this.bookData = res;
-    } , (error: any) => {
+    }, (error: any) => {
       console.log(error);
     });
   }

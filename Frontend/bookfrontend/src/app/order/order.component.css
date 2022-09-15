@@ -1,4 +1,22 @@
-.thead-danger{
-    background-color: rgb(216, 67, 67);
-    color: white;
+.thead-danger {
+    background-color: rgb(232, 211, 211);
+    color: black;
+    font-weight: lighter;
 }
+th,td{
+    border-color: lightgray;
+}
+table{
+    border-bottom: none;
+}
+
+
+
+
+
+
+
+
+
+
+

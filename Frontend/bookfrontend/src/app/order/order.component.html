@@ -1,5 +1,5 @@
 <!--Second Nav Bar-->
-<div class="col-sm-12 text-center mb-3">
+<div class="col-sm-10 text-center mb-2">
     <nav class="navbar navbar-expand-lg bg-light">
         <div class="container-fluid">
             <div class="collapse navbar-collapse" id="navbarText">
@@ -11,14 +11,15 @@
                     <li>
                         <div class="input-group">
                             <div class="form-outline">
-                                <input type="search" placeholder="enter Payment Id" [(ngModel)]='paymentId' name="paymentId" class="form-control" />
+                                <input type="search" placeholder="enter Payment Id" [(ngModel)]='paymentId'
+                                    name="paymentId" class="form-control" />
                             </div>
-                            <button type="button" class="btn btn-danger" (click)="searchByPaymentId(paymentId)"  >
+                            <button type="button" class="btn btn-danger" (click)="searchByPaymentId(paymentId)">
                                 <i class="bi bi-search"></i>
                             </button>
                         </div>
 
-                       
+
                     </li>
 
                 </ul>
@@ -27,38 +28,6 @@
         </div>
     </nav>
 </div>
-
-<!--Table display-->
-
-
-<table class="table">
-    <thead class="thead-danger">
-        <tr>
-            <th scope="col">Payment Id</th>
-            <th scope="col">Date</th>
-            <th scope="col">BookId</th>
-            <th scope="col">Book Name</th>
-            <th scope="col">Publisher</th>
-            <th scope="col">Price</th>
-            <th scope="col">Read</th>
-            <th scope="col">Refund</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let payment of payments">
-            <td>{{payment.id}}</td>
-            <td>{{payment.paymentDate}}</td>
-            <td>{{payment.book.id}}</td>
-            <td>{{payment.book.title}}</td>
-            <td>{{payment.book.publisher}}</td>
-            <td>{{payment.book.price }}</td>
-            <td><button type="button" class="btn btn-light" (click)="readContent(payment)">Read</button></td>
-            <td><button type="button" [disabled]="!payment.refundStatus" class="btn btn-light"
-                    (click)="refund(payment)">Refund</button></td>
-        </tr>
-
-    </tbody>
-</table>
 <!--books display-->
 <div class="row gy-2 my-2">
     <div class="col-sm-2" *ngFor="let book of bookData">
@@ -72,7 +41,48 @@
                 <p class="card-text">
                     <label>Price: </label> {{book.book.price| currency:'INR'}}
                 </p>
-               
+
             </div>
         </div>
     </div>
+
+<!--Table display-->
+<div class="container">
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Payment Id</th>
+            <th scope="col">Date</th>
+            <th scope="col">BookId</th>
+            <th scope="col">Book Name</th>
+            <th scope="col">Publisher</th>
+            <th scope="col">Price</th>
+            <th scope="col">Read</th>
+            <th scope="col">Refund</th>
+            <th scope="col">status</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let payment of payments">
+            <td>{{payment.id}}</td>
+            <td>{{payment.paymentDate}}</td>
+            <td>{{payment.book.id}}</td>
+            <td>{{payment.book.title}}</td>
+            <td>{{payment.book.publisher}}</td>
+            <td>{{payment.book.price }}</td>
+
+            <td><button type="button" class="btn btn-dark" [disabled]="payment.paymentStatus=='CANCLLED'?1:0"   (click)="readContent(payment)"><i class="bi bi-download"></i></button></td>
+            <td><button type="button" [disabled]="!payment.refundStatus || payment.paymentStatus=='CANCLLED'?1:0" class="btn btn-dark"
+                    (click)="refund(payment)"><i class="bi bi-cash"></i></button></td>
+            <td>{{payment.paymentStatus }}</td>
+        </tr>
+
+    </tbody>
+</table>
+
+</div>
+
+
+

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthService } from '../auth.service';
 import { BookService } from '../book.service';
 import { NotificationService } from '../notification.service';
 
@@ -11,7 +12,7 @@ import { NotificationService } from '../notification.service';
 })
 export class RegisterComponent implements OnInit {
 
-  constructor(private fb: FormBuilder, private bookService: BookService, private route: Router, private notifyService: NotificationService) { }
+  constructor(private fb: FormBuilder, private authService: AuthService, private route: Router, private notifyService: NotificationService) { }
   title: any = "Books.com"
   ngOnInit(): void {
   }
@@ -36,7 +37,7 @@ export class RegisterComponent implements OnInit {
   }
   RegisterClick(register: any) {
     console.log('Register clicked');
-    const promise = this.bookService.registerUser(register);
+    const promise = this.authService.registerUser(register);
     promise.subscribe((res: any) => {
       console.log(res);
       this.showToasterSuccess(res.response);

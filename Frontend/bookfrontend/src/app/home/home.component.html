@@ -1,19 +1,18 @@
-
-
 <!--Second Nav Bar-->
 <div class="col-sm-12 text-center mb-3">
     <nav class="navbar navbar-expand-lg bg-light">
         <div class="container-fluid">
             <div class="collapse navbar-collapse" id="navbarText">
                 <ul class="navbar-nav me-auto">
-                    <li  class="nav-item p-3">
+                    <li class="nav-item p-3">
                         <button class="btn btn-light" type="button" (click)="openModelCard()">Save Card Details</button>
                     </li>
                 </ul>
                 <ul class="navbar-nav me-auto">
-                    <li  class="nav-item p-3">
+                    <li class="nav-item p-3">
                         <span class="bi bi-cart"></span>
-                        <button class="btn btn-light" type="button" (click)="showCart()">Cart({{addToCart.length}})</button>
+                        <button class="btn btn-light" type="button"
+                            (click)="showCart()">Cart({{addToCart.length}})</button>
                     </li>
                 </ul>
                 <ul class="navbar-nav me-auto">
@@ -60,14 +59,15 @@
                 <button type="submit" class="btn btn-danger" (click)='removeFromCart(book.id)'>Remove</button>
             </div>
         </div>
-       
-    </div>
-    
-    </div>
-    <button type="button" class="btn btn-danger" *ngIf="!cartFlag&&this.addToCart.length!=0" (click)="openModalBuy()">ProcedToBuy {{cartTotal}}</button>
 
-  <!--Carousel-->
-  <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+    </div>
+
+</div>
+<button type="button" class="btn btn-danger" *ngIf="!cartFlag&&this.addToCart.length!=0"
+    (click)="openModalBuy()">ProcedToBuy {{cartTotal}}</button>
+
+<!--Carousel-->
+<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
         <div class="carousel-item active">
             <img src="/assets/carousel3.jpg" class="d-block w-100" alt="...">
@@ -79,13 +79,11 @@
             <img src="/assets/carousel1.jpg" class="d-block w-100" alt="...">
         </div>
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
-        data-bs-slide="prev">
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Previous</span>
     </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
-        data-bs-slide="next">
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
     </button>
@@ -93,7 +91,7 @@
 
 
 
-    <!--Cards display Home-->
+<!--Cards display Home-->
 
 
 <div class="row gy-2 my-2">
@@ -112,157 +110,181 @@
             </div>
         </div>
     </div>
-  
 
 
 
-<!--model filter-->
 
-<div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':display}">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Filter</h5>
-                <button type="button" class="btn-close" (click)="closeModal()" data-bs-dismiss="modal"
-                    aria-label="Close"></button>
+    <!--model filter-->
+
+    <div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':display}">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Filter</h5>
+                    <button type="button" class="btn-close" (click)="closeModal()" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <!--Author-->
+                        <label class="labelHeader">Authors</label>
+                        <div class="form-check" *ngFor="let user of users">
+                            <input class="form-check-input" type="checkbox"
+                                (change)="onCheckAuthors($event.target,user.user.id)" value="">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                {{user.user.firstName}}
+                            </label>
+                        </div>
+                        <!--Catageory-->
+                        <label class="labelHeader">Publisher</label>
+                        <div class="form-check" *ngFor="let publisher of publishers">
+                            <input class="form-check-input" type="checkbox" name="publisher"
+                                (change)="onCheckPublishers($event.target,publisher)">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                {{publisher}}
+                            </label>
+                        </div>
+                        <!--Publisher-->
+                        <label class="labelHeader">Catageory</label>
+                        <div class="form-check" *ngFor="let catageory of catagories">
+                            <input class="form-check-input" type="checkbox" value=""
+                                (change)="onCheckCatageory($event.target,catageory)">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                {{catageory}}
+                            </label>
+                        </div>
+                        <!--Price-->
+                        <label class="labelHeader">Price</label>
+                        <div class="input-group">
+                            <input type="number" class='form-control' [(ngModel)]="price" name="price">
+                        </div>
+                        <br>
+                        <button type="button" class="btn btn-danger" (click)="saveFilters()">Save
+                            changes</button>
+
+                    </form>
+                </div>
             </div>
-            <div class="modal-body">
-                <form>
-                    <!--Author-->
-                    <label class="labelHeader">Authors</label>
-                    <div class="form-check" *ngFor="let user of users">
-                        <input class="form-check-input" type="checkbox"
-                            (change)="onCheckAuthors($event.target,user.user.id)" value="">
-                        <label class="form-check-label" for="flexCheckDefault">
-                            {{user.user.firstName}}
-                        </label>
-                    </div>
-                    <!--Catageory-->
-                    <label class="labelHeader">Publisher</label>
-                    <div class="form-check" *ngFor="let publisher of publishers">
-                        <input class="form-check-input" type="checkbox" name="publisher"
-                            (change)="onCheckPublishers($event.target,publisher)">
-                        <label class="form-check-label" for="flexCheckDefault">
-                            {{publisher}}
-                        </label>
-                    </div>
-                    <!--Publisher-->
-                    <label class="labelHeader">Catageory</label>
-                    <div class="form-check" *ngFor="let catageory of catagories">
-                        <input class="form-check-input" type="checkbox" value=""
-                            (change)="onCheckCatageory($event.target,catageory)">
-                        <label class="form-check-label" for="flexCheckDefault">
-                            {{catageory}}
-                        </label>
-                    </div>
-                    <!--Price-->
-                    <label class="labelHeader">Price</label>
-                    <div class="input-group">
-                        <input type="number" class='form-control' [(ngModel)]="price" name="price">
-                    </div>
-                    <br>
-                    <button type="button" class="btn btn-danger" (click)="saveFilters()">Save
-                        changes</button>
 
-                </form>
-            </div>
-        </div>
-
-    </div>
-</div>
-
-<!--model Buy-->
-
-<div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':displayBuy}">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Buy</h5>
-                <button type="button" class="btn-close" (click)="closeModalBuy()" data-bs-dismiss="modal"
-                    aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <form>
-                    <label class="labelHeader">Email Id</label>
-                    <div class="input-group">
-                        <input type="email" class='form-control' [(ngModel)]="userInfo.email" name="email">
-                    </div>
-                    <label class="labelHeader">Name</label>
-                    <div class="input-group">
-                        <input type="text" class='form-control' [(ngModel)]="userInfo.name" name="name">
-                    </div>
-                    <label class="labelHeader">Card No</label>
-                    <div class="input-group">
-                        <input type="number" class='form-control' [(ngModel)]="userInfo.cardNumber" name="cardNumber">
-                    </div>
-                    <label class="labelHeader">CVC</label>
-                    <div class="input-group">
-                        <input type="password" class='form-control' [(ngModel)]="userInfo.cvc" name="cvc">
-                    </div>
-                    <br>
-                    <button type="button" class="btn btn-danger" (click)="procedeToBuy(bookId,userInfo)">ProcedeToBuy
-                    </button>
-                </form>
-            </div>
         </div>
     </div>
-</div>
 
-<!--modal order-->
-<div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':displayOrder}">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Order</h5>
-                <button type="button" class="btn-close" (click)="closeModalOrder()" data-bs-dismiss="modal"
-                    aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <form>
-                    <label class="labelHeader">Email Id</label>
-                    <div class="input-group">
-                        <input type="email" class='form-control' [(ngModel)]="userInfo.email" name="email">
-                    </div>
-                    <br>
-                    <button type="button" class="btn btn-danger" (click)="routeToOrder(userInfo)">Procede
-                    </button>
-                </form>
+    <!--model Buy-->
+
+    <div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':displayBuy}">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Buy</h5>
+                    <button type="button" class="btn-close" (click)="closeModalBuy()" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form [formGroup]="frmEmail" (ngSubmit)="procedeToBuy(frmEmail.value)">
+                        <label class="labelHeader">Email Id</label>
+                        <div class="input-group">
+                            <input type="email" class='form-control' formControlName="email" name="email">
+                        </div>
+                        <dd class="text-danger" *ngIf="email.touched && email.invalid">
+                            <span *ngIf="email.errors?.['required']">Email Required</span>
+                        </dd>
+                        <label class="labelHeader">Name</label>
+                        <div class="input-group">
+                            <input type="text" class='form-control' formControlName="name" name="name">
+                        </div>
+                        <dd class="text-danger" *ngIf="name.touched && name.invalid">
+                            <span *ngIf="name.errors?.['required']">Name Required</span>
+                        </dd>
+                        <label class="labelHeader">Card No</label>
+                        <div class="input-group">
+                            <input type="number" class='form-control' formControlName="cardNumber" name="cardNumber">
+                        </div>
+                        <dd class="text-danger" *ngIf="cardNumber.touched && cardNumber.invalid">
+                            <span *ngIf="cardNumber.errors?.['required']">CardNumber Required</span>
+                        </dd>
+                        <label class="labelHeader">CVC</label>
+                        <div class="input-group">
+                            <input type="password" class='form-control' formControlName="cvc" name="cvc">
+                        </div>
+                        <dd class="text-danger" *ngIf="cvc.touched && cvc.invalid">
+                            <span *ngIf="cvc.errors?.['required']">CVC Required</span>
+                        </dd>
+                        <br>
+                        <button type="submit" [disabled]="frmEmail.invalid" class="btn btn-danger">ProcedeToBuy
+                        </button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
-
-<!--Save Card Details-->
-
-<!--modal order-->
-<div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':displayCard}">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Card</h5>
-                <button type="button" class="btn-close" (click)="closeModalCard()" data-bs-dismiss="modal"
-                    aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <form>
-                    <label class="labelHeader">Email Id</label>
-                    <div class="input-group">
-                        <input type="email" required class='form-control' [(ngModel)]="userInfo.email" name="email">
-                    </div>
-                    <label class="labelHeader">Card No</label>
-                    <div class="input-group">
-                        <input type="number" required  class='form-control' [(ngModel)]="userInfo.cardNumber" name="cardNumber">
-                    </div>
-                    <label class="labelHeader">cvc</label>
-                    <div class="input-group">
-                        <input type="number" required class='form-control' [(ngModel)]="userInfo.cvc" name="cvc">
-                    </div>
-                    <br>
-                    <button type="button" class="btn btn-danger" (click)="saveCardDetails(userInfo)">Procede
-                    </button>
-                </form>
+    <!--modal order-->
+    <div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':displayOrder}">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Order</h5>
+                    <button type="button" class="btn-close" (click)="closeModalOrder()" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form [formGroup]="frmEmail" (ngSubmit)="routeToOrder(frmEmail.value)">
+                        <label class="labelHeader">Email Id</label>
+                        <div class="input-group">
+                            <input type="email" class='form-control' formControlName="email" name="email">
+                        </div>
+                        <dd class="text-danger" *ngIf="email.touched && email.invalid">
+                            <span *ngIf="email.errors?.['required']">Email Required</span>
+                        </dd>
+                        <br>
+                        <button type="submit" [disabled]="frmEmail.invalid" class="btn btn-danger">Procede
+                        </button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
-</div>
+
+
+    <!--Save Card Details-->
+
+    <!--modal order-->
+    <div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':displayCard}">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Card</h5>
+                    <button type="button" class="btn-close" (click)="closeModalCard()" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form [formGroup]="frmEmail" (ngSubmit)="saveCardDetails(frmEmail.value)">
+                        <label class="labelHeader">Email Id</label>
+                        <div class="input-group">
+                            <input type="email" class='form-control' formControlName="email" name="email">
+                        </div>
+                        <dd class="text-danger" *ngIf="email.touched && email.invalid">
+                            <span *ngIf="email.errors?.['required']">Email Required</span>
+                        </dd>
+                        <label class="labelHeader">Card No</label>
+                        <div class="input-group">
+                            <input type="number" class='form-control' formControlName="cardNumber" name="cardNumber">
+                        </div>
+                        <dd class="text-danger" *ngIf="cardNumber.touched && cardNumber.invalid">
+                            <span *ngIf="cardNumber.errors?.['required']">CardNumber Required</span>
+                        </dd>
+                        <label class="labelHeader">cvc</label>
+                        <div class="input-group">
+                            <input type="number" class='form-control' formControlName="cvc" name="cvc">
+                        </div>
+                        <dd class="text-danger" *ngIf="cvc.touched && cvc.invalid">
+                            <span *ngIf="cvc.errors?.['required']">CVC Required</span>
+                        </dd>
+                        <br>
+                        <button type="submit" class="btn btn-danger" [disabled]="frmEmail.invalid">Procede
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>

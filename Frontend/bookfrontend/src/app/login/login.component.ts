@@ -16,8 +16,8 @@ import { TokenService } from '../token.service';
 export class LoginComponent implements OnInit {
   title: any = "Books.com"
   public isLoggedIn: any = false;
-  roles: any=[];
-  constructor(public authService: AuthService,public tokenService:TokenService,private fb: FormBuilder, private route: Router, private notifyService: NotificationService) { }
+  roles: any = [];
+  constructor(public authService: AuthService, public tokenService: TokenService, private fb: FormBuilder, private route: Router, private notifyService: NotificationService) { }
 
   ngOnInit(): void {
     if (this.tokenService.getToken()) {
@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit {
   }
 
   public frmLogin = this.fb.group({
-    emailId: this.fb.control('', [Validators.required, Validators.minLength(4)]),
+    emailId: this.fb.control('', [Validators.required, Validators.minLength(4), Validators.pattern('^[^\\s@]+@[^\\s@]+\\.[^\\s@]{2,}$')]),
     password: this.fb.control('', [Validators.required])
   })
 
@@ -41,23 +41,23 @@ export class LoginComponent implements OnInit {
     console.log('Login clicked');
     const promise = this.authService.loginUser(login);
     promise.subscribe((res: any) => {
-     
+
       //  localStorage.setItem('currentUser', this.isLoggedIn);
-       // localStorage.setItem('emailId', login.emailId);
-       // localStorage.setItem('id', res.id);
-       // console.log(localStorage.getItem('currentUser'))
+      // localStorage.setItem('emailId', login.emailId);
+      // localStorage.setItem('id', res.id);
+      // console.log(localStorage.getItem('currentUser'))
 
-       this.tokenService.saveToken(res.token);
-       this.tokenService.saveUser(res);
-       this.tokenService.saveIsLoggedIn(true);
+      this.tokenService.saveToken(res.token);
+      this.tokenService.saveUser(res);
+      this.tokenService.saveIsLoggedIn(true);
 
-    
-       this.isLoggedIn = true;
-       this.roles = this.tokenService.getUser().roles;
-      
 
-        this.route.navigate(['/author']);
-      
+      this.isLoggedIn = true;
+      this.roles = this.tokenService.getUser().roles;
+
+
+      this.route.navigate(['/author']);
+
       this.showToasterSuccess(res.response);
     }, (error: any) => {
       console.log(error);
@@ -73,5 +73,5 @@ export class LoginComponent implements OnInit {
     console.log("showToasterError");
     this.notifyService.showError(msg, this.title)
   }
- 
+
 }

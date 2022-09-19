@@ -12,7 +12,7 @@ import { TokenService } from '../token.service';
 })
 export class HomeComponent implements OnInit {
   bookData: any;
-  catagories: any = ['FICTIONAL', 'HORROR', 'HISTORY'];
+  catagories: any = ['FICTIONAL', 'HORROR','FANTASY'];
   users: any;
   publishers: any;
   bookId: any;
@@ -74,7 +74,7 @@ export class HomeComponent implements OnInit {
   }
 
   public frmEmail = this.fb.group({
-    email: this.fb.control('', [Validators.required]),
+    email: this.fb.control('', [Validators.required, Validators.pattern('^[^\\s@]+@[^\\s@]+\\.[^\\s@]{2,}$')]),
     cardNumber: this.fb.control('', [Validators.required]),
     cvc: this.fb.control('', [Validators.required]),
     name: this.fb.control('', [Validators.required])

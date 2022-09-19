@@ -188,6 +188,9 @@
                         <dd class="text-danger" *ngIf="email.touched && email.invalid">
                             <span *ngIf="email.errors?.['required']">Email Required</span>
                         </dd>
+                        <dd class="text-danger" *ngIf="email.touched && email.invalid">
+                            <span *ngIf="email.errors?.['pattern']">@gmail.com</span>
+                        </dd>
                         <label class="labelHeader">Name</label>
                         <div class="input-group">
                             <input type="text" class='form-control' formControlName="name" name="name">
@@ -236,6 +239,9 @@
                         <dd class="text-danger" *ngIf="email.touched && email.invalid">
                             <span *ngIf="email.errors?.['required']">Email Required</span>
                         </dd>
+                        <dd class="text-danger" *ngIf="email.touched && email.invalid">
+                            <span *ngIf="email.errors?.['pattern']">@gmail.com</span>
+                        </dd>
                         <br>
                         <button type="submit" [disabled]="frmEmail.invalid" class="btn btn-danger">Procede
                         </button>
@@ -266,6 +272,9 @@
                         <dd class="text-danger" *ngIf="email.touched && email.invalid">
                             <span *ngIf="email.errors?.['required']">Email Required</span>
                         </dd>
+                        <dd class="text-danger" *ngIf="email.touched && email.invalid">
+                            <span *ngIf="email.errors?.['pattern']">@gmail.com</span>
+                        </dd>
                         <label class="labelHeader">Card No</label>
                         <div class="input-group">
                             <input type="number" class='form-control' formControlName="cardNumber" name="cardNumber">
@@ -275,10 +284,17 @@
                         </dd>
                         <label class="labelHeader">cvc</label>
                         <div class="input-group">
-                            <input type="number" class='form-control' formControlName="cvc" name="cvc">
+                            <input type="password" class='form-control' formControlName="cvc" name="cvc">
                         </div>
                         <dd class="text-danger" *ngIf="cvc.touched && cvc.invalid">
                             <span *ngIf="cvc.errors?.['required']">CVC Required</span>
+                        </dd>
+                        <label class="labelHeader">Name</label>
+                        <div class="input-group">
+                            <input type="text" class='form-control' formControlName="name" name="name">
+                        </div>
+                        <dd class="text-danger" *ngIf="name.touched && name.invalid">
+                            <span *ngIf="name.errors?.['required']">CVC Required</span>
                         </dd>
                         <br>
                         <button type="submit" class="btn btn-danger" [disabled]="frmEmail.invalid">Procede

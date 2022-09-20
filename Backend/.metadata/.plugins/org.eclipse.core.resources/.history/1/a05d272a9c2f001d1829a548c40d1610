@@ -1,5 +1,0 @@
-package com.cog.repository;
-
-public interface PaymentDao {
-
-}

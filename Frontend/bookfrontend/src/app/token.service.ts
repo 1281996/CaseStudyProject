@@ -18,16 +18,16 @@ export class TokenService {
     window.sessionStorage.removeItem(TOKEN_KEY);
     window.sessionStorage.setItem(TOKEN_KEY, token);
   }
-  public saveIsLoggedIn(isLoggedIn:any){
+  public saveIsLoggedIn(isLoggedIn: any) {
     window.sessionStorage.setItem(LOGGEDIN_KEY, isLoggedIn);
   }
 
   public getToken(): string | null {
     return window.sessionStorage.getItem(TOKEN_KEY);
   }
-public getIsLoggedIn(){
-  return window.sessionStorage.getItem(LOGGEDIN_KEY);
-}
+  public getIsLoggedIn() {
+    return window.sessionStorage.getItem(LOGGEDIN_KEY);
+  }
   public saveUser(user: any): void {
     window.sessionStorage.removeItem(USER_KEY);
     window.sessionStorage.setItem(USER_KEY, JSON.stringify(user));

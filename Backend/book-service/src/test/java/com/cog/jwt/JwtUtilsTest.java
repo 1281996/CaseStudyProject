@@ -49,13 +49,13 @@ class JwtUtilsTest {
 	@Test
 	void testGetEmailIdFromJwtToken() {
 		assertNotEquals("", jwtUtils.getEmailIdFromJwtToken(
-				"eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzbmVoYUBnbWFpbC5jb20iLCJpYXQiOjE2NjMyMjc4NDYsImV4cCI6MTY2MzI4Nzg0Nn0.FNlv7KMIND7GUXtvViXK1UD8zYBET4-ydFFnguWoEcTDBFRiYq-NBcIN6HRNwz57IWTtJ5kEX-quQ9TkvZMNKg"));
+				"eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJkYXR0YUBnbWFpbC5jb20iLCJpYXQiOjE2NjM1Njk2NTIsImV4cCI6MTY2MzYyOTY1Mn0.Q-HfiGOGsCuV22flgVt0bhOINLcUj2hZ93oPqN-XA9OvvZcxb1ha6vE2qxge5U_QF95F5UBzgkjNFkhHxZWLHg"));
 	}
 
 	@Test
 	void testValidateJwtToken() {
 		assertNotEquals("", jwtUtils.validateJwtToken(
-				"eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzbmVoYUBnbWFpbC5jb20iLCJpYXQiOjE2NjMyMjc4NDYsImV4cCI6MTY2MzI4Nzg0Nn0.FNlv7KMIND7GUXtvViXK1UD8zYBET4-ydFFnguWoEcTDBFRiYq-NBcIN6HRNwz57IWTtJ5kEX-quQ9TkvZMNKg"));
+				"eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJkYXR0YUBnbWFpbC5jb20iLCJpYXQiOjE2NjM1Njk2NTIsImV4cCI6MTY2MzYyOTY1Mn0.Q-HfiGOGsCuV22flgVt0bhOINLcUj2hZ93oPqN-XA9OvvZcxb1ha6vE2qxge5U_QF95F5UBzgkjNFkhHxZWLHg"));
 	}
 
 	public static LoginDto getLoginDto() {

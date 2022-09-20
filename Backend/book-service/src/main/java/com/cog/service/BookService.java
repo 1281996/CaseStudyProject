@@ -190,7 +190,7 @@ public class BookService {
 			}
 		});
 		// debit amount in to card
-		String uriUpdate = "http://localhost:8081/card/" + buyDto.getCardNumber() + "/" + buyDto.getAmount();
+		String uriUpdate = "https://4d2vz23n9h.execute-api.us-east-1.amazonaws.com/prod/" + buyDto.getCardNumber() + "/" + buyDto.getAmount();
 		HttpEntity<BuyDto> entity = new HttpEntity<BuyDto>(buyDto);
 		LOGGER.info("buyDto.getAmount()"+buyDto.getAmount());
 		ResponseEntity<ResponseDto> dto = restTemplate.exchange(uriUpdate, HttpMethod.PUT, entity, ResponseDto.class);

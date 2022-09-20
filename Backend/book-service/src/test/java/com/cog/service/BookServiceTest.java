@@ -123,7 +123,7 @@ class BookServiceTest {
 		when(paymentRepository.findByEmailAndBookId(buyDto.getEmail(), 1)).thenReturn(null);
 		Optional<Book> optionalBook = Optional.of(getBook());
 		when(bookRepository.findById(1)).thenReturn(optionalBook);
-		String uriUpdate = "http://localhost:8081/card/" + buyDto.getCardNumber() + "/" + buyDto.getAmount();
+		String uriUpdate = "https://4d2vz23n9h.execute-api.us-east-1.amazonaws.com/prod/"+ buyDto.getCardNumber() + "/" + buyDto.getAmount();
 		ResponseDto dto = new ResponseDto();
 		dto.setResponse("");
 		ResponseEntity<ResponseDto> resEntity = new ResponseEntity<>(dto, HttpStatus.OK);

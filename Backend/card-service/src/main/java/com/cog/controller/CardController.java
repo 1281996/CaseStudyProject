@@ -21,7 +21,7 @@ public class CardController {
 	@Autowired
 	CardService cardService;
 
-	@PostMapping
+	@PostMapping("/create")
 	Card saveCardDetails(@RequestBody Card card) {
 		return cardService.saveCardDetails(card);
 	}

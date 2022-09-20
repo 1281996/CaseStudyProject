@@ -19,7 +19,7 @@ export class BookService {
     return this.http.post(AUTHOR_URL + '/login', login);
   }
   public createBook(book: any) {
-    return this.http.post(AUTHOR_URL + book.authorId, book);
+    return this.http.post(AUTHOR_URL +'/'+ book.authorId+'/books', book);
   }
   public bookDisplay(authorId: any) {
     return this.http.get(AUTHOR_URL + '/' + authorId + '/books/display');
